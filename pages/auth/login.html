@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/styles/login.css">
+    <title>Login form</title>
 </head>
+
 <body>
-    
+    <main>
+        <section>
+            <div class="login">
+                <img src="/Images/Eudia-logo.png" alt="">
+                <div class="login-container">
+                <div class="login-container-content">
+                    <h2 id="sign-up-heading">Sign up to Euodia</h2>
+                    <p id="sign-up-introduction">Quick & Simple way to start making your orders </p>
+                    <form class="login-form">
+                        <label for="name">Name</label> <br>
+                        <input type="name" id="name" name="name" placeholder="Chinedu Freedom" required> <br>
+                        <label for="email">Email</label> <br>
+                        <input type="email" id="email" name="email" placeholder="chinedufreedom10@gmail.com" required>
+                        <br>
+                        <label for="password">Password</label> <br>
+                        <input type="password" id="password" name="password" placeholder="must be at least 8 characters"
+                            required>
+                        <br>
+                        <div class="terms-condition">
+                            <input type="checkbox" id="terms" name="terms" required>
+
+                            <!-- <input type="checkbox" id="terms" name="terms" required> -->
+                            <label for="terms">I agree to the <a href="#">Terms and Conditions</a> and <a
+                                    href="#">Privacy Policy</a> </label>
+                        </div>
+                        <button id="login-button" type="submit">Create an account</button>
+                        <p id="reg-opt">Already have an account?<a href="">Log in</a></p>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
 </body>
+
 </html>
