@@ -1,1 +1,11 @@
 /* Charity */
+*{
+    padding: 0;
+    margin: 0;
+}
+#headerImage{
+    width: 100%;
+    height: 520px; 
+    top: 112px;
+    left: 70px;
+}
