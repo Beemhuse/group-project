@@ -1,1 +1,31 @@
 /* Charity */
+*{
+    padding: 0;
+    margin: 0;
+}
+#headerImage{
+    width: 90%;
+    margin: 50px 70px 10px 72px;
+    height: 520px; 
+     
+}
+#what-we-offer{
+    background-color: #f7f7f7;
+    padding: 20px 0;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+#what-we-offer > a {
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #34A853;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+}

@@ -1,11 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/styles/login.css">
+    <title>Log in form</title>
 </head>
+
 <body>
-    
+    <main>
+        <section>
+            <div class="login">
+                <img src="/Images/Eudia-logo.png" alt="">
+                <div class="login-container">
+                    <div class="login-container-content">
+                        <h2 id="login-heading">Log in to Euodia</h2>
+                        <p id="login-introduction">Quick & Simple way to start making your orders </p>
+                        <form class="login-form">
+                            <label for="email">Email</label> <br>
+                            <input type="email" id="email" name="email" placeholder="chinedufreedom10@gmail.com"
+                                required>
+                            <br>
+                            <label for="password">Password</label> <br>
+                            <input type="password" id="password" name="password"
+                                placeholder="must be at least 8 characters" required>
+                                <i class="fa-solid fa-eye-slash" style="color: #34A853;" id="password-icon"></i>
+                            <br>
+                            <div id="remember-me-span">
+                                <div class="remember-me">
+                                        <label class="checkbox" for="myCheckboxId">
+                                            <input class="checkbox__input" type="checkbox" name="myCheckboxId" id="myCheckboxId">
+                                            <div class="checkbox__box"></div>
+                                          <label for="myCheckboxId">Remember me</label>
+                                        </label>
+                            </div>
+                                <a href="/pages/auth/forgot.html" id="forgotten-password-link">Forgot Password?</a>
+                            </div>
+                            <button id="log-in-button" type="submit">Log in</button>
+                            <p id="sign-up-opt">Don't have an account?<a href="/pages/auth/signup.html">Sign up</a></p>
+                        </form>
+                    </div>
+                </div>
+                <p class="alrightrev">© 2023 My Blog. All rights reserved.</p>
+            </div>
+        </section>
+    </main>
+    <script src="/scripts/login.js"></script>
 </body>
+
 </html>
