@@ -6,7 +6,7 @@
             "id": 1,
             "name": "Village Rice",
             "description": "Tasty Village Rice cooked with palm oil and native spices.",
-            "image": "../Images/menu_images/Village_Rice.png",
+            "image": "../Images/menu_images/Rice Dish 1.png",
             "price": 5000,
             "currency": "N"
           },
@@ -14,7 +14,7 @@
             "id": 2,
             "name": "Jollof Rice",
             "description": "Spicy Nigerian Jollof rice served with fried plantains.",
-            "image": "../Images/menu_images/Jollof_Rice.png",
+            "image": "../Images/menu_images/Jollof Rice.png",
             "price": 4500,
             "currency": "N"
           },
@@ -22,7 +22,7 @@
             "id": 3,
             "name": "Fried Rice",
             "description": "Delicious Nigerian fried rice with vegetables and proteins.",
-            "image": "../Images/menu_images/Fried_Rice.png",
+            "image": "../Images/menu_images/Fried Rice.png",
             "price": 4800,
             "currency": "N"
           },
