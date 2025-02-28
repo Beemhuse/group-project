@@ -1,0 +1,491 @@
+[
+    {
+        "category": "Rice Dishes",
+        "dishes": [
+          {
+            "id": 1,
+            "name": "Village Rice",
+            "description": "Tasty Village Rice cooked with palm oil and native spices.",
+            "image": "../Images/menu_images/Village_Rice.png",
+            "price": 5000,
+            "currency": "N"
+          },
+          {
+            "id": 2,
+            "name": "Jollof Rice",
+            "description": "Spicy Nigerian Jollof rice served with fried plantains.",
+            "image": "../Images/menu_images/Jollof_Rice.png",
+            "price": 4500,
+            "currency": "N"
+          },
+          {
+            "id": 3,
+            "name": "Fried Rice",
+            "description": "Delicious Nigerian fried rice with vegetables and proteins.",
+            "image": "../Images/menu_images/Fried_Rice.png",
+            "price": 4800,
+            "currency": "N"
+          },
+          {
+            "id": 4,
+            "name": "Ofada Rice",
+            "description": "Local Ofada rice served with spicy ayamase sauce.",
+            "image": "../Images/menu_images/Ofada_Rice.png",
+            "price": 5500,
+            "currency": "N"
+          },
+          {
+            "id": 5,
+            "name": "Coconut Rice",
+            "description": "Fragrant coconut rice cooked with fresh coconut milk.",
+            "image": "../Images/menu_images/Coconut_Rice.png",
+            "price": 5200,
+            "currency": "N"
+          },
+          {
+            "id": 6,
+            "name": "Palm Oil Rice",
+            "description": "Traditional rice dish prepared with palm oil and assorted meats.",
+            "image": "../Images/menu_images/Palm_Oil_Rice.png",
+            "price": 5000,
+            "currency": "N"
+          },
+          {
+            "id": 7,
+            "name": "Tuwo Shinkafa",
+            "description": "Northern Nigerian rice dish served with spicy soup.",
+            "image": "../Images/menu_images/Tuwo_Shinkafa.png",
+            "price": 4800,
+            "currency": "N"
+          },
+          {
+            "id": 8,
+            "name": "Rice and Beans",
+            "description": "Nigerian rice dish made with katsu (chicken breasts) and seasoned with spices.",
+            "image": "../Images/menu_images/Katsu_Rice.png",
+            "price": 5500,
+            "currency": "N"
+          }
+        ]
+      },
+
+      {
+        "category": "Salads",
+        "dishes": [
+          {
+            "id": 1,
+            "name": "Nigerian Vegetable Salad",
+            "description": "A rich mix of cabbage, carrots, cucumbers, boiled eggs, and baked beans.",
+            "image": "../Images/menu_images/Nigerian_Vegetable_Salad.png",
+            "price": 3500,
+            "currency": "N"
+          },
+          {
+            "id": 2,
+            "name": "Coleslaw",
+            "description": "Classic Nigerian coleslaw made with shredded cabbage, carrots, and creamy dressing.",
+            "image": "../Images/menu_images/Coleslaw.png",
+            "price": 3000,
+            "currency": "N"
+          },
+          {
+            "id": 3,
+            "name": "Avocado Salad",
+            "description": "Fresh avocado slices with lettuce, tomatoes, onions, and light dressing.",
+            "image": "../Images/menu_images/Avocado_Salad.png",
+            "price": 3800,
+            "currency": "N"
+          },
+          {
+            "id": 4,
+            "name": "Beans and Corn Salad (Ewa ati Agbado)",
+            "description": "A nutritious mix of cooked beans, sweet corn, tomatoes, and spices.",
+            "image": "../Images/menu_images/Beans_Corn_Salad.png",
+            "price": 4000,
+            "currency": "N"
+          },
+          {
+            "id": 5,
+            "name": "Chicken Salad",
+            "description": "Grilled chicken breast served with fresh lettuce, tomatoes, and cucumber.",
+            "image": "../Images/menu_images/Chicken_Salad.png",
+            "price": 4500,
+            "currency": "N"
+          },
+          {
+            "id": 6,
+            "name": "Shrimp Salad",
+            "description": "Spicy shrimp tossed with crunchy vegetables and light dressing.",
+            "image": "../Images/menu_images/Shrimp_Salad.png",
+            "price": 5000,
+            "currency": "N"
+          },
+          {
+            "id": 7,
+            "name": "Fruit Salad",
+            "description": "A refreshing mix of watermelon, pineapple, banana, and apple.",
+            "image": "../Images/menu_images/Fruit_Salad.png",
+            "price": 3200,
+            "currency": "N"
+          },
+          {
+            "id": 8,
+            "name": "Plantain Salad",
+            "description": "Fried plantain cubes mixed with vegetables and light dressing.",
+            "image": "../Images/menu_images/Plantain_Salad.png",
+            "price": 3700,
+            "currency": "N"
+          }
+        ]
+      },
+
+      {
+        "category": "Proteins",
+        "dishes": [
+          {
+            "id": 1,
+            "name": "Grilled Chicken",
+            "description": "Well-marinated and grilled chicken with a smoky flavor.",
+            "image": "../Images/menu_images/Grilled_Chicken.png",
+            "price": 5000,
+            "currency": "N"
+          },
+          {
+            "id": 2,
+            "name": "Peppered Turkey",
+            "description": "Spicy turkey wings coated in a rich pepper sauce.",
+            "image": "../Images/menu_images/Peppered_Turkey.png",
+            "price": 6000,
+            "currency": "N"
+          },
+          {
+            "id": 3,
+            "name": "Goat Meat Peppersoup",
+            "description": "Traditional Nigerian pepper soup made with tender goat meat and aromatic spices.",
+            "image": "../Images/menu_images/Goat_Meat_Peppersoup.png",
+            "price": 6500,
+            "currency": "N"
+          },
+          {
+            "id": 4,
+            "name": "Fried Fish",
+            "description": "Crispy fried fish served with a side of spicy sauce.",
+            "image": "../Images/menu_images/Fried_Fish.png",
+            "price": 4500,
+            "currency": "N"
+          },
+          {
+            "id": 5,
+            "name": "Suya (Spicy Grilled Meat)",
+            "description": "Popular Nigerian street food made from grilled spicy beef skewers.",
+            "image": "../Images/menu_images/Suya.png",
+            "price": 5500,
+            "currency": "N"
+          },
+          {
+            "id": 6,
+            "name": "Bole and Fish",
+            "description": "Grilled plantain (Bole) served with roasted fish and spicy sauce.",
+            "image": "../Images/menu_images/Bole_Fish.png",
+            "price": 4800,
+            "currency": "N"
+          },
+          {
+            "id": 7,
+            "name": "Isi Ewu (Goat Head Delicacy)",
+            "description": "A rich, spicy dish made from goat head, palm oil sauce, and local spices.",
+            "image": "../Images/menu_images/Isi_Ewu.png",
+            "price": 7000,
+            "currency": "N"
+          },
+          {
+            "id": 8,
+            "name": "Nkwobi",
+            "description": "Delicious cow foot dish prepared with spicy palm oil sauce.",
+            "image": "../Images/menu_images/Nkwobi.png",
+            "price": 6800,
+            "currency": "N"
+          }
+        ]
+      },
+      {
+        "category": "Soups",
+        "dishes": [
+          {
+            "id": 1,
+            "name": "Egusi Soup",
+            "description": "Rich, thick soup made from melon seeds, vegetables, and assorted meats.",
+            "image": "../Images/menu_images/Egusi_Soup.png",
+            "price": 5000,
+            "currency": "N"
+          },
+          {
+            "id": 2,
+            "name": "Oha Soup",
+            "description": "Traditional Eastern Nigerian soup made with oha leaves and thickened with cocoyam.",
+            "image": "../Images/menu_images/Oha_Soup.png",
+            "price": 6000,
+            "currency": "N"
+          },
+          {
+            "id": 3,
+            "name": "Banga Soup",
+            "description": "Palm nut soup cooked with local spices and served with fresh fish or meat.",
+            "image": "../Images/menu_images/Banga_Soup.png",
+            "price": 6500,
+            "currency": "N"
+          },
+          {
+            "id": 4,
+            "name": "Afang Soup",
+            "description": "A delicious, vegetable-based soup made with water leaves and afang leaves.",
+            "image": "../Images/menu_images/Afang_Soup.png",
+            "price": 5500,
+            "currency": "N"
+          },
+          {
+            "id": 5,
+            "name": "Edikaikong Soup",
+            "description": "A highly nutritious soup made from ugu and water leaves, often served with assorted meats.",
+            "image": "../Images/menu_images/Edikaikong_Soup.png",
+            "price": 7000,
+            "currency": "N"
+          },
+          {
+            "id": 6,
+            "name": "Ewedu Soup",
+            "description": "A slimy-textured soup made from jute leaves, often paired with gbegiri and amala.",
+            "image": "../Images/menu_images/Ewedu_Soup.png",
+            "price": 4000,
+            "currency": "N"
+          },
+          {
+            "id": 7,
+            "name": "Ogbono Soup",
+            "description": "Thick, draw soup made from ground ogbono seeds and cooked with meat and vegetables.",
+            "image": "../Images/menu_images/Ogbono_Soup.png",
+            "price": 5000,
+            "currency": "N"
+          },
+          {
+            "id": 8,
+            "name": "Nsala Soup",
+            "description": "White soup made with fresh fish, uziza leaves, and thickened with yam.",
+            "image": "../Images/menu_images/Nsala_Soup.png",
+            "price": 6800,
+            "currency": "N"
+          }
+        ]
+      },
+      {
+        "category": "Swallow",
+        "dishes": [
+          {
+            "id": 1,
+            "name": "Pounded Yam",
+            "description": "Smooth and stretchy swallow made from boiled yam, pounded to perfection.",
+            "image": "../Images/menu_images/Pounded_Yam.png",
+            "price": 3000,
+            "currency": "N"
+          },
+          {
+            "id": 2,
+            "name": "Garri (Eba)",
+            "description": "A popular swallow made from cassava flakes, served with soups.",
+            "image": "../Images/menu_images/Garri_Eba.png",
+            "price": 2000,
+            "currency": "N"
+          },
+          {
+            "id": 3,
+            "name": "Amala",
+            "description": "Yoruba delicacy made from yam flour, soft and perfect with ewedu soup.",
+            "image": "../Images/menu_images/Amala.png",
+            "price": 2500,
+            "currency": "N"
+          },
+          {
+            "id": 4,
+            "name": "Fufu",
+            "description": "A smooth and sticky swallow made from fermented cassava, best paired with rich soups.",
+            "image": "../Images/menu_images/Fufu.png",
+            "price": 2800,
+            "currency": "N"
+          },
+          {
+            "id": 5,
+            "name": "Semovita",
+            "description": "A smooth and filling swallow made from semolina flour, served with any Nigerian soup.",
+            "image": "../Images/menu_images/Semovita.png",
+            "price": 2600,
+            "currency": "N"
+          },
+          {
+            "id": 6,
+            "name": "Wheat Meal",
+            "description": "A healthy and fibrous alternative to traditional swallows, made from whole wheat.",
+            "image": "../Images/menu_images/Wheat_Meal.png",
+            "price": 2700,
+            "currency": "N"
+          },
+          {
+            "id": 7,
+            "name": "Lafun",
+            "description": "A white, slightly fermented swallow made from cassava flour, popular in Yoruba cuisine.",
+            "image": "../Images/menu_images/Lafun.png",
+            "price": 2200,
+            "currency": "N"
+          },
+          {
+            "id": 8,
+            "name": "Tuwon Shinkafa",
+            "description": "A Northern Nigerian swallow made from mashed rice, often served with Miyan Kuka.",
+            "image": "../Images/menu_images/Tuwon_Shinkafa.png",
+            "price": 3500,
+            "currency": "N"
+          }
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishes": [
+          {
+            "id": 1,
+            "name": "Zobo",
+            "description": "A refreshing hibiscus drink infused with pineapple, ginger, and cloves.",
+            "image": "../Images/menu_images/Zobo.png",
+            "price": 1000,
+            "currency": "N"
+          },
+          {
+            "id": 2,
+            "name": "Kunu",
+            "description": "A traditional Northern Nigerian drink made from millet or corn with a spicy kick.",
+            "image": "../Images/menu_images/Kunu.png",
+            "price": 1200,
+            "currency": "N"
+          },
+          {
+            "id": 3,
+            "name": "Palm Wine",
+            "description": "A natural and mildly alcoholic drink tapped from palm trees, enjoyed fresh.",
+            "image": "../Images/menu_images/Palm_Wine.png",
+            "price": 1500,
+            "currency": "N"
+          },
+          {
+            "id": 4,
+            "name": "Chapman",
+            "description": "A popular Nigerian cocktail made with Angostura bitters, grenadine, and soft drinks.",
+            "image": "../Images/menu_images/Chapman.png",
+            "price": 1800,
+            "currency": "N"
+          },
+          {
+            "id": 5,
+            "name": "Tiger Nut Milk (Kunu Aya)",
+            "description": "A creamy, nutritious drink made from tiger nuts, dates, and coconut.",
+            "image": "../Images/menu_images/Tiger_Nut_Milk.png",
+            "price": 2000,
+            "currency": "N"
+          },
+          {
+            "id": 6,
+            "name": "Fura da Nono",
+            "description": "A Northern Nigerian drink made from fermented cow milk and millet dough.",
+            "image": "../Images/menu_images/Fura_da_Nono.png",
+            "price": 2500,
+            "currency": "N"
+          },
+          {
+            "id": 7,
+            "name": "Agbo",
+            "description": "A herbal drink made from medicinal roots, leaves, and spices for health benefits.",
+            "image": "../Images/menu_images/Agbo.png",
+            "price": 1300,
+            "currency": "N"
+          },
+          {
+            "id": 8,
+            "name": "Soya Milk",
+            "description": "A nutritious and dairy-free drink made from blended and strained soybeans.",
+            "image": "../Images/menu_images/Soya_Milk.png",
+            "price": 1400,
+            "currency": "N"
+          }
+        ]
+      },
+      {
+        "category": "Pastries",
+        "dishes": [
+          {
+            "id": 1,
+            "name": "Meat Pie",
+            "description": "A flaky pastry filled with minced meat, potatoes, and carrots.",
+            "image": "../Images/menu_images/Meat_Pie.png",
+            "price": 1500,
+            "currency": "N"
+          },
+          {
+            "id": 2,
+            "name": "Fish Roll",
+            "description": "A crispy rolled pastry stuffed with seasoned fish filling.",
+            "image": "../Images/menu_images/Fish_Roll.png",
+            "price": 1200,
+            "currency": "N"
+          },
+          {
+            "id": 3,
+            "name": "Chin Chin",
+            "description": "A crunchy, deep-fried pastry made from flour, milk, and sugar.",
+            "image": "../Images/menu_images/Chin_Chin.png",
+            "price": 1000,
+            "currency": "N"
+          },
+          {
+            "id": 4,
+            "name": "Puff Puff",
+            "description": "A soft and fluffy deep-fried dough snack with a slightly sweet taste.",
+            "image": "../Images/menu_images/Puff_Puff.png",
+            "price": 800,
+            "currency": "N"
+          },
+          {
+            "id": 5,
+            "name": "Buns",
+            "description": "A denser and crunchier version of puff puff, enjoyed as a snack.",
+            "image": "../Images/menu_images/Buns.png",
+            "price": 900,
+            "currency": "N"
+          },
+          {
+            "id": 6,
+            "name": "Scotch Egg",
+            "description": "A boiled egg wrapped in sausage meat, coated in breadcrumbs, and deep-fried.",
+            "image": "../Images/menu_images/Scotch_Egg.png",
+            "price": 1800,
+            "currency": "N"
+          },
+          {
+            "id": 7,
+            "name": "Egg Roll",
+            "description": "A boiled egg wrapped in a slightly sweet dough and deep-fried.",
+            "image": "../Images/menu_images/Egg_Roll.png",
+            "price": 1500,
+            "currency": "N"
+          },
+          {
+            "id": 8,
+            "name": "Donkwa",
+            "description": "A peanut-based Nigerian snack made from groundnuts, sugar, and spices.",
+            "image": "../Images/menu_images/Donkwa.png",
+            "price": 1300,
+            "currency": "N"
+          }
+        ]
+      }
+      
+      
+    ]
+      
+      
