@@ -84,3 +84,53 @@ strong{
     text-decoration: none;
     margin-left: 10px;
 }
+@media only screen and (max-width: 768px){
+    #footer-container{
+        flex-direction: column;
+    }
+    .subscribe-email{
+        display: flex;
+        gap: 5px;
+    }
+    .subscribe-email > input{
+        padding: 5px 5px;
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid rgba(128, 128, 128, 0.866);
+        color: black;
+        width: 140px;
+        font-size: 12px;;
+    }
+    .subscribe-email > button{
+        padding: 6px 5px;
+        border-radius: 5px;
+        background-color: #34A853;
+        border: none;
+        color: white;
+        font-size: 12px;;
+    }
+    #subscribe:hover{
+      cursor: pointer;
+      padding: 8px 8px;
+    }
+    #extra{
+        padding: 0;
+        text-align: center ;
+    }
+    #newsletter{
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
+    #customer-service{
+        flex-direction: row;
+        gap: 5px;
+        padding: 0;
+    }
+    #privacy{
+        flex-direction: column;
+        text-align: center ;
+        padding: 0;
+        gap: 5px;
+    }
+}
