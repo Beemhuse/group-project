@@ -97,9 +97,10 @@ body {
 }
 
 .order-button {
-    padding: 8px 15px;
+    padding: 10px 25px;
     border-radius: 50px;
     background-color: #34A853;
+    font-size: 12px;
     border: none;
     color: white;
 }
