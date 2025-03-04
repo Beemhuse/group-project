@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.not-found-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    height: 70vh;
+}
+h2{
+    font-size: 80px;
+    color: #374151;
+    font-weight: 500;
+}
+#notice{
+    color: #6D7280;
+}
+button{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #16A34A;
+    background-color: #16A34A;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+
+
+/* MOBILE RESPONSIVENESS */
+@media screen and (max-width: 600px){
+    h2{
+        font-size: 50px;
+    }
+    #notice{
+        font-size: 14px;
+    }
+}

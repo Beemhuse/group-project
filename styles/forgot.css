@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.forgot-password-form input::placeholder{
+    text-indent: 14px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #9CA3AF;
+}
+label{
+    font-size: 16px;
+    font-weight: bold;
+    color: #757575;
+}
+.forgot-password-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+#forgot-password-heading{
+    padding-bottom: 8px;
+    color: #219653;
+    text-align: center;
+    font-size: 30px;
+}
+#forgot-password-introduction{
+    padding-bottom: 30px;
+    color: #757575;
+    text-align: center;
+    font-size: 16px;
+}
+.forgot-password img{
+    margin: 10px 0 0 10px;
+}
+.forgot-password-content{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 50px 0 15px 0;
+}
+.forgot-password-form input{
+    width: 100%;
+    height: 44px;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-indent: 14px;
+    border: 1px solid #6FCF9780;
+    outline: none;
+}
+#send-code-button{
+    margin-top: 12px;
+    width: 100%;
+    height: 42px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #34A853;
+    background-color: #34A853;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 17px;
+    transition: background-color 0.3s ease
+}
+#send-code-button:hover{
+    background-color: #219653
+}
+#log-in-opt{
+    text-align: center;
+    font-weight: 500;
+    margin-top: 50px;
+    font-size: 14px;
+    color: #9CA3AF;
+    transition: color 0.3s ease;
+    margin-bottom: 30px; 
+    text-decoration: underline; 
+}
+#log-in-opt:focus{
+    outline: none;
+}
+#log-in-opt a{
+    color: #34A853;
+    text-decoration: none;
+    cursor: pointer; 
+    font-weight: 500;
+    margin-left: 5px;
+    text-decoration: none; 
+}
+#log-in-opt a:hover{
+    color: #219653;
+}
+.alrightrev{
+    text-align: center;
+    font-size: 10px;
+    color: #9CA3AF;
+}
+.email-error-message{
+    color: red;
+    display: none;
+    font-size: 10px;
+    margin-top: -8px;  
+    text-indent: 5px;  
+}
+

@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.otp-password-form input::placeholder{
+    text-indent: 14px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #9CA3AF;
+}
+label{
+    font-size: 16px;
+    color: #757575;
+}
+.otp-password img{
+    margin: 10px 0 0 10px;
+}
+.otp-password-container-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+}
+.otp-password-container{
+    display: flex;
+    justify-content: center;
+}
+#otp-password-heading{
+    padding-bottom: 8px;
+    color: #219653;
+    text-align: center;
+    font-size: 30px;
+}
+#otp-password-introduction{
+    padding-bottom: 30px;
+    color: #757575;
+    text-align: center;
+    font-size: 16px;
+}
+#otp-requirement{
+    font-size: 15px;
+    color: #757575;
+}
+.otp-password-form input{
+    width: 100%;
+    height: 44px;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-indent: 14px;
+    border: 1px solid #6FCF9780;
+    outline: none;
+}
+#send-button{
+    margin-top: 12px;
+    width: 365px; 
+    height: 44px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #34A853;
+    background-color: #34A853;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 17px;
+    transition: background-color 0.3s ease
+}
+#send-button:hover{
+    background-color: #219653;
+}
+#log-in-opt{
+    text-align: center;
+    font-weight: 500;
+    margin-top: 50px;
+    font-size: 14px;
+    color: #9CA3AF;
+    transition: color 0.3s ease;
+    margin-bottom: 30px; 
+    text-decoration: underline; 
+}
+#log-in-opt:focus{
+    outline: none;
+}
+#log-in-opt a{
+    color: #34A853;
+    text-decoration: none;
+    cursor: pointer; 
+    font-weight: 500;
+    margin-left: 5px;
+    text-decoration: none; 
+}
+#log-in-opt a:hover{
+    color: #219653;
+}
+.alrightrev{
+    text-align: center;
+    font-size: 10px;
+    color: #9CA3AF;
+}
+.code-error-message{
+    color: red;
+    display: none;
+    font-size: 10px;
+    margin-top: -8px;
+    text-indent: 5px;     
+}
+/* MOBILE PHONE RESPONSIVENESS */
+@media screen and (max-width: 600px){
+.otp-password-form input{
+    width: 350px;
+}
+#send-button{
+    width: 345px;
+}
+}

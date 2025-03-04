@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.reset-form input::placeholder{
+    text-indent: 14px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #9CA3AF;
+}
+label{
+    font-size: 16px;
+    font-weight: bold;
+    color: #757575;
+}
+.reset-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+.reset-container-content{
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+#reset-heading{
+    padding-bottom: 8px;
+    color: #219653;
+}
+#reset-introduction{
+    padding-bottom: 40px;
+    color: #757575;
+}
+.reset img{
+    margin: 10px 0 0 10px;
+}
+.reset-container-content{
+    width: 32%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 45px 0 50px 0;
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+.reset-form input{
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-indent: 14px;
+    border: 1px solid #6FCF9780;
+    outline: none;
+}
+#reset-button{
+    margin-top: 12px;
+    width: 350px;
+    height: 46px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #34A853;
+    background-color: #34A853;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 17px;
+    transition: background-color 0.3s ease
+}
+#reset-button:hover{
+    background-color: #219653;
+}
+.alrightrev{
+    text-align: center;
+    font-size: 10px;
+    color: #9CA3AF;
+    margin-top: 50px;
+}
+.password-error-message{
+    color: red;
+    display: none;
+    font-size: 10px;
+    margin-top: -8px;
+    text-indent: 2px;  
+}
+.user-password-content,
+.user-confirm-password-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 10px;
+        width: 100%;
+        height: 52px;
+        border-radius: 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-indent: 14px;
+        border: 1px solid #6FCF9780;
+        outline: none;    
+    }
+#password,
+#confirm-password{
+    border: none;
+}
+    .confirm-password-error-message{
+    color: red;
+    display: none;
+    font-size: 10px;
+    margin-top: -8px;
+    text-indent: 2px;  
+}
+
+/* MOBILE PHONE RESPONSIVENESS */
+@media screen and (max-width: 600px){
+    #reset-heading{
+        font-size: 30px;
+        width: 300px;
+        text-align: center;
+    }
+       #reset-introduction{ 
+        padding-bottom: 25px;
+        font-size: 14px;
+        width: 300px;
+        text-align: center;
+    }
+    .reset-container-content{
+        width: 95%;
+        padding: 40px 20px 40px 20px;
+    }
+    .reset-form input{
+        width: 100%;
+    }
+    #reset-button{
+        width: 300px;
+    }
+    .alrightrev{
+        text-align: center;
+        font-size: 10px;
+        color: #9CA3AF;
+    }
+}

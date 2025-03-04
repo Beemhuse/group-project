@@ -1,1 +1,94 @@
 /* Charity */
+* {
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid green; */
+}
+
+body {
+    background-image: url(../Images/menu_images/Ellipse\ 9.png), url(../Images/menu_images/Ellipse\ 9.png); 
+    background-repeat: no-repeat, no-repeat;
+    background-size: 40%, 40%;
+    background-position: top right, bottom right;
+    background-blend-mode: multiply;
+}
+#headerImage {
+    width: 95%;
+    padding: 50px 40px 10px 40px;
+    height: 520px;
+}
+
+#what-we-offer {
+    background-color: #f7f7f7;
+    padding: 10px 0;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+#what-we-offer> button{
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #34A853;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.brief-description {
+    width: 100%;
+    background-color: #f6e7d26e;
+    text-align: center;
+    padding: 15px 0;
+    margin: 20px 0;
+}
+
+#rice-dishes {
+    width: 95%;
+    margin: 0 auto;
+    display: none;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.dish {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+#dish-image {
+    width: 334px;
+    height: 245px;
+}
+
+.dish-content {
+    display: flex;
+    width: 295px;
+    height: 90px;
+    gap: 26px;
+    justify-content: space-evenly;
+    padding: 20px 20px;
+}
+
+#dish-title,
+#price-buy {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-button {
+    padding: 8px 15px;
+    border-radius: 50px;
+    background-color: #34A853;
+    border: none;
+    color: white;
+}
