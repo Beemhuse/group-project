@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/styles/otp.css">
+    <title>Send OTP</title>
 </head>
+
 <body>
-    
+    <main>
+        <section>
+            <div class="otp-password">
+                <img src="/Images/Eudia-logo.png" alt="">
+                <div class="otp-password-container">
+                    <div class="otp-password-container-content">
+                        <h2 id="otp-password-heading">Recover your password</h2>
+                        <p id="otp-password-introduction">Let's recover your password in one go</p>
+                        <form class="otp-password-form">
+                            <label for="email">Enter the six digit code sent to your email</label> <br>
+                            <input type="email" id="email" name="email" placeholder="112233"
+                                required>
+                            <br>
+                            <button id="send-button" type="submit">send</button>
+                            <p id="log-in-opt"><a href="/pages/auth/login.html">Go back</a><a href="/pages/auth/login.html">Log in</a></p>
+                        </form>
+                    </div>
+                </div>
+                <p class="alrightrev">© 2023 My Blog. All rights reserved.</p>
+            </div>
+        </section>
+    </main>
 </body>
+
 </html>

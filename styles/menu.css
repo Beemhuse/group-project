@@ -1,31 +1,127 @@
 /* Charity */
-*{
+* {
     padding: 0;
     margin: 0;
+    /* border: 1px solid green; */
 }
-#headerImage{
-    width: 90%;
-    margin: 50px 70px 10px 72px;
-    height: 520px; 
-     
+
+body {
+    background-image: url(../Images/menu_images/Ellipse\ 9.png), url(../Images/menu_images/Ellipse\ 9.png); 
+    background-repeat: no-repeat, no-repeat;
+    background-size: 40%, 40%;
+    background-position: top right, bottom right;
+    background-blend-mode: multiply;
 }
-#what-we-offer{
+#headerImage {
+    width: 95%;
+    padding: 50px 35px 10px 40px;
+    height: 520px;
+}
+#our-menu{
     background-color: #f7f7f7;
-    padding: 20px 0;
+    padding: 10px 0;
+    width: 95%;
+    margin: 0 auto;
+    display: none;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 5px rgba(125, 124, 124, 0.2);
+}
+
+#what-we-offer {
+    background-color: #f7f7f7;
+    padding: 10px 0;
+    width: 95%;
+    margin: 0 auto;
     display: flex;
     gap: 30px;
     justify-content: center;
     align-items: center;
 }
 
-#what-we-offer > a {
+#what-we-offer> button{
     padding: 10px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
     color: #34A853;
+    border: none;
     border-radius: 10px;
-    box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.brief-description {
+    width: 100%;
+    background-color: #f6e7d26e;
+    text-align: center;
+    padding: 15px 0;
+    margin: 20px 0;
+}
+
+#rice-dishes {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.dish {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+#dish-image {
+    width: 334px;
+    height: 245px;
+}
+
+.dish-content {
+    display: flex;
+    width: 295px;
+    height: 90px;
+    gap: 26px;
+    justify-content: space-evenly;
+    padding: 20px 20px;
+}
+
+#dish-title,
+#price-buy {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-button {
+    padding: 10px 25px;
+    border-radius: 50px;
+    background-color: #34A853;
+    font-size: 12px;
+    border: none;
+    color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        background-image: none;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 40%, 40%;
+        background-position: top right, bottom right;
+        background-blend-mode: multiply;
+    }
+    #headerImage {
+        display: none;
+    }
+    #our-menu{
+        display: flex;
+        width: 100%;
+    }
+    #what-we-offer {
+         flex-wrap: wrap;
+         width: 100%;
+    }
 }

@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-.login-form input::placeholder{
+.sign-up-form input::placeholder{
     text-indent: 14px;
     font-size: 16px;
     font-weight: 400;
@@ -14,36 +14,37 @@ label{
     font-weight: bold;
     color: #757575;
 }
-.login-container{
+.sign-up-container{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh;
-    width: 75%;
+    height: 95vh;
 }
-#login-heading{
+#sign-up-heading{
     padding-bottom: 8px;
     color: #219653;
+    text-align: center;
 }
-#login-introduction{
+#sign-up-introduction{
     padding-bottom: 40px;
     color: #757575;
+    text-align: center;
 }
-.login img{
+.sign-up img{
     margin: 10px 0 0 10px;
 }
-.login-container-content{
+.sign-up-container-content{
     width: 35%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: #ffffff;
-    /* padding: 40px 0 15px 0; */
+    padding: 50px 15px 15px 15px;
     border: 1px solid rgba(0, 0, 0, .1);
 }
-.login-form input{
-    width: 350px;
+.sign-up-form input{
+    width: 100%;
     height: 44px;
     border-radius: 8px;
     margin-top: 10px;
@@ -52,23 +53,20 @@ label{
     border: 1px solid #6FCF9780;
     outline: none;
 }
-.remember-me{
+.terms-condition{
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
-#remember-me-span{
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    align-items: center;
+#terms,
+.terms-condition a{
+    color: #616161;
+    text-decoration: underline;
+    font-size: 14px;
 }
-#remember-me-span a{
-    color: #9CA3AF;
-}
-#log-in-button{
+#create-account-button{
     margin-top: 12px;
-    width: 350px;
+    width: 100%;
     height: 42px;
     border-radius: 5px;
     outline: none;
@@ -80,41 +78,41 @@ label{
     font-size: 17px;
     transition: background-color 0.3s ease
 }
-#log-in-button:hover{
+#create-account-button:hover{
     background-color: #219653;
 }
-#sign-up-opt{
+#login-opt{
     text-align: center;
     font-weight: 500;
     margin-top: 20px;
     font-size: 14px;
     color: #9CA3AF;
     transition: color 0.3s ease;
-    margin-bottom: 30px; 
-    text-decoration: underline; 
+    margin-bottom: 30px;  
 }
-#sign-up-opt:focus{
+#login-opt:focus{
     outline: none;
 }
-#sign-up-opt a{
+#login-opt a{
     color: #34A853;
     text-decoration: none;
     cursor: pointer; 
     font-weight: 500;
     margin-left: 5px;
-    text-decoration: none; 
 }
-#sign-up-opt a:hover{
+#login-opt a:hover{
     color: #219653;
 }
 .alrightrev{
     text-align: center;
     font-size: 10px;
     color: #9CA3AF;
-    margin-bottom: 40px 
+    margin-bottom: 20px 
 }
 #password-icon{
-    margin-left: -10%;
+   /* margin-left: -10%; */
+   
+   
 }
 /* CUSTOM CHECKBOX */
 .checkbox{
@@ -157,36 +155,42 @@ label{
     transform: scale(1);
 }
 
+
 /* MOBILE PHONE RESPONSIVENESS */
 @media screen and (max-width: 600px){
-    #login-heading{
+    #sign-up-heading{
         font-size: 30px;
         width: 300px;
         text-align: center;
     }
-    #login-introduction{
+    #sign-up-introduction{
         padding-bottom: 25px;
         font-size: 14px;
         width: 300px;
         text-align: center;
     }
-    .login-container-content{
+    .sign-up-container-content{
+        padding: 50px 0 15px 0;
         width: 95%;
-        padding: 40px 20px 15px 20px;
     }
-    .login-form input{
-        width: 300px;
+    .sign-up-form input{
+        width: 330px;
     }
-    #log-in-button{
-        width: 300px;
-    }
-    #log-in-button:hover{
-        background-color: #219653;
+    .terms-condition label,
+    .terms-condition a{
+        font-size: 12.5px;
+        width: 330px;
     }
     input[type="checkbox"] {
-        width: 20px;
+        height: 30px;
+        width: 30px;
     }
-    #remember-me-span{
-        gap: 28px;
+    .alrightrev{
+        text-align: center;
+        font-size: 10px;
+        color: #9CA3AF;
+    }
+    #password-icon{
+        margin-left: -10%;
     }
 }
