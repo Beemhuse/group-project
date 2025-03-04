@@ -23,15 +23,25 @@
                         <h2 id="reset-heading">Reset your password</h2>
                         <p id="reset-introduction">Let's reset your password in one go</p>
                         <form class="reset-form">
-                            <label for="password">Enter new password</label> <br>
-                            <input type="password" id="password" name="password" placeholder="must be at least 8 characters"
-                                required>
-                                <i class="fa-solid fa-eye-slash" style="color: #34A853;" id="password-icon"></i>
-                            <br>
-                            <label for="password">Confirm new password</label> <br>
-                            <input type="password" id="confirm-password" name="password"placeholder="must be at least 8 characters" required>
-                            <i class="fa-solid fa-eye-slash" style="color: #34A853;" id="confirm-password-icon"></i>
-                            <br>
+                            <div class="user-password">
+                                <label for="password">Enter new password</label>
+                                <div class="user-password-content">
+                                    <input type="password" id="password" name="password"
+                                        placeholder="must be at least 8 characters" required>
+                                    <i class="fa-solid fa-eye-slash" style="color: #34A853;" id="password-icon"></i>
+                                </div>
+                                <span class="password-error-message"></span>
+                            </div>
+                            <div class="user-confirm-password">
+                                <label for="password">Confirm new password</label>
+                                <div class="user-confirm-password-content">
+                                    <input type="password" id="confirm-password" name="password"
+                                        placeholder="must be at least 8 characters" required>
+                                    <i class="fa-solid fa-eye-slash" style="color: #34A853;"
+                                        id="confirm-password-icon"></i>
+                                </div>
+                                <span class="confirm-password-error-message"></span>
+                            </div>
                             <button id="reset-button" type="submit">Reset password</button>
                         </form>
                     </div>
@@ -42,4 +52,5 @@
     </main>
     <script src="/scripts/reset.js"></script>
 </body>
+
 </html>

@@ -18,32 +18,31 @@ label{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh;
-    width: 75%;
+    height: 85vh;
 }
 #login-heading{
     padding-bottom: 8px;
     color: #219653;
 }
 #login-introduction{
-    padding-bottom: 40px;
+    padding-bottom: 35px;
     color: #757575;
 }
 .login img{
     margin: 10px 0 0 10px;
 }
 .login-container-content{
-    width: 35%;
+    width: 32%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: #ffffff;
-    /* padding: 40px 0 15px 0; */
+    padding: 40px 15px 10px 15px;
     border: 1px solid rgba(0, 0, 0, .1);
 }
 .login-form input{
-    width: 350px;
+    width: 100%;
     height: 44px;
     border-radius: 8px;
     margin-top: 10px;
@@ -60,7 +59,6 @@ label{
 #remember-me-span{
     display: flex;
     justify-content: space-between;
-    gap: 40px;
     align-items: center;
 }
 #remember-me-span a{
@@ -68,7 +66,7 @@ label{
 }
 #log-in-button{
     margin-top: 12px;
-    width: 350px;
+    width: 350px; /* i will work on this when next i have this kinda project * */
     height: 42px;
     border-radius: 5px;
     outline: none;
@@ -113,9 +111,6 @@ label{
     color: #9CA3AF;
     margin-bottom: 40px 
 }
-#password-icon{
-    margin-left: -10%;
-}
 /* CUSTOM CHECKBOX */
 .checkbox{
     display: inline-flex;
@@ -156,6 +151,38 @@ label{
 .checkbox__input:checked + .checkbox__box::after{
     transform: scale(1);
 }
+.user-password-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+    width: 100%;
+    height: 47px;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-indent: 14px;
+    border: 1px solid #6FCF9780;
+    outline: none;
+}
+#password{
+    border: none;
+}
+.email-error-message{
+    color: red;
+    display: none;
+    font-size: 10px;
+    margin-top: -7px;
+    text-indent: 2px;  
+}
+.password-error-message{
+    color: red;
+    display: none;
+    font-size: 10px;
+    margin-top: -8px;
+    padding-bottom: 5px;
+    text-indent: 5px;  
+}
 
 /* MOBILE PHONE RESPONSIVENESS */
 @media screen and (max-width: 600px){
@@ -174,19 +201,10 @@ label{
         width: 95%;
         padding: 40px 20px 15px 20px;
     }
-    .login-form input{
-        width: 300px;
-    }
     #log-in-button{
         width: 300px;
     }
-    #log-in-button:hover{
-        background-color: #219653;
-    }
     input[type="checkbox"] {
         width: 20px;
-    }
-    #remember-me-span{
-        gap: 28px;
     }
 }
