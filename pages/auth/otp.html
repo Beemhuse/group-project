@@ -18,10 +18,11 @@
                         <h2 id="otp-password-heading">Recover your password</h2>
                         <p id="otp-password-introduction">Let's recover your password in one go</p>
                         <form class="otp-password-form">
-                            <label for="email">Enter the six digit code sent to your email</label> <br>
-                            <input type="email" id="email" name="email" placeholder="112233"
-                                required>
-                            <br>
+                            <div class="user-email">
+                                <p id="otp-requirement">Enter the six digit code sent to your email</p>
+                                <input type="number" id="number" name="number" placeholder="112233" required>
+                                <span class="code-error-message"></span>
+                            </div>
                             <button id="send-button" type="submit">send</button>
                             <p id="log-in-opt"><a href="/pages/auth/login.html">Go back</a><a href="/pages/auth/login.html">Log in</a></p>
                         </form>
@@ -31,6 +32,7 @@
             </div>
         </section>
     </main>
+    <script src="/scripts/otp.js"></script>
 </body>
 
 </html>

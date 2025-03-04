@@ -23,23 +23,32 @@
                         <h2 id="login-heading">Log in to Euodia</h2>
                         <p id="login-introduction">Quick & Simple way to start making your orders </p>
                         <form class="login-form">
-                            <label for="email">Email</label> <br>
-                            <input type="email" id="email" name="email" placeholder="chinedufreedom10@gmail.com"
-                                required>
-                            <br>
-                            <label for="password">Password</label> <br>
-                            <input type="password" id="password" name="password"
-                                placeholder="must be at least 8 characters" required>
-                                <i class="fa-solid fa-eye-slash" style="color: #34A853;" id="password-icon"></i>
-                            <br>
+                            <div class="user-email">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="chinedufreedom10@gmail.com"
+                                    required>
+                                    <span class="email-error-message"></span>
+                                    
+                            </div>
+                            <div class="user-password">
+                                <label for="password">Password</label>
+                                <div class="user-password-content">
+                                <input type="password" id="password" name="password"
+                                    placeholder="must be at least 8 characters" required>
+                                    
+                                    <i class="fa-solid fa-eye-slash" style="color: #34A853;" id="password-icon"></i>
+                                </div>
+                                <span class="password-error-message"></span>
+                            </div>
                             <div id="remember-me-span">
                                 <div class="remember-me">
-                                        <label class="checkbox" for="myCheckboxId">
-                                            <input class="checkbox__input" type="checkbox" name="myCheckboxId" id="myCheckboxId">
-                                            <div class="checkbox__box"></div>
-                                          <label for="myCheckboxId">Remember me</label>
-                                        </label>
-                            </div>
+                                    <label class="checkbox" for="myCheckboxId">
+                                        <input class="checkbox__input" type="checkbox" name="myCheckboxId"
+                                            id="myCheckboxId">
+                                        <div class="checkbox__box"></div>
+                                        <label for="myCheckboxId">Remember me</label>
+                                    </label>
+                                </div>
                                 <a href="/pages/auth/forgot.html" id="forgotten-password-link">Forgot Password?</a>
                             </div>
                             <button id="log-in-button" type="submit">Log in</button>

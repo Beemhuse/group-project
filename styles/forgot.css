@@ -43,10 +43,9 @@ label{
     flex-direction: column;
     background-color: #ffffff;
     padding: 50px 0 15px 0;
-    border: 1px solid rgba(0, 0, 0, .1);
 }
 .forgot-password-form input{
-    width: 370px;
+    width: 100%;
     height: 44px;
     border-radius: 8px;
     margin-top: 10px;
@@ -57,7 +56,7 @@ label{
 }
 #send-code-button{
     margin-top: 12px;
-    width: 365px;
+    width: 100%;
     height: 42px;
     border-radius: 5px;
     outline: none;
@@ -101,9 +100,11 @@ label{
     font-size: 10px;
     color: #9CA3AF;
 }
-/* MOBILE PHONE RESPONSIVENESS */
-@media screen and (max-width: 600px){
-    #send-code-button{
-        width: 370px;
-    }
+.email-error-message{
+    color: red;
+    display: none;
+    font-size: 10px;
+    margin-top: -8px;  
+    text-indent: 5px;  
 }
+

@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+   margin-top: 10%;
+}
+.checkout-container h2{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 50px;
+    color: #6D7280;
+    font-size: 32px;
+    color: #6D7280
+}
+.checkout-container-content i{
+    color: #6D7280;
+}
+.checkout-container{
+    padding: 20px
+}
+.checkout-container-content{
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.checkout-details{
+    color: #6D7280;
+}
+#gratitude{
+    margin-bottom: 20px;
+    color: #6D7280;
+
+}
+.value{
+    font-weight: bold;
+    color: #6D7280;
+}
+.label{
+    color: #6D7280;
+
+}
+.fa-solid{
+    font-size: 15px;
+}
+a{
+    color: red;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px){
+.checkout-container h2{
+    margin-bottom: 30px;
+}
+.checkout-container-content{
+    gap: 2px
+}
+}

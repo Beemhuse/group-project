@@ -18,7 +18,10 @@ label{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70vh;
+    height: 80vh;
+}
+.reset-container-content{
+    border: 1px solid rgba(0, 0, 0, .1);
 }
 #reset-heading{
     padding-bottom: 8px;
@@ -32,17 +35,17 @@ label{
     margin: 10px 0 0 10px;
 }
 .reset-container-content{
-    width: 35%;
+    width: 32%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: #ffffff;
-    padding: 40px 0 60px 0;
+    padding: 45px 0 50px 0;
     border: 1px solid rgba(0, 0, 0, .1);
 }
 .reset-form input{
-    width: 350px;
+    width: 100%;
     height: 50px;
     border-radius: 8px;
     margin-top: 10px;
@@ -54,7 +57,7 @@ label{
 #reset-button{
     margin-top: 12px;
     width: 350px;
-    height: 42px;
+    height: 46px;
     border-radius: 5px;
     outline: none;
     border: 1px solid #34A853;
@@ -74,11 +77,38 @@ label{
     color: #9CA3AF;
     margin-top: 50px;
 }
-#password-icon{
-    margin-left: -10%;
+.password-error-message{
+    color: red;
+    display: none;
+    font-size: 10px;
+    margin-top: -8px;
+    text-indent: 2px;  
 }
-#confirm-password-icon{
-    margin-left: -10%;
+.user-password-content,
+.user-confirm-password-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 10px;
+        width: 100%;
+        height: 52px;
+        border-radius: 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-indent: 14px;
+        border: 1px solid #6FCF9780;
+        outline: none;    
+    }
+#password,
+#confirm-password{
+    border: none;
+}
+    .confirm-password-error-message{
+    color: red;
+    display: none;
+    font-size: 10px;
+    margin-top: -8px;
+    text-indent: 2px;  
 }
 
 /* MOBILE PHONE RESPONSIVENESS */
@@ -99,7 +129,7 @@ label{
         padding: 40px 20px 40px 20px;
     }
     .reset-form input{
-        width: 300px;
+        width: 100%;
     }
     #reset-button{
         width: 300px;
@@ -108,6 +138,5 @@ label{
         text-align: center;
         font-size: 10px;
         color: #9CA3AF;
-        /* margin-top: -10px;   */
     }
 }

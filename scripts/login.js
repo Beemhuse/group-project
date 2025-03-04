@@ -1,7 +1,6 @@
 let passsword =  document.getElementById("password")
 let confirmPassword = document.getElementById("confirm-password")
 let passwordIcon = document.getElementById("password-icon")
-let confirmPasswordIcon = document.getElementById("confirm-password-icon")
 
 
 
@@ -20,17 +19,31 @@ passwordIcon.onclick = (e) => {
         passwordIcon.classList.add("fa-eye-slash")
     }
 }
-confirmPasswordIcon.onclick = () => {
-    if(confirmPassword.type === "password")
-    {
-        confirmPassword.type = "text";
-        confirmPasswordIcon.classList.remove("fa-eye-slash")
-        confirmPasswordIcon.classList.add("fa-eye")
+let loginButton = document.getElementById("log-in-button")
+let emailInput = document.querySelector("#email")
+let passwordInput = document.querySelector("#password")
+let emailErrorMesssge = document.querySelector(".email-error-message")
+let passwordErrorMesssge = document.querySelector(".password-error-message")
+
+
+
+
+loginButton.addEventListener("click",(e) => {
+    e.preventDefault()
+    if(emailInput.value.trim() === ""){
+        emailErrorMesssge.style.display = "block"
+        emailErrorMesssge.textContent = "This field is required"
     }
     else{
-        confirmPassword.type = "password";
-        confirmPasswordIcon.classList.remove("fa-eye")
-        confirmPasswordIcon.classList.add("fa-eye-slash")
-
+        emailErrorMesssge.style.display = "none"
     }
-}
+    if(passwordInput.value.trim() === ""){
+        passwordErrorMesssge.style.display = "block"
+        passwordErrorMesssge.textContent = "This field is required"
+    }
+    else{
+        passwordErrorMesssge.style.display = "none"
+    }
+})
+
+
