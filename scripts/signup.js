@@ -20,17 +20,39 @@ passwordIcon.onclick = (e) => {
         passwordIcon.classList.add("fa-eye-slash")
     }
 }
-confirmPasswordIcon.onclick = () => {
-    if(confirmPassword.type === "password")
-    {
-        confirmPassword.type = "text";
-        confirmPasswordIcon.classList.remove("fa-eye-slash")
-        confirmPasswordIcon.classList.add("fa-eye")
+let createAccountButton = document.getElementById("create-account-button")
+let usernameInput = document.querySelector("#username")
+let emailInput = document.querySelector("#email")
+let passwordInput = document.querySelector("#password")
+let usernameErrorMesssge = document.querySelector(".username-error-message")
+let emailErrorMesssge = document.querySelector(".email-error-message")
+let passwordErrorMesssge = document.querySelector(".password-error-message")
+
+
+
+
+createAccountButton.addEventListener("click",(e) => {
+    e.preventDefault()
+    if(emailInput.value.trim() === ""){
+        emailErrorMesssge.style.display = "block"
+        emailErrorMesssge.textContent = "This field is required"
     }
     else{
-        confirmPassword.type = "password";
-        confirmPasswordIcon.classList.remove("fa-eye")
-        confirmPasswordIcon.classList.add("fa-eye-slash")
-
+        emailErrorMesssge.style.display = "none"
     }
-}
+    if(passwordInput.value.trim() === ""){
+        passwordErrorMesssge.style.display = "block"
+        passwordErrorMesssge.textContent = "This field is required"
+    }
+    else{
+        passwordErrorMesssge.style.display = "none"
+    }
+    if(usernameInput.value.trim() === ""){
+        usernameErrorMesssge.style.display = "block"
+        usernameErrorMesssge.textContent = "This field is required"
+    }
+    else{
+        usernameErrorMesssge.style.display = "none"
+    }
+})
+

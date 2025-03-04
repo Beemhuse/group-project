@@ -39,3 +39,29 @@ confirmPasswordIcon.onclick = () => {
 
     }
 }
+let resetPasswordButton = document.getElementById("reset-button")
+let passwordInput = document.querySelector("#password")
+let passwordErrorMesssge = document.querySelector(".password-error-message")
+let confirmpasswordInput = document.querySelector("#confirm-password")
+let confirmpasswordErrorMesssge = document.querySelector(".confirm-password-error-message")
+
+
+
+
+resetPasswordButton.addEventListener("click",(e) => {
+    e.preventDefault()
+    if(passwordInput.value.trim() === ""){
+        passwordErrorMesssge.style.display = "block"
+        passwordErrorMesssge.textContent = "Enter a new password"
+    }
+    else{
+        passwordErrorMesssge.style.display = "none"
+    }
+    if(confirmpasswordInput.value.trim() === ""){
+        confirmpasswordErrorMesssge.style.display = "block"
+        confirmpasswordErrorMesssge.textContent = "Confirm new password"
+    }
+    else{
+        confirmpasswordErrorMesssge.style.display = "none"
+    }
+})
