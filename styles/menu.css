@@ -1,31 +1,210 @@
 /* Charity */
-*{
+* {
     padding: 0;
     margin: 0;
+    /* border: 1px solid green; */
 }
-#headerImage{
-    width: 90%;
-    margin: 50px 70px 10px 72px;
-    height: 520px; 
-     
+
+body {
+    background-image: url(../Images/menu_images/Ellipse\ 9.png), url(../Images/menu_images/Ellipse\ 9.png);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 40%, 40%;
+    background-position: top right, bottom right;
+    background-blend-mode: multiply;
 }
-#what-we-offer{
+#bg{
+    background-color: black;
+    margin: 50px 30px 10px 30px;
+    position: relative;
+}
+#headerImage {
+    width: 100%;
+    height: 520px;
+    opacity: 0.3;
+}
+.header-title{
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+}
+
+#our-menu {
     background-color: #f7f7f7;
-    padding: 20px 0;
+    padding: 10px 0;
+    width: 95%;
+    margin: 0 auto;
+    display: none;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 5px rgba(125, 124, 124, 0.2);
+}
+
+#what-we-offer {
+    background-color: #f7f7f7;
+    padding: 10px 0;
+    width: 95%;
+    margin: 0 auto;
     display: flex;
     gap: 30px;
     justify-content: center;
     align-items: center;
 }
 
-#what-we-offer > a {
+#what-we-offer>button {
     padding: 10px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
     color: #34A853;
+    border: none;
     border-radius: 10px;
-    box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.brief-description {
+    width: 100%;
+    background-color: #f6e7d26e;
+    text-align: center;
+    padding: 15px 0;
+    margin: 20px 0;
+}
+
+#rice-dishes {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.dish {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+#dish-image {
+    width: 334px;
+    height: 245px;
+}
+
+.dish-content {
+    display: flex;
+    width: 295px;
+    height: 120px;
+    gap: 20px;
+    justify-content: space-evenly;
+    padding: 20px 10px;
+}
+ 
+#dish-title,
+#price-buy {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 14px;
+    width: 50%;
+
+}
+
+.order-button {
+    border-radius: 20px;
+    background-color: #34A853;
+    font-size: 12px;
+    border: none;
+    color: white;
+    width: 80%;
+    height: 30%;
+    
+}
+#page-btn {
+    border: none;
+    width: 6%;
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+#page-btn button{
+    background-color: #34A853;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+/* *{
+        border: 1px dotted green;
+    }  */
+    body {
+        background-image: none;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 40%, 40%;
+        background-position: top right, bottom right;
+        background-blend-mode: multiply;
+    }
+
+    #headerImage {
+        display: none;
+    }
+
+    #our-menu {
+        display: flex;
+        width: 100%;
+    }
+
+    #what-we-offer {
+        overflow-x: scroll;
+        justify-content: left;
+        gap: 20px;
+        width: 100%;
+        font-size: 12px;
+    }
+    #what-we-offer::-webkit-scrollbar {
+        display: none;  
+    }
+    
+    #what-we-offer>button {
+        padding: 10px 15px;
+        box-shadow:  none;
+        display: flex;
+        color: #34A853;
+        border: none;
+        border-radius: 5px;
+        box-shadow:  none;
+    }
+    
+
+    .rice-menu {
+        width: 100%;
+    }
+
+    #dish-image {
+        width: 100%;
+        height: 245px;
+    }
+
+    .dish-content {
+        display: flex;
+        width: 90%;
+        height: 120px;
+        gap: 10px;
+        padding: 10px 10px;
+        font-size: 16px;
+        ;
+    }
+
+    #dish-title,
+    #price-buy {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
