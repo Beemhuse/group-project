@@ -83,11 +83,17 @@
                 <input type="email" id="email" class="input" required>
             </div>
             
-            <input type="checkbox" id="checkbox">
-            <p>Save this information for faster check-out next time</p>
+            <div style="display: flex;">
+                <input type="radio" id="checkbox1">
+                <p style="margin-left: 1%;">Save this information for faster check-out next time</p>
+            </div>
+           
 
-            <input type="checkbox">
-            <h4>ship to different address?</h4>
+            <div style="display: flex;">
+                <input type="radio">
+                <h4 style="margin-left: 1%;">ship to different address?</h4>
+            </div>
+          
 
             <h3>ORDER NOTES (OPTIONAL)</h3>
             <textarea name="" id="" placeholder="Special notes about your orders, e.g. special notes for delivery"></textarea>
@@ -138,7 +144,31 @@
                     
                 </div>
 
-                <input type="checkbox">
+                <div class="payment-card">
+                    <input type="radio" id="checkbox2" name="payment-method">
+                    <h5 class="h5">Card</h5>
+                    <img src="/images/menu_images/paystack-wc 1.png" alt="">
+                </div>
+
+                <div class="payment-transfer">
+                    <input type="radio" name="payment-method">
+                    <h5>Pay with bank transfer</h5>
+                </div>
+                <p style="color: rgb(155, 153, 153); font-size: 12px; margin-left: 5%;">Enjoy faster order confirmation by paying using bank transfer</p>
+
+                <div class="" style="margin-left: 5%; display: flex;">
+                    <input type="radio" name="payment-method">
+                    <h5 style="margin-left: 1%;">Cash on delivery</h5>
+                </div>
+
+                <p style="font-size: 12px; margin-left: 5%; margin-right: 2%;">Your personal data will be used to process your order. Support your experience throughout this website,and for other purposes described in our <a href="" style="color: rgb(190, 118, 118); font-size: 12px;">privacy policy</a></p>
+
+                <div style="display: flex;">
+                    <input type="checkbox" style="margin-left: 5%; margin-bottom: 5%;">
+                    <p style="margin-left: 1%; font-size: 12px;">I HAVE READ AND AGREE TO THE WEBSITE <a href="" style="color: rgb(190, 118, 118); font-size: 12px;">TERMS AND CONDITIONS</a></p>
+                </div>
+
+                <button id="place-order">Place Order</button>
              </div>
 
             
@@ -177,6 +207,14 @@
             <div><a href="">Service</a></div>
         </div>
        </div><hr>
+
+       <div class="privacy-div">
+
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+
+       </div>
     </footer>
 </body>
 </html>

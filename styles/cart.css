@@ -201,6 +201,13 @@ textarea{
     border-radius: 5px;
     border: none;
     padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.last-div button:hover{
+    padding: 10px 20px;
+    background-color: rgb(2, 155, 2);
 }
 
 .last-div .email-div{
@@ -236,4 +243,54 @@ textarea{
 .footer-links2 div{
     padding: 10px 15px;
     margin-top: 2.5%;
+}
+
+
+.payment-card{
+    display: flex;
+    justify-content: space-between;
+}
+
+#checkbox2{
+    margin-bottom: 15%;
+    margin-left: 5%;
+}
+
+.payment-card img{
+    margin-right: 2%;
+}
+
+.payment-card .h5{
+    font-weight: lighter;
+    margin-bottom: 17%;
+}
+
+.payment-transfer{
+    display: flex;
+    margin-left: 5%;
+}
+
+.payment-transfer h5{
+    padding-left: 1%;
+}
+
+#place-order{
+    background-color: green;
+    color: white;
+    padding: 15px 35px;
+    margin-left: 5%;
+    border: none;
+    border-radius: 7px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#place-order:hover{
+    padding: 15px 40px;
+    background-color: rgb(2, 155, 2);
+}
+.privacy-div{
+    justify-content: center;
+    justify-content: space-around;
 }
