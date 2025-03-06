@@ -33,6 +33,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
       data.forEach((dish) => {
         const riceMenu = document.createElement("div");
         riceMenu.classList.add("rice-menu");
+        
+        let price = dish.price;
+        price = new Intl.NumberFormat("en-NG", { minimumFractionDigits: 0 });
+        let formattedPrice = price.format(dish.price);
 
         riceMenu.innerHTML = `
                   <div class="dish">
@@ -43,7 +47,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
                         <p>${dish.description}</p>
                     </div>
                     <div id="price-buy">
-                        <h2>N ${dish.price}</h2>
+                        <h2 id="price">N ${formattedPrice}</h2>
                         <button class="order-button">Buy Now</button>
                     </div>
                 </div>
@@ -85,23 +89,23 @@ document.addEventListener("DOMContentLoaded", (e) => {
     });
   }
   // displayDishes()
-//   let dishButton = document.querySelectorAll(".available-dishes");
+  //   let dishButton = document.querySelectorAll(".available-dishes");
 
-//   dishButton.forEach((dishButton) => {
-//     dishButton.addEventListener("click", async (e) => {
-//       e.preventDefault();
+  //   dishButton.forEach((dishButton) => {
+  //     dishButton.addEventListener("click", async (e) => {
+  //       e.preventDefault();
 
-//       if (e.target.textContent === "All") {
-//         getData();
-//       } else {
-//         try {
-//           const res = await fetch("../menu.json");
-//           let result = await res.json();
-//           filterData(result, e.target.textContent);
-//         } catch (error) {
-//           console.error("Error:", error);
-//         }
-//       }
-//     });
-//   });
+  //       if (e.target.textContent === "All") {
+  //         getData();
+  //       } else {
+  //         try {
+  //           const res = await fetch("../menu.json");
+  //           let result = await res.json();
+  //           filterData(result, e.target.textContent);
+  //         } catch (error) {
+  //           console.error("Error:", error);
+  //         }
+  //       }
+  //     });
+  //   });
 });
