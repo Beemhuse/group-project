@@ -7,6 +7,32 @@
 body {
     background-color: #f7f7f7;
 }
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+    align-items: center;
+    padding: 0px 50px;
+}
+.nav-links,
+.nav-icons {
+    display: flex;
+    gap: 40px;
+    font-size: 16px;
+    list-style-type: none;
+}
+.nav-links a {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    padding-bottom: 10px;
+    border-bottom: 2px solid  #34A853;
+    color: #34A853;
+     
+}
 
 #what-we-offer {
     background-color: #f7f7f7;

@@ -12,9 +12,36 @@ body {
     background-position: top right, bottom right;
     background-blend-mode: multiply;
 }
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+    align-items: center;
+    padding: 0px 50px;
+}
+.nav-links,
+.nav-icons {
+    display: flex;
+    gap: 40px;
+    font-size: 16px;
+    list-style-type: none;
+}
+.nav-links a {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    padding-bottom: 10px;
+    border-bottom: 2px solid  #34A853;
+    color: #34A853;
+     
+}
+
 #bg{
     background-color: black;
-    margin: 50px 30px 10px 30px;
+    margin: 6px 30px 10px 30px;
     position: relative;
 }
 #headerImage {
@@ -152,6 +179,9 @@ body {
     }
 
     #headerImage {
+        display: none;
+    }
+    .header-title{
         display: none;
     }
 
