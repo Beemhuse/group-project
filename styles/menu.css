@@ -12,9 +12,39 @@ body {
     background-position: top right, bottom right;
     background-blend-mode: multiply;
 }
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+    align-items: center;
+    padding: 0px 50px;
+}
+.nav-links,
+.nav-icons {
+    display: flex;
+    gap: 40px;
+    font-size: 16px;
+    list-style-type: none;
+}
+.nav-links a {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}
+/* let price = dish.price;
+price = new Intl.NumberFormat("en-NG", { minimumFractionDigits: 0 });
+let formattedPrice = price.format(dish.price); */
+
+.nav-links a:hover {
+    padding-bottom: 10px;
+    border-bottom: 2px solid  #34A853;
+    color: #34A853;
+     
+}
+
 #bg{
     background-color: black;
-    margin: 50px 30px 10px 30px;
+    margin: 6px 30px 10px 30px;
     position: relative;
 }
 #headerImage {
@@ -74,7 +104,7 @@ body {
     margin: 20px 0;
 }
 
-#rice-dishes {
+#Our-dishes {
     width: 95%;
     margin: 0 auto;
     display: flex;
@@ -125,7 +155,7 @@ body {
 }
 #page-btn {
     border: none;
-    width: 6%;
+    width: 15%;
     padding: 10px;
     margin: 0 auto;
     font-size: 12px;
@@ -137,6 +167,10 @@ body {
     border-radius: 5px;
     border: none;
     font-size: 12px;
+}
+#page-btn p{
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -152,6 +186,9 @@ body {
     }
 
     #headerImage {
+        display: none;
+    }
+    .header-title{
         display: none;
     }
 
@@ -182,7 +219,7 @@ body {
     }
     
 
-    .rice-menu {
+    .dishes-menu {
         width: 100%;
     }
 
@@ -207,4 +244,15 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+    #page-btn {
+        border: none;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 10px;
+        margin: 0 auto;
+        font-size: 12px;
+    }
+    
 }
