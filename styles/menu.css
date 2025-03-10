@@ -126,11 +126,12 @@ let formattedPrice = price.format(dish.price); */
 
 .dish-content {
     display: flex;
-    width: 295px;
-    height: 120px;
-    gap: 20px;
+    width: 315px;
+    height: 130px;
+    gap: 45px;
     justify-content: space-evenly;
     padding: 20px 10px;
+    text-align: left;
 }
  
 #dish-title,
@@ -201,7 +202,7 @@ let formattedPrice = price.format(dish.price); */
         overflow-x: scroll;
         justify-content: left;
         gap: 20px;
-        width: 100%;
+        width: 98%;
         font-size: 12px;
     }
     #what-we-offer::-webkit-scrollbar {
@@ -235,7 +236,6 @@ let formattedPrice = price.format(dish.price); */
         gap: 10px;
         padding: 10px 10px;
         font-size: 16px;
-        ;
     }
 
     #dish-title,

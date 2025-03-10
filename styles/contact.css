@@ -66,8 +66,8 @@ body {
 
 
 #contact-us-container {
-    width: 100%;
-    margin-left: 50px;
+    width: 90%;
+    padding-left: 50px;
     display: flex;
     flex-direction: row;
     gap: 50px;
@@ -149,8 +149,8 @@ textarea {
     background-color: #34A853;
     color: white;
     border: none;
-    width: 20%;
-    margin-left: 80%;
+    width: 25%;
+    margin-left: 75%;
     margin-top: 30px;
     padding: 15px 25px;
     border-radius: 10px;
@@ -161,7 +161,7 @@ textarea {
         overflow-x: scroll;
         justify-content: left;
         gap: 20px;
-        width: 100%;
+        width: 98%;
         font-size: 12px;
     }
     #what-we-offer::-webkit-scrollbar {
@@ -178,8 +178,9 @@ textarea {
         box-shadow:  none;
     }
     #contact-us-container {
-        width: 100%;
-        margin: 0 auto;
+        width: 95%;
+        margin: 0;
+        padding-left: 0;
         display: flex;
         flex-direction: column;
         gap: 30px;
