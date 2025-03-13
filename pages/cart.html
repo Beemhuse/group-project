@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/styles/cart.css">
+    <title>cart</title>
+</head>
+
+                              <!--SHEDRACH-->
+<body>
+
+    <nav>
+        <div class="navdiv" style="display: flex;">
+            <img src="/images/logo.png" alt="">
+
+            <div class="navlinks" style="display: flex;">
+                <a href="">Home</a>
+                <a href="">Our Menu</a>
+                <a href="">Contact Us</a>
+            </div>
+    
+            <div class="navicons">
+                <i class="fa-regular fa-cart-shopping"></i>
+                <i class="fa-light fa-bag-shopping"></i>
+                <i class="fa-light fa-user"></i>
+            </div>
+        </div>
+    </nav>
+
+    <nav>
+        <div class="button-links-div"> 
+            <a href="" class="button-links">Rice Dishes</a>
+            <a href="" class="button-links">Protein</a>
+            <a href="" class="button-links">Salads</a>
+            <a href="" class="button-links">Swallows</a>
+            <a href="" class="button-links">Nigerian Soup</a>
+            <a href="" class="button-links">Pasteries</a>
+            <a href="" class="button-links">Drinks</a>
+            <a href="" class="button-links">Others</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <div class="maindiv">
+
+          <div class="formdiv">
+            <div>
+                <label for="firstname">First Name*</label><br>
+                <input type="text" id="firstname" class="input" required><br>
+            </div>
+             
+            <div class="margintop">
+                <label for="address">Street Address*</label><br>
+                <input type="text" id="address" class="input" required><br>
+                <input type="text" id="address" class="input inputmargin" required><br>
+            </div>
+
+           
+            <div class="margintop">
+               <label for="apartment">Apartment,floor,etc. (Optional)*</label><br>
+               <input type="text" id="apartment" class="input" required><br>
+            </div>
+
+            <div class="margintop">
+                <label for="area">Town/City*</label><br>
+                <input type="text" id="area" class="input" required><br>
+            </div>
+           
+
+            <div class="margintop">
+                <label for="phone">Phone Number*</label><br>
+                <input type="number" id="phone" class="input" required><br>
+            </div>
+            
+
+            <div class="margintop">
+                <label for="">Email Address*</label><br>
+                <input type="email" id="email" class="input" required>
+            </div>
+            
+            <div style="display: flex;">
+                <input type="radio" id="checkbox1">
+                <p style="margin-left: 1%;">Save this information for faster check-out next time</p>
+            </div>
+           
+
+            <div style="display: flex;">
+                <input type="radio">
+                <h4 style="margin-left: 1%;">ship to different address?</h4>
+            </div>
+          
+
+            <h3>ORDER NOTES (OPTIONAL)</h3>
+            <textarea name="" id="" placeholder="Special notes about your orders, e.g. special notes for delivery"></textarea>
+
+
+          </div>
+
+        
+            <div class="carddiv">
+                <div class="jollofdiv">
+                   <img src="/images/menu_images/jollof rice.png" alt="">
+                   <p>Jollof Rice ✖3</p>
+                   <label>$20,000.00</label>
+                </div>
+   
+                <div class="saladdiv">
+                   <img src="/images/village rice.png" alt="">
+                   <p>Fruit Salad ✖2</p>
+                   <label>$20,000.00</label>
+                </div>
+   
+                <div class="villagediv">
+                   <img src="/images/village rice.png" alt="">
+                   <p>Village Rice ✖3</p>
+                   <label>$15,000.00</label>
+                </div>
+
+                <div class="subtotal">
+                   <label for="total">Subtotal</label>
+                   <input type="number" id="total" class="sub-input"><hr>
+                </div>
+   
+
+                <div class="option-div">
+                    <div class="shipping-div">
+                        <h3>Shipping:</h3>
+                        <p>Service Free:</p>
+                        <h5>VAT:</h5>
+                        <h3>Total:</h3>
+                    </div>
+
+                    <div class="procedures-div">
+                        <p>Enter your address to view shipping options</p><hr>
+                        <p id="Service"></p><hr>
+                        <p id="VAT"></p><hr>
+                        <h3 id="total"></h3>
+                    </div>
+                    
+                </div>
+
+                <div class="payment-card">
+                    <input type="radio" id="checkbox2" name="payment-method">
+                    <h5 class="h5">Card</h5>
+                    <img src="/images/menu_images/paystack-wc 1.png" alt="">
+                </div>
+
+                <div class="payment-transfer">
+                    <input type="radio" name="payment-method">
+                    <h5>Pay with bank transfer</h5>
+                </div>
+                <p style="color: rgb(155, 153, 153); font-size: 12px; margin-left: 5%;">Enjoy faster order confirmation by paying using bank transfer</p>
+
+                <div class="" style="margin-left: 5%; display: flex;">
+                    <input type="radio" name="payment-method">
+                    <h5 style="margin-left: 1%;">Cash on delivery</h5>
+                </div>
+
+                <p style="font-size: 12px; margin-left: 5%; margin-right: 2%;">Your personal data will be used to process your order. Support your experience throughout this website,and for other purposes described in our <a href="" style="color: rgb(190, 118, 118); font-size: 12px;">privacy policy</a></p>
+
+                <div style="display: flex;">
+                    <input type="checkbox" style="margin-left: 5%; margin-bottom: 5%;">
+                    <p style="margin-left: 1%; font-size: 12px;">I HAVE READ AND AGREE TO THE WEBSITE <a href="" style="color: rgb(190, 118, 118); font-size: 12px;">TERMS AND CONDITIONS</a></p>
+                </div>
+
+                <button id="place-order">Place Order</button>
+             </div>
+
+            
+          
+             
+
+        </div>
+
+        <div class="last-div">
+            <div class="newsletter">
+                <h2 style="font-family: Arial, Helvetica, sans-serif;">Join Our <span style="color: green;">Newsletter</span></h2>
+                <p>Be the first to know about our latest updates, exclusive offers and more.</p>
+            </div>
+
+            <div class="email-div">
+                <input type="email" id="email-address" placeholder="Enter your email address">
+                <button id="email-btn">Subscribe</button>
+            </div>
+         </div>
+    </main><hr>
+
+    <footer>
+
+       <div class="footer-div">
+
+        <div class="footer-links1">
+            <div><a href="">Help</a></div>
+            <div><a href="">Customer Support</a></div>
+            <div><a href="">Email Support</a></div>
+            <div><a href="">Delivery Details</a></div>
+        </div>
+
+        <div class="footer-links2">
+            <div><a href="">About</a></div>
+            <div><a href="">Contact</a></div>
+            <div><a href="">Service</a></div>
+        </div>
+       </div><hr>
+
+       <div class="privacy-div">
+
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+
+       </div>
+    </footer>
+</body>
+</html>
