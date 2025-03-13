@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+   
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+.nav-links,
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+    list-style-type: none;
+}
+#login{
+    display: none;
+}
+
+.nav-links a:hover {
+    border-bottom: 2px solid green;
+    padding: 4px 4px 0 4px;
+}
+
+.nav-links a {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}
