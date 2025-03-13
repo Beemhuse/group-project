@@ -1,0 +1,211 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid green; */
+}
+
+body {
+    background-color: #f7f7f7;
+}
+
+#what-we-offer {
+    background-color: #f7f7f7;
+    padding: 30px 0;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#what-we-offer>button {
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #34A853;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+#home-contact{
+    margin-left: 50px;
+}
+#home-contact a{
+ text-decoration: none;
+ color: black;
+}
+
+
+#contact-us-container {
+    width: 100%;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-bottom: 50px ;
+}
+
+#call-email-container {
+    width: 20%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: white;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.call-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.work-hours{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+hr{
+    width: 93%;
+    margin: auto;
+    border-top: 1px solid  rgb(188, 186, 186);
+}
+#contact-us-container i{
+    margin-right: 10px;
+    font-size: 15px;
+    color: white;
+    background-color: #34A853;
+    padding: 10px;
+    border-radius: 50%;
+    border:none;
+}
+.call-icon, .email-icon {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#customer-contact-information {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+#input-fields>input {
+    background-color:  #f9fafb;
+    margin-bottom: 10px;
+    width: 30%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+.email-details{
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+textarea {
+    background-color:  #f9fafb;
+    padding : 10px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+}
+#message-btn{
+    background-color: #34A853;
+    color: white;
+    border: none;
+    width: 20%;
+    margin-left: 80%;
+    margin-top: 30px;
+    padding: 15px 25px;
+    border-radius: 10px;
+}
+@media only screen and (max-width: 768px){
+    
+    #what-we-offer {
+        overflow-x: scroll;
+        justify-content: left;
+        gap: 20px;
+        width: 100%;
+        font-size: 12px;
+    }
+    #what-we-offer::-webkit-scrollbar {
+        display: none;  
+    }
+    
+    #what-we-offer>button {
+        padding: 10px 15px;
+        box-shadow:  none;
+        display: flex;
+        color: #34A853;
+        border: none;
+        border-radius: 5px;
+        box-shadow:  none;
+    }
+    #contact-us-container {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        
+    }  
+    #call-email-container {
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        background-color: white;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    }
+    #customer-contact-information {
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    }
+    #input-fields>input {
+        background-color:  #f9fafb;
+        margin-bottom: 10px;
+        display: flex;
+        width: 95%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+    }
+    #message-btn{
+        background-color: #34A853;
+        color: white;
+        border: none;
+        width: 30%;
+        margin-left: 60%;
+        margin-top: 30px;
+        padding: 5px 15px;
+        border-radius: 10px;
+        font-size: 12px;
+    }
+    #footer-container{
+        background-color:  white;
+        color: black;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding-top: 20px;
+    }
+    
+}
