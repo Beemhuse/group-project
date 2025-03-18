@@ -1,58 +1,89 @@
-let passsword =  document.getElementById("password")
-let confirmPassword = document.getElementById("confirm-password")
-let passwordIcon = document.getElementById("password-icon")
-let confirmPasswordIcon = document.getElementById("confirm-password-icon")
-
-
-
-
-passwordIcon.onclick = (e) => {
-    e.preventDefault()
-    if(password.type === "password")
-    {
-        password.type = "text";
-        passwordIcon.classList.remove("fa-eye-slash")
-        passwordIcon.classList.add("fa-eye")
-    }
-    else{
-        password.type = "password";
-        passwordIcon.classList.remove("fa-eye")
-        passwordIcon.classList.add("fa-eye-slash")
-    }
-}
-let createAccountButton = document.getElementById("create-account-button")
+// Getting the elements
+let password = document.getElementById("password");
+let passwordIcon = document.getElementById("password-icon");
+let messageContainer = document.getElementById("message-container");
+let messageText = document.getElementById("message");
+let messageIcon = document.getElementById("message-icon");
 let usernameInput = document.querySelector("#username")
 let emailInput = document.querySelector("#email")
 let passwordInput = document.querySelector("#password")
-let usernameErrorMesssge = document.querySelector(".username-error-message")
-let emailErrorMesssge = document.querySelector(".email-error-message")
-let passwordErrorMesssge = document.querySelector(".password-error-message")
-
-
-
-
-createAccountButton.addEventListener("click",(e) => {
-    e.preventDefault()
-    if(emailInput.value.trim() === ""){
-        emailErrorMesssge.style.display = "block"
-        emailErrorMesssge.textContent = "This field is required"
+const signUpForm = document.querySelector(".sign-up-form");
+// Password view toggle
+passwordIcon.onclick = (e) => {
+    e.preventDefault();
+    if (password.type === "password") {
+        password.type = "text";
+        passwordIcon.classList.remove("fa-eye-slash");
+        passwordIcon.classList.add("fa-eye");
+    } else {
+        password.type = "password";
+        passwordIcon.classList.remove("fa-eye");
+        passwordIcon.classList.add("fa-eye-slash");
     }
-    else{
-        emailErrorMesssge.style.display = "none"
+};
+// Importing the base URL for API requests
+import { baseUrl } from "./baseurl.js"; // importing the baseUrl from baseurl.js
+// Function to handle signup form submission
+async function handleSignup(event) {
+  event.preventDefault(); // Prevent form submission
+  const name = usernameInput.value.trim();
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
+  const signInButton = document.getElementById('create-account-button');
+  const loader = document.getElementById('loader');
+  const signInButtonText = document.getElementById('sign-in-button-text');
+  // Disable the button and show the loader
+  signInButton.disabled = true;
+  loader.style.display = 'inline-block';
+  signInButtonText.style.visibility = 'hidden';
+  // User data to send in the request
+  const userData = {
+      name,
+      email,
+      password,
+  };
+    // try
+    try {
+        // Sending the signup request
+        const response = await fetch(`${baseUrl}/api/signup`, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userData),
+        });
+        const result = await response.json();
+        if (response.ok) {
+            // Show success message and transition
+            showMessage(`Welcome ${name}`, "success");
+            setTimeout(() => {
+              window.location.href = "/pages/auth/login.html"; // Redirect to login page
+          }, 2000); 
+        } else {
+            // Show error message if the response isn't OK
+            throw new Error(result.error || "Signup failed");
+        }
+    } catch (error) {
+        showMessage("Sign up failed", "error");
+        signInButton.disabled = false; // Re-enable the button
+        loader.style.display = 'none';
+        signInButtonText.style.visibility = 'visible';
     }
-    if(passwordInput.value.trim() === ""){
-        passwordErrorMesssge.style.display = "block"
-        passwordErrorMesssge.textContent = "This field is required"
-    }
-    else{
-        passwordErrorMesssge.style.display = "none"
-    }
-    if(usernameInput.value.trim() === ""){
-        usernameErrorMesssge.style.display = "block"
-        usernameErrorMesssge.textContent = "This field is required"
-    }
-    else{
-        usernameErrorMesssge.style.display = "none"
-    }
-})
-
+}
+// Show the slide-in message
+function showMessage(message, type) {
+  messageText.textContent = message;
+  messageContainer.classList.remove('hidden');
+  messageContainer.classList.add('show'); // Add the success or error class
+  messageIcon.className = `fas ${type === 'success' ? 'fa-check-circle' : 'fa-circle-exclamation'}`;
+  messageIcon.style.color = type === 'success' ? '#219653' : '#f41010'; // Green for success, red for error
+  // Hide the message after 3 seconds
+  setTimeout(() => {
+      messageContainer.classList.remove('show');
+      setTimeout(() => {
+          messageContainer.classList.add('hidden');
+      }, 1000);
+  }, 3000);
+}
+// Attach event listener for form submission
+signUpForm.addEventListener('submit', handleSignup);
