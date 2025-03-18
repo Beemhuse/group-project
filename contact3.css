@@ -1,0 +1,495 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.header-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    padding-left: 60px;
+    padding-right: 60px;
+    position: sticky;
+    top: 10px;
+    
+  }
+  .header-nav ul a{
+    text-decoration: none;
+    color: #4B5563;
+  }
+  .header-nav ul a:hover{
+    border-bottom: 2px solid #16A34A;
+    padding-bottom: 6px;
+  }
+  .header-nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style-type: none;
+  }
+  .header-left-content{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .log-in-button{
+    padding: 12px;
+    width: 100px;
+    border-radius: 18px;
+    border: 1px solid #16A34A;
+    color: #16A34A;
+    background: none;
+  }
+  
+
+body {
+    background-image: url(../Images/menu_images/Ellipse\ 9.png), url(../Images/menu_images/Ellipse\ 9.png);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 40%, 40%;
+    background-position: top right, bottom right;
+    background-blend-mode: multiply;
+    background-color: rgba(255, 158, 12, 0.05);
+}
+
+
+#what-we-offer {
+    background-color: hsl(0, 15%, 92%);
+    padding: 10px 0;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+#what-we-offer>button {
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #34A853;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.section{
+    display: flex; 
+    gap: 30px; 
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.sec{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+.contact{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 15px;
+    margin: 10px;
+    padding: 20px;
+    width: 450px;
+    height: 450px;
+    line-height: 20px;
+    font: xx-large;
+    justify-content: center;
+    text-align: center;
+}
+.call-us, .email-us{
+    display: grid;
+    margin-right: 40%;
+}
+.field{
+    background-color:white;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    width: 800px;
+    height: 470px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    margin-left: 10px;
+    padding-left: 25px;
+}
+.group{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2%; 
+    padding-left: 55px;
+    padding-top: 10px;
+}
+
+.group1{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    padding-left: 55px;
+    padding-top: 20px;
+}
+input:focus{
+    outline: none;
+}
+.text-area{
+    margin-top: 7px;
+    width: 750px;
+     height: 300px; 
+     background-color: #F9FAFB;
+     border-radius: 5px;
+      margin: 5px;
+      border: #d8d0d0;
+      padding-left: 20px;
+}
+.btn{
+     background-color: rgb(109, 184, 109);
+     color: white;
+     border: none;
+     height: 20PX;
+     border-radius: 5PX;
+}
+.cancel{
+    display: flex;
+    gap: 10px;
+    margin-left: 66%;
+padding-top: 20px;
+}
+
+.brief-description {
+    width: 100%;
+    background-color: #f6e7d26e;
+    text-align: center;
+    padding: 15px 0;
+    margin: 20px 0;
+}
+
+#rice-dishes {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.dish {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+#dish-image {
+    width: 334px;
+    height: 245px;
+}
+
+.dish-content {
+    display: flex;
+    width: 295px;
+    height: 120px;
+    gap: 20px;
+    justify-content: space-evenly;
+    padding: 20px 10px;
+}
+ 
+#dish-title,
+#price-buy {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 14px;
+    width: 50%;
+
+}
+
+.order-button {
+    border-radius: 20px;
+    background-color: #34A853;
+    font-size: 12px;
+    border: none;
+    color: white;
+    width: 80%;
+    height: 30%;
+    
+}
+#page-btn {
+    border: none;
+    width: 6%;
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+#page-btn button{
+    background-color: #34A853;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 12px;
+}
+
+
+
+#footer-container{
+    background-color:  white;
+    color: black;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 40px;
+margin-top: 30px;
+  }
+  #extra{
+    padding: 5px 50px;
+  }
+  hr{
+    width: 93%;
+    margin: auto;
+    border-top: 1px solid  rgba(222, 219, 219, 0.349);
+  }
+  #newsletter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:  10px 50px;
+    font-size: 22px;;
+  }
+  
+  strong{
+    color: #34A853;
+  }
+  .subscribe-email{
+    display: flex;
+    gap: 10px;
+  }
+  .subscribe-email > input{
+    padding: 10px 5px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.866);
+    color: black;
+    width: 250px;
+  }
+  .subscribe-email > button{
+    padding: 11px 10px;
+    border-radius: 5px;
+    background-color: #34A853;
+    border: none;
+    color: white;
+  }
+  #subscribe:hover{
+  cursor: pointer;
+  padding: 8px 8px;
+  }
+  #customer-service{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 5px 50px;
+  }
+  
+  .help, .about{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .help a, .about a{
+    color: black;
+    text-decoration: none;
+  }
+  #privacy{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 20% ;
+    padding: 5px 50px;
+    
+  }
+  .privacy-links > a{
+    color: black;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  
+
+@media only screen and (max-width: 768px) {
+    body {
+        background-image: none;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 40%, 40%;
+        background-position: top right, bottom right;
+        background-blend-mode: multiply;
+    }
+}
+    @media screen and (max-width: 600px){
+        .header-nav {
+            display: none;
+        }
+        .log-in-button{
+            display: none;
+        }
+        .header-logo img{
+            width: 80%;
+        }
+        .header-container{
+            justify-content: center;
+            gap: 10px;
+            /* border: 2px solid red; */
+            padding: 10px;
+            padding-right: 30px;
+            padding-top: 15px;
+        }
+
+    #headerImage {
+        display: none;
+    }
+
+    #our-menu {
+        display: flex;
+        width: 100%;
+    }
+
+    #what-we-offer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        overflow-x: scroll;
+        justify-content: left;
+        gap: 20px;
+        width: 95%;
+        font-size: 12px;
+    }
+    #what-we-offer::-webkit-scrollbar {
+        display: none;  
+    }
+    
+    #what-we-offer>button {
+        padding: 10px 15px;
+        box-shadow:  none;
+        display: flex;
+        color: #34A853;
+        border: none;
+        border-radius: 5px;
+        box-shadow:  none;
+    }
+    .section{
+        display: grid;
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    .contact{
+        padding-left: 74px;
+    }
+    .field{
+      width: 450px;  
+      height: 650px;
+      padding-left: 1px;
+    }
+    .group{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+       
+    }
+    .text-area{
+        width: 40px;
+        height: 100px;
+    }
+    .btn{
+       width: 80px; 
+    }
+
+    .rice-menu {
+        width: 100%;
+        padding-top: 10%;
+    }
+
+    #dish-image {
+        width: 100%;
+        height: 245px;
+    }
+
+    .dish-content {
+        display: flex;
+        width: 90%;
+        height: 120px;
+        gap: 10px;
+        padding: 10px 10px;
+        font-size: 16px; 
+    }
+
+    #dish-title,
+    #price-buy {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+    @media only screen and (max-width: 768px){
+        #footer-container{
+            flex-direction: column;
+        }
+        #newsletter{
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            padding:  10px 50px;
+            font-size: 22px;;
+        }
+        .subscribe-email{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .subscribe-email > input{
+            padding: 5px 10px;
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid rgba(128, 128, 128, 0.866);
+            color: black;
+            width: 90%;
+            margin: 0 auto;
+            font-size: 12px;
+        }
+        .subscribe-email > button{
+            padding: 6px 5px;
+            border-radius: 5px;
+            background-color: #34A853;
+            border: none;
+            color: white;
+            font-size: 12px;;
+            width: 50%;
+            margin: 0 auto;
+        }
+        #subscribe:hover{
+          cursor: pointer;
+          padding: 8px 8px;
+        }
+        #extra{
+            padding: 0;
+            text-align: center ;
+        }
+        #newsletter{
+            flex-direction: column;
+            text-align: center;
+            padding: 0;
+        }
+        #customer-service{
+            flex-direction: row;
+            gap: 5px;
+            padding: 0;
+        }
+        #privacy{
+            flex-direction: column;
+            text-align: center ;
+            padding: 0;
+            gap: 5px;
+        }
+      }
+    

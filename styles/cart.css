@@ -1,0 +1,296 @@
+nav{
+    display: flex;
+    width: 100%;
+    height: 20px;
+    background-color: white;
+    border: none;
+    color: black;
+    justify-content: space-between;
+
+    z-index: 9999;
+}
+
+.navlinks{
+    margin-left: 550px;
+}
+
+img{
+    margin-top: auto;
+}
+
+a{
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18.5px;
+}
+
+.button-links-div{
+    width: 100%;
+    justify-content: center;
+    margin-top: 70px;
+    margin-left: 20%;
+}
+
+.button-links-div a{
+    border: 1px solid grey;
+    border-radius: 8px;
+}
+
+.button-links-div a:hover{
+    background-color: green;
+    color: white;
+}
+
+a{
+    color: black;
+}
+
+.maindiv{
+    display: flex;
+    margin-top: 140px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.formdiv{
+    width: 45%;
+    margin-left: 5%;
+}
+
+
+.input{
+    width: 100%;
+    background-color: rgb(209, 205, 205);
+    border: none;
+    border-radius: 2px;
+    line-height: 32px;
+}
+
+textarea{
+    width: 100%;
+    background-color: rgb(209, 205, 205);
+    border: none;
+    border-radius: 2px;
+    height: 160px;
+    margin-top: 2%;
+}
+
+.inputmargin{
+    margin-top: 5px;
+}
+
+.formdiv .margintop{
+    margin-top: 30px;
+}
+
+.margintop{
+    margin-bottom: 5px;
+}
+
+
+
+.carddiv{
+    width: 25%;
+    height: fit-content;
+    border-radius: 5px;
+    border: 1.5px solid grey;
+    margin-right: 2%;
+}
+
+.jollofdiv{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 5%;
+}
+
+.jollofdiv img{
+    margin-left: -12%;
+}
+
+.jollofdiv p{
+    margin-left: -10%;
+}
+
+.jollofdiv label{
+    margin-top: 15px;
+}
+
+.saladdiv{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 5%;
+}
+
+.saladdiv img{
+    margin-left: -12%;
+}
+
+.saladdiv p{
+    margin-left: -10%;
+}
+
+.saladdiv label{
+    margin-top: 15px;
+}
+
+.villagediv{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 5%;
+}
+
+.villagediv img{
+    margin-left: -12%;
+}
+
+.villagediv p{
+    margin-left: -10%;
+}
+
+.villagediv label{
+    margin-top: 15px;
+}
+
+.subtotal{
+    padding-top: 20px;
+    justify-content: space-around;
+}
+
+.subtotal label{
+    margin-left: 3%;
+}
+
+.sub-input{
+    margin-left: 29%;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(252, 250, 250);
+    line-height: 22px;
+    text-align: right;
+}
+
+.option-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.shipping-div{
+    margin-left: 3%;
+}
+
+.procedures-div{
+    width: 220px;
+    margin-left: 14%;
+}
+
+.last-div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+}
+
+.last-div input{
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 10px 15px;
+}
+
+.last-div button{
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.last-div button:hover{
+    padding: 10px 20px;
+    background-color: rgb(2, 155, 2);
+}
+
+.last-div .email-div{
+    margin-top: 3%;
+}
+
+.last-div .newsletter{
+    margin-left: 5%;
+}
+
+.last-div .email-div{
+    margin-left: 2%;
+}
+
+.footer-div{
+    justify-content: center;
+    font-size: 5px;
+    font-weight: lighter;
+    display: flex;
+}
+
+.footer-links1 div{
+    display: block;
+    padding: 10px 15px;
+    margin-top: 2.5%;
+}
+
+.footer-links2{
+    display: block;
+    margin-left: 10%;
+}
+
+.footer-links2 div{
+    padding: 10px 15px;
+    margin-top: 2.5%;
+}
+
+
+.payment-card{
+    display: flex;
+    justify-content: space-between;
+}
+
+#checkbox2{
+    margin-bottom: 15%;
+    margin-left: 5%;
+}
+
+.payment-card img{
+    margin-right: 2%;
+}
+
+.payment-card .h5{
+    font-weight: lighter;
+    margin-bottom: 17%;
+}
+
+.payment-transfer{
+    display: flex;
+    margin-left: 5%;
+}
+
+.payment-transfer h5{
+    padding-left: 1%;
+}
+
+#place-order{
+    background-color: green;
+    color: white;
+    padding: 15px 35px;
+    margin-left: 5%;
+    border: none;
+    border-radius: 7px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#place-order:hover{
+    padding: 15px 40px;
+    background-color: rgb(2, 155, 2);
+}
+.privacy-div{
+    justify-content: center;
+    justify-content: space-around;
+}
