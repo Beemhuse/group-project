@@ -3,7 +3,7 @@ const dishesContainer = document.querySelector('.best-seller-dishes-container-co
 // call in the loader
 const loader = document.getElementById('loader');
 // import the baseUrl from baseurl.js
-import { baseUrl } from "./baseurl.js";
+import { baseUrl } from "./styles/baseurl";
 // Function to fetch dishes and display them
 async function fetchDishes() {
     try {
