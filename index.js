@@ -3,13 +3,13 @@ const dishesContainer = document.querySelector('.best-seller-dishes-container-co
 // call in the loader
 const loader = document.getElementById('loader');
 // import the baseUrl from baseurl.js
-import { baseUrl } from "./styles/baseurl";
+// import { baseUrl } from "./styles/baseurl";
 // Function to fetch dishes and display them
 async function fetchDishes() {
     try {
         // Show loader while fetching data
         loader.style.display = 'block';  // Ensure loader is visible after the delay
-        const response = await fetch(`${baseUrl}/api/dishes`);
+        const response = await fetch("https://student-food-be.onrender.com/api/dishes");
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
