@@ -1,23 +1,13 @@
 import { baseUrl } from "./baseUrl.js";
 console.log(baseUrl);
-const menudetailsContainer  = document.querySelector(".food-lists-container-content-container")
-const urlParams = new URLSearchParams(window.location.search);
-const myParams = urlParams.get("slug");
-console.log(myParams);
-// Fetch all dishes from the API
+
+
 
 document.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
-  const button = document.getElementById("all-btn");
-  
-  if (!button) {
-    console.error("button not found");
-    return;
-  }
-
-  button.addEventListener("click", (e) => {
-    e.preventDefault();
-    console.log("welcome");
+  let dishData = []
+const buttonContainer = document.getElementById("what-we-offer");
+   
     async function getDishes() {
       try {
         const response = await fetch(`${baseUrl}/dishes`, {
@@ -30,92 +20,116 @@ document.addEventListener("DOMContentLoaded", (e) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        const result = await response.json();
-        console.log(result);
+        let result = await response.json();
+        dishData=result
         displayDishes(result);
+
       } catch (error) {
         console.log("Error fetching dishes", error);
       }
     }
     getDishes();
-  });
+    
+      function displayDishes(result) {
+        const container = document.getElementById("Our-dishes");
+        container.innerHTML = "";
+        result.forEach((result) => {
+          const menu = document.createElement("div");
+          menu.classList.add("dishes-menu");
 
-function displayDishes(result) {
-  const container = document.getElementById("Our-dishes");
-  container.innerHTML = "";
-  result.forEach((result) => {
-    const menu = document.createElement("div");
-    menu.classList.add("dishes-menu");
+          const formattedPrice = new Intl.NumberFormat("en-NG", {
+            style: "currency",
+            currency: "NGN",
+          }).format(result.price);
 
-    const formattedPrice = new Intl.NumberFormat("en-NG", {
-      style: "currency",
-      currency: "NGN",
-    }).format(result.price);
+          menu.innerHTML = `
+                        <div class="dish">
+                            <img id="dish-image" src=${result.imageUrl} alt=${result.name} width="120px">
+                            <div class="dish-content">
+                                <div id="dish-title">
+                                    <h2>${result.title}</h2>
+                                    <p>${result.description}</p>
+                                </div>
+                                <div id="price-buy">
+                                    <h2 id="price">${formattedPrice}</h2>
+                                    <button class="order-button">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>`;
 
-    menu.innerHTML = `
-                  <div class="dish">
-                      <img id="dish-image" src=${result.imageUrl} alt=${result.name} width="120px">
-                      <div class="dish-content">
-                          <div id="dish-title">
-                              <h2>${result.title}</h2>
-                              <p>${result.description}</p>
-                          </div>
-                          <div id="price-buy">
-                              <h2 id="price">${formattedPrice}</h2>
-                              <button class="order-button">Buy Now</button>
-                          </div>
-                      </div>
-                  </div>`;
-
-    container.appendChild(menu);
-  });
-}
-
-
-getDishesSlug();
-async function getDishesSlug(result) {
-  try {
-    const response = await fetch(`${baseUrl}/dishes/`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const result = await response.json();
-    console.log(result);
-    displayDishes(result);
-  } catch (error) {
-    console.log("Error fetching dishes", error);
-  }
+          container.appendChild(menu);
+          
+        });
+      }
+   
+      async function getDishesCategory() {
+        try {
+          const response = await fetch(`${baseUrl}/category`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          let result = await response.json();
+           console.log(result);
+          displayCategoryButtons(result);
+         
+          
+        } catch (error) {
+          console.log("Error fetching dishes", error);
+        }
+        
+      }
+      getDishesCategory();
   
-}
 
+  function displayCategoryButtons(result) {
+     if (!buttonContainer) {
+      alert("Container with ID 'what-we-offer' not found!");
+      return;
+    }
+    buttonContainer.innerHTML = "";
+    const categories = ["All", ...new Set(result?.categories?.map((categories) => categories.title))];  
+    console.log(categories)
+    categories.forEach((categories) => {
+      const button = document.createElement("button");
+      button.classList.add("available-dishes");
+      button.textContent = categories;
+      buttonContainer.appendChild(button);
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+          filterData(categories, result);
+          
+      });
+    });
+  }
+
+  function filterData(categories, ) {
+    if (categories === "All") {
+      getDishes();
+      return;
+    }
+    console.log(dishData);
+      
+    const filteredDishes = categories === 'All'? dishData : dishData.filter((dish) => dish.category?.title?.toLowerCase() === categories.toLowerCase());
+   displayDishes(filteredDishes);
+  
+  }
 });
+
+
+  
+
  
 
-async function getDishesCategory(result) {
-  try {
-    const response = await fetch(`${baseUrl}/dishes/category`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const result = await response.json();
-    console.log(result);
-    displayDishes(result);
-  } catch (error) {
-    console.log("Error fetching dishes", error);
-  }
-  
-}
-getDishesCategory()
+
+
+
+
+
 
 
 
@@ -267,5 +281,4 @@ getDishesCategory()
 //   getData();
 // });
 
-// const urlParams = new URLSearchParams(windows.location.search);
-// const myParams = urlParams.get('slug');
+ 

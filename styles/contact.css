@@ -156,6 +156,18 @@ textarea {
     padding: 15px 25px;
     border-radius: 10px;
 }
+alert{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #34A853;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 100;
+}
 @media only screen and (max-width: 768px){
     
     #what-we-offer {
