@@ -41,9 +41,14 @@
   border: 1px solid #16A34A;
   color: #16A34A;
   background: none;
+  cursor: pointer;
+}
+i{
+  cursor: pointer;
 }
 #user{
   display: none;
+  cursor: pointer;
 }
 /* ORDER SECTION */
 .intro-container{
@@ -86,7 +91,6 @@
   font-weight: 600;
   margin-top: 30px;
 }
-
 /* OFFER SECTION */
 #offer-head{
   font-weight: 600;
@@ -159,7 +163,7 @@
   margin-top: 6px;
 }
 .why-choose-us-delivery-option-content{
-  padding: 0px;
+  padding: 18px;
   margin-bottom: 0px;
 }
 /*BEST SELLER DISHES SECTION */
@@ -186,22 +190,58 @@
   max-width: 600px;
   margin: 0 auto; 
 }
+.best-seller-dishes-container-content:hover{
+  transform: scale(1.05);
+}
 .best-seller-dishes-container-content{
   box-shadow: 1px 3px 4px rgba(0, 0, 0, .1);
   border-radius: 12px;
   padding-bottom: 60px;
-  margin-top: 40px
-}
-.others_details img{
+  margin-top: 40px;
   width: 100%;
+}
+.dish-image{
+  width: 100% ;
+  height: 300px;
+  object-fit: cover;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
 }
 .best-seller-dishes-container-content-container{
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 20px;
   padding: 40px 50px 50px 50px;
+  position: relative;
 }
-#category_price{
+.dish-name{
+  color: #4B5563;
+  font-size: 18px;
+}
+.dish-price{
+  color: #4B5563;
+}
+.dish-description{
+  font-size: 15px;
+  color: #757575;
+  display: flex;
+  /* justify-content: end; */
+  align-items: center;
+}
+.categoryPrice{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px 0 20px;
+  color: #4B5563;
+}
+.descBuy{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px 0 20px;
+}
+/* #category_price{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -220,7 +260,7 @@
 }
 #category{
   font-size: 18px;
-}
+} */
 .buy-now{
   width: 90px;
   height: 35px;
@@ -258,87 +298,26 @@
 .text-overlay p{
   text-align: center;
 }
-#footer-container{
-  background-color:  white;
-  color: black;
+/* Loader styles */
+.loader {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #4CAF50; /* Green */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 0;
   bottom: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding-top: 20px;
-}
-#extra{
-  padding: 5px 50px;
-}
-hr{
-  width: 93%;
-  margin: auto;
-  border-top: 1px solid  rgba(222, 219, 219, 0.349);
-}
-#newsletter{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding:  10px 50px;
-  font-size: 22px;;
+  left: 0;
+  right: 0;
+  margin:  auto;
 }
 
-strong{
-  color: #34A853;
-}
-.subscribe-email{
-  display: flex;
-  gap: 10px;
-}
-.subscribe-email > input{
-  padding: 10px 5px;
-  border-radius: 5px;
-  outline: none;
-  border: 1px solid rgba(128, 128, 128, 0.866);
-  color: black;
-  width: 250px;
-}
-.subscribe-email > button{
-  padding: 11px 10px;
-  border-radius: 5px;
-  background-color: #34A853;
-  border: none;
-  color: white;
-}
-#subscribe:hover{
-cursor: pointer;
-padding: 8px 8px;
-}
-#customer-service{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 5px 50px;
-}
-
-.help, .about{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.help a, .about a{
-  color: black;
-  text-decoration: none;
-}
-#privacy{
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  gap: 20% ;
-  padding: 5px 50px;
-  
-}
-.privacy-links > a{
-  color: black;
-  text-decoration: none;
-  margin-left: 10px;
+/* Spin animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* MOBILE RESPONSIVENESS */
@@ -355,10 +334,11 @@ padding: 8px 8px;
   .header-container{
       justify-content: center;
       gap: 10px;
-      /* border: 2px solid red; */
       padding: 10px;
       padding-right: 30px;
       padding-top: 15px;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, .1);
+
   }
   #user{
       display: block;
@@ -414,7 +394,9 @@ padding: 8px 8px;
   .why-choose-us-delivery-option-content-container{
       padding-left: 0px;
   }
-
+  .why-choose-us-delivery-option-content{
+      padding: 20px;
+  }
   #why-choose-us-delivery-option-text{
       font-size: 12px;
   }
@@ -434,68 +416,6 @@ padding: 8px 8px;
   }
   .buy-now{
       width: 80px;
-      font-size: 10px;
-}
-@media only screen and (max-width: 768px){
-  #footer-container{
-      flex-direction: column;
+      font-size: 10px;
   }
-  #newsletter{
-      display: flex;
-      gap: 5px;
-      align-items: center;
-      padding:  10px 50px;
-      font-size: 22px;;
-  }
-  .subscribe-email{
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-  }
-  .subscribe-email > input{
-      padding: 5px 10px;
-      border-radius: 5px;
-      outline: none;
-      border: 1px solid rgba(128, 128, 128, 0.866);
-      color: black;
-      width: 90%;
-      margin: 0 auto;
-      font-size: 12px;
-  }
-  .subscribe-email > button{
-      padding: 6px 5px;
-      border-radius: 5px;
-      background-color: #34A853;
-      border: none;
-      color: white;
-      font-size: 12px;;
-      width: 50%;
-      margin: 0 auto;
-  }
-  #subscribe:hover{
-    cursor: pointer;
-    padding: 8px 8px;
-  }
-  #extra{
-      padding: 0;
-      text-align: center ;
-  }
-  #newsletter{
-      flex-direction: column;
-      text-align: center;
-      padding: 0;
-  }
-  #customer-service{
-      flex-direction: row;
-      gap: 5px;
-      padding: 0;
-  }
-  #privacy{
-      flex-direction: column;
-      text-align: center ;
-      padding: 0;
-      gap: 5px;
-  }
-}
-
 }
