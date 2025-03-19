@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       } else {
+       
         alert(result.message || "Message Sent");
 
       }
