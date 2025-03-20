@@ -68,20 +68,6 @@ label{
     color: #616161;
     text-decoration: underline;
 }
-#create-account-button{
-    margin-top: 13px;
-    width: 100%;
-    height: 42px;
-    border-radius: 5px;
-    outline: none;
-    border: 1px solid #34A853;
-    background-color: #34A853;
-    color: #ffffff;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 17px;
-    transition: background-color 0.3s ease
-}
 #create-account-button:hover{
     background-color: #219653;
 }
@@ -114,21 +100,63 @@ label{
     margin-bottom: 20px 
 }
 .user-password-content{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-right: 10px;
-        width: 100%;
-        height: 46px;
-        border-radius: 8px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        text-indent: 14px;
-        border: 1px solid #6FCF9780;
-        outline: none;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+    width: 100%;
+    height: 46px;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-indent: 14px;
+    border: 1px solid #6FCF9780;
+    outline: none;    
     }
 #password{
     border: none;
+}
+#log-in-btn:disabled {
+    cursor: not-allowed;
+}
+
+button{
+    margin-top: 13px;
+    width: 100%;
+    height: 42px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #34A853;
+    background-color: #34A853;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 17px;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+#create-account-button:disabled {
+    cursor: not-allowed;
+}
+#loader {
+    display: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    border-top: 3px solid #34A853;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 /* CUSTOM CHECKBOX */
 .checkbox{
@@ -192,6 +220,39 @@ label{
     margin-top: -8px;
     padding-bottom: 5px;
     text-indent: 4px;  
+}
+.message-container {
+    position: fixed;
+    top: 20px;
+    right: -300px; /* Initially out of view */
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: right 1s ease-out;
+    z-index: 1000;
+}
+.message-container p {
+    margin: 0;
+    font-size: 16px;
+}
+.message-container.hidden {
+    display: none;
+}
+.message-container.show {
+    right: 20px; /* Slide in */
+}
+.message-icon.error {
+    background-color: #f44336; /* Red for error */
+}
+.message-icon.success {
+    background-color: #4CAF50; /* Green for success */
+}
+.message-container i {
+    margin-right: 10px;
 }
 
 /* MOBILE PHONE RESPONSIVENESS */

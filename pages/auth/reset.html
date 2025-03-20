@@ -42,15 +42,23 @@
                                 </div>
                                 <span class="confirm-password-error-message"></span>
                             </div>
-                            <button id="reset-button" type="submit">Reset password</button>
+                            <!-- <button id="reset-button" type="submit">Reset password</button> -->
+                            <button type="submit" id="reset-button">
+                                <span id="reset-button-text" type="submit">Reset password</span>
+                                <div id="loader" class="loader"></div>
+                            </button>
                         </form>
                     </div>
                 </div>
                 <p class="alrightrev">© 2023 My Blog. All rights reserved.</p>
             </div>
         </section>
+        <div id="message-container" class="message-container hidden">
+            <i id="message-icon" class="fas"></i>
+            <p id="message"></p>
+        </div>
     </main>
-    <script src="/scripts/reset.js"></script>
+    <script type="module" src="/scripts/reset.js"></script>
 </body>
 
 </html>
