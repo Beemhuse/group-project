@@ -128,9 +128,9 @@ let formattedPrice = price.format(dish.price); */
     display: flex;
     width: 315px;
     height: 130px;
-    gap: 45px;
+    gap: 50px;
     justify-content: space-evenly;
-    padding: 20px 10px;
+    padding: 25px 10px 10px 10px;
     text-align: left;
 }
  
@@ -138,7 +138,7 @@ let formattedPrice = price.format(dish.price); */
 #price-buy {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     font-size: 14px;
     width: 50%;
 
