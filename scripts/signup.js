@@ -18,7 +18,7 @@ passwordIcon.onclick = (e) => {
     } else {
         password.type = "password";
         passwordIcon.classList.remove("fa-eye");
-        passwordIcon.classList.add("fa-eye-slash");
+        passwordIcon.classList.add("fa-eye-slash")++;
     }
 };
 // Importing the base URL for API requests

@@ -1,3 +1,4 @@
+let otpErrorMessage = document.querySelector(".code-error-message")
 let messageContainer = document.getElementById("message-container");
 let messageText = document.getElementById("message");
 let messageIcon = document.getElementById("message-icon");
@@ -7,28 +8,41 @@ import { baseUrl } from "./baseurl.js";
 document.addEventListener("DOMContentLoaded", () => {
 const otpInputs = document.querySelectorAll('input[type="text"]');
 const otpForm = document.querySelector(".otp-password-form");
-const otpInput = document.getElementById("otp");
+// const otpInput = document.getElementById("otp");
 // Focus control between OTP inputs
 otpInputs.forEach((input, index) => {
   input.addEventListener("input", () => {
-    // Focus to next input field when the current one is filled
     if (input.value.length === input.maxLength && index < otpInputs.length - 1) {
       otpInputs[index + 1].focus();
-    }
-    // Focus to previous input field if current is cleared
-    if (input.value === "" && index > 0) {
+    } else if (input.value === "" && index > 0) {
       otpInputs[index - 1].focus();
     }
+  });
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Backspace" && input.value === "" && index > 0) {
+      otpInputs[index - 1].focus();
+      otpInputs[index - 1].value = "";
+    } else if (event.key === "Delete" && input.value === "" && index < otpInputs.length - 1) {
+      otpInputs[index + 1].focus();
+    }
+  });
 });
-});
+
+
     // Form submission handler
     otpForm.addEventListener("submit", async (event) => {
-        event.preventDefault(); // Prevent default form submission behavior
-        
+      event.preventDefault(); // Prevent default form submission behavior        
     // Gather OTP values
     const otp = Array.from(otpInputs).map(input => input.value).join("");
     if (otp.length !== 6) {
-        alert("Please enter the complete six digit code sent to your email")
+        otpErrorMessage.innerHTML = "Please enter the six digit code sent to your email";
+             // Make all the OTP input borders red if they're not filled correctly
+             otpInputs.forEach(input => {
+              if (input.value === "" || input.value.length !== 1) {
+                  input.style.border = "1px solid red";
+              } 
+          });
         return;
       }
     const email = localStorage.getItem("email")
