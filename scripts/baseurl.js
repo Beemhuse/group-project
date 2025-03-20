@@ -1,0 +1,2 @@
+export const baseUrl = "https://student-food-be.onrender.com"
+
