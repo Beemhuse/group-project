@@ -1,15 +1,16 @@
+import { baseUrl } from "./scripts/baseUrl.js";
+
 // call in the dishesContainer
 const dishesContainer = document.querySelector('.best-seller-dishes-container-content-container');
 // call in the loader
 const loader = document.getElementById('loader');
 // import the baseUrl from baseurl.js
-import { baseUrl } from "./baseurl.js";
 // Function to fetch dishes and display them
 async function fetchDishes() {
     try {
         // Show loader while fetching data
         loader.style.display = 'block';  // Ensure loader is visible after the delay
-        const response = await fetch(`${baseUrl}/api/dishes`);
+        const response = await fetch(`${baseUrl}/dishes`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -31,7 +32,7 @@ async function fetchDishes() {
 
 // Function to display dishes in the HTML
 function displayDishes(dishes) {
-    dishes.forEach(dish => {
+    dishes?.forEach(dish => {
         const dishCard = document.createElement('div');
         dishCard.classList.add('best-seller-dishes-container-content');
 
@@ -82,9 +83,15 @@ function displayDishes(dishes) {
         q.classList.add("descBuy")
         // Append the card to the container
         // dishesContainer.appendChild(dishCard);
+        dishCard.addEventListener("click", ()=>openDetail(dish.slug.current))
         dishesContainer.appendChild(dishCard)
     }
     )
 }
 // Fetch dishes on page load
 window.onload = fetchDishes;
+
+function openDetail(slug){
+    // console.log("Added to cart")
+    window.location.href = "pages/menu-details.html?slug=" + slug
+}
