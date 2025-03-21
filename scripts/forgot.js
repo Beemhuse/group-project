@@ -1,5 +1,5 @@
 // Call in the base url 
-import { baseUrl } from "./baseurl.js"; 
+import { baseUrl } from "./baserl.js"; 
     let messageContainer = document.getElementById("message-container");
     let messageText = document.getElementById("message");
     let messageIcon = document.getElementById("message-icon");

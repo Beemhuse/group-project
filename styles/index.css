@@ -9,7 +9,7 @@
   transform: scale(0);
   transition: all 0.5s;
   position: absolute;
-  top: 70px;
+  top: 65px;
   right: 5px;
   /* background-color: #60BC46; */
   background-color: #F2994A;
@@ -82,11 +82,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 10px;
   padding-left: 60px;
   padding-right: 60px;
   position: sticky;
   top: 10px;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, .1);
 }
 .user{
   background-color: #757575;

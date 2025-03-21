@@ -22,7 +22,7 @@ passwordIcon.onclick = (e) => {
     }
 };
 // Importing the base URL for API requests
-import { baseUrl } from "./baseUrl.js"; // importing the baseUrl from baseurl.js
+// import { baseUrl } from "./baseUrl"; // importing the baseUrl from baseurl.js
 // Function to handle signup form submission
 async function handleSignup(event) {
   event.preventDefault(); // Prevent form submission
@@ -45,7 +45,7 @@ async function handleSignup(event) {
     // try
     try {
         // Sending the signup request
-        const response = await fetch(`${baseUrl}/api/signup`, {
+        const response = await fetch("https://student-food-be.onrender.com/api/signup", {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -53,6 +53,8 @@ async function handleSignup(event) {
             body: JSON.stringify(userData),
         });
         const result = await response.json();
+        // Log the result for debugging purposes
+        console.log(result)        
         if (response.ok) {
             // Show success message and transition
             showMessage(`Welcome ${name}`, "success");
