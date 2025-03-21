@@ -1,4 +1,4 @@
-import { baseUrl } from "./baseUrl.js";
+import { baseUrl } from "../scripts/baseurl.js";
 console.log(baseUrl);
 
 
@@ -12,7 +12,7 @@ const loader = document.getElementById("loader");
     async function getDishes() {
       try {
          loader.style.display = "block";
-        const response = await fetch(`${baseUrl}/dishes`, {
+        const response = await fetch(`${baseUrl}/api/dishes`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

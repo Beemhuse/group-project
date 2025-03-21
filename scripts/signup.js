@@ -22,7 +22,7 @@ passwordIcon.onclick = (e) => {
     }
 };
 // Importing the base URL for API requests
-import { baseUrl } from "./baseurl.js"; // importing the baseUrl from baseurl.js
+import { baseUrl } from "./baseUrl.js"; // importing the baseUrl from baseurl.js
 // Function to handle signup form submission
 async function handleSignup(event) {
   event.preventDefault(); // Prevent form submission

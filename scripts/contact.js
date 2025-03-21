@@ -1,4 +1,4 @@
-import { baseUrl } from "./baseUrl.js";
+import { baseUrl } from "../scripts/baseurl.js";
 console.log(baseUrl);
 
 // Fetching the data from the API
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     try {
-      const response = await fetch(`${baseUrl}/contact`, {
+      const response = await fetch(`${baseUrl}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
