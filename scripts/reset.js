@@ -1,5 +1,5 @@
 // import the baseUrl from baseurl.js
-import { baseUrl } from "./baseurl.js"; 
+import { baseUrl } from "./baseUrl.js"; 
 // call in the messsage display
 let messageContainer = document.getElementById("message-container");
 let messageText = document.getElementById("message");
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // try
         try {
             // Send POST request to the backend API to reset the password
-            const response = await fetch("https://student-food-be.onrender.com/api/password-reset", {
+            const response = await fetch(`${baseUrl}/api/password-reset`, {
                 method: "POST",
               headers: {
                 "Content-Type": "application/json",
