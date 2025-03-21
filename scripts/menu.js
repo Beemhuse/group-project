@@ -7,9 +7,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
   let dishData = []
 const buttonContainer = document.getElementById("what-we-offer");
+const loader = document.getElementById("loader");
    
     async function getDishes() {
       try {
+         loader.style.display = "block";
         const response = await fetch(`${baseUrl}/dishes`, {
           method: "GET",
           headers: {
@@ -27,6 +29,7 @@ const buttonContainer = document.getElementById("what-we-offer");
       } catch (error) {
         console.log("Error fetching dishes", error);
       }
+      loader.style.display = "none";
     }
     getDishes();
     
