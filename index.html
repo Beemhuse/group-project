@@ -28,16 +28,24 @@
                 <button class="log-in-button">Log In</button>
             </div>
         </div>
+        <!-- Logout Modal -->
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+                <h3>Are you sure you want to log out?</h3>
+                <button id="confirmLogout">Yes</button>
+                <button id="cancelLogout">No</button>
+            </div>
+        </div>
         <!-- userIcon onclick dropdown -->
         <div class="dropdown-menu" id="dropdownMenu">
             <ul>
-              <li><a href="/logout.html" id="logoutLink">
-                <i class="fa-solid fa-user-tie" style="color: #2c2525;" id="menu-icon"></i>Dashboard
+                <li>
+                    <a href="/dashboard.html" id="dashboardLink">
+                <i class="fa-solid fa-user-tie" style="color: #fff;" id="menu-icon"></i>Dashboard
             </a>
               </li>
-              <li>
-                <a href="/dashboard.html" id="dashboardLink">
-            <i class="fa-solid fa-arrow-right-from-bracket" style="color: #2c2525;" id="menu-icon"></i>Logout
+              <li><a href="#" id="logoutLink">
+            <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;" id="menu-icon"></i>Logout
                 </a>
               </li>
             </ul>

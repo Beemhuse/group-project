@@ -16,7 +16,7 @@
         // userIcon.setAttribute("class", "user-icon")    
         // element.setAttribute("id", "newId");
         userIcon.innerHTML = `
-                <i class="fa-solid fa-user" style="color: #000000;"></i>        
+                <i class="fa-solid fa-user" style="color: #fff;"></i>        
         `
         userIcon.classList.add('user')
         header.appendChild(userIcon)
@@ -31,6 +31,35 @@
       dropdownMenu.style.transform = isVisible ? "scale(1)" : "scale(0)";
     });
         // // Add logout functionality
+        // Get the logout modal and the buttons
+const logoutBtn = document.getElementById("logoutLink")
+const logoutModal = document.getElementById("logoutModal");
+const cancelLogout = document.getElementById("cancelLogout");
+const confirmLogout = document.getElementById("confirmLogout");
+
+// When the user clicks the logout button, open the modal
+logoutBtn.onclick = function() {
+    logoutModal.style.visibility = "visible";
+}
+// When the user clicks the cancel button, close the modal
+cancelLogout.onclick = function() {
+    logoutModal.style.visibility = "hidden";
+}
+
+// When the user clicks the confirm button, log the user out (or add your logout logic here)
+confirmLogout.onclick = function() {
+    // Here you can add your actual logout logic, like redirecting the user or clearing session storage
+    sessionStorage.removeItem('token');  // Remove the token on logout
+            location.reload(); // Reload the page to reset UI
+    // logoutModal.style.display = "none";
+}
+// When the user clicks anywhere outside the modal, close it
+window.onclick = function(event) {
+    if (event.target === logoutModal) {
+        logoutModal.style.visibility = "hidden";
+    }
+}
+
         // const logoutButton = document.getElementById('logout-btn');
         // logoutButton.addEventListener('click', () => {
         //     sessionStorage.removeItem('token');  // Remove the token on logout
@@ -51,6 +80,7 @@
       }
     });
 
+
   
 // import the baseUrl from baseUrl.js
 import { baseUrl } from "./scripts/baseUrl.js";
@@ -64,7 +94,7 @@ async function fetchDishes() {
     try {
         // Show loader while fetching data
         loader.style.display = 'block';  // Ensure loader is visible after the delay
-        const response = await fetch(`${baseUrl}/api/dishes`);
+        const response = await fetch("https://student-food-be.onrender.com/api/dishes");
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
