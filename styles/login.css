@@ -64,9 +64,9 @@ label{
 #remember-me-span a{
     color: #9CA3AF;
 }
-#log-in-button{
+button{
     margin-top: 12px;
-    width: 350px; /* i will work on this when next i have this kinda project * */
+    width: 350px;/*i will work on this when next i have this kinda project */
     height: 42px;
     border-radius: 5px;
     outline: none;
@@ -76,7 +76,31 @@ label{
     cursor: pointer;
     font-weight: 600;
     font-size: 17px;
-    transition: background-color 0.3s ease
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+#log-in-btn:disabled {
+    cursor: not-allowed;
+}
+#loader {
+    display: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    border-top: 3px solid #34A853;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 #log-in-button:hover{
     background-color: #219653;
@@ -168,20 +192,38 @@ label{
 #password{
     border: none;
 }
-.email-error-message{
-    color: red;
-    display: none;
-    font-size: 10px;
-    margin-top: -7px;
-    text-indent: 2px;  
+.message-container {
+    position: fixed;
+    top: 20px;
+    right: -300px; /* Initially out of view */
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: right 1s ease-out;
+    z-index: 1000;
 }
-.password-error-message{
-    color: red;
+.message-container p {
+    margin: 0;
+    font-size: 16px;
+}
+.message-container.hidden {
     display: none;
-    font-size: 10px;
-    margin-top: -8px;
-    padding-bottom: 5px;
-    text-indent: 5px;  
+}
+.message-container.show {
+    right: 20px; /* Slide in */
+}
+.message-icon.error {
+    background-color: #f44336; /* Red for error */
+}
+.message-icon.success {
+    background-color: #4CAF50; /* Green for success */
+}
+.message-container i {
+    margin-right: 10px;
 }
 
 /* MOBILE PHONE RESPONSIVENESS */
@@ -206,5 +248,8 @@ label{
     }
     input[type="checkbox"] {
         width: 20px;
+    }
+    .message-container {
+        top: 40px;
     }
 }
