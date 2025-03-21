@@ -3,6 +3,40 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* dropdown */
+.dropdown-menu {
+  /* display: none; */
+  transform: scale(0);
+  transition: all 0.5s;
+  position: absolute;
+  top: 70px;
+  right: 5px;
+  background-color: #60BC46;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100px;
+  padding: 5px;
+  z-index: 100;
+  color: white;
+}
+.dropdown-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 3px;
+  flex-direction: column;
+}
+.dropdown-menu ul li a{ 
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  /* color: red; */
+  cursor: pointer;
+  text-decoration: none;
+  color: #2c2525;
+  gap: 5px;
+  transition: background-color 0.3s;
+}
+/* dropdown */
 .header-container{
   width: 100%;
   display: flex;
@@ -13,6 +47,15 @@
   padding-right: 60px;
   position: sticky;
   top: 10px;
+}
+.user{
+  background-color: #757575;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .header-nav ul a{
   text-decoration: none;
@@ -41,9 +84,10 @@
   border: 1px solid #16A34A;
   color: #16A34A;
   background: none;
+  cursor: pointer;
 }
-#user{
-  display: none;
+i{
+  cursor: pointer;
 }
 /* ORDER SECTION */
 .intro-container{
@@ -86,7 +130,6 @@
   font-weight: 600;
   margin-top: 30px;
 }
-
 /* OFFER SECTION */
 #offer-head{
   font-weight: 600;
@@ -121,10 +164,9 @@
 }
 .why-choose-us-container{
   display: flex;
-  justify-content: start;
+  justify-content: center;
   gap: 15%;
   padding: 50px;
-  margin-left: 50px;
   margin-top: 30px;
 }
 .why-choose-us-delivery-option-content-container{
@@ -159,7 +201,7 @@
   margin-top: 6px;
 }
 .why-choose-us-delivery-option-content{
-  padding: 0px;
+  padding: 18px;
   margin-bottom: 0px;
 }
 /*BEST SELLER DISHES SECTION */
@@ -186,40 +228,56 @@
   max-width: 600px;
   margin: 0 auto; 
 }
+.best-seller-dishes-container-content:hover{
+  transform: scale(1.05);
+}
 .best-seller-dishes-container-content{
   box-shadow: 1px 3px 4px rgba(0, 0, 0, .1);
   border-radius: 12px;
-  padding-bottom: 60px;
-  margin-top: 40px
-}
-.others_details img{
+  padding-bottom: 40px;
+  margin-top: 40px;
   width: 100%;
+  height: 350px
+}
+.dish-image{
+  width: 100% ;
+  height: 250px;
+  object-fit: cover;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
 }
 .best-seller-dishes-container-content-container{
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(4,1fr);
   gap: 20px;
   padding: 40px 50px 50px 50px;
+  position: relative;
 }
-#category_price{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 30px 0 20px;
+.dish-name{
+  color: #4B5563;
+  font-size: 18px;
+}
+.dish-price{
   color: #4B5563;
 }
-#desc_buy{
+.dish-description{
+  font-size: 15px;
+  color: #757575;
+  display: flex;
+  align-items: center;
+}
+.categoryPrice{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 20px 0 20px;
+  padding: 10px 15px 0 10px;
+  color: #4B5563;
 }
-#desc{
-  font-size: 15px;
-  color: #757575;
-}
-#category{
-  font-size: 18px;
+.descBuy{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px 0 10px;
 }
 .buy-now{
   width: 90px;
@@ -258,95 +316,31 @@
 .text-overlay p{
   text-align: center;
 }
-#footer-container{
-  background-color:  white;
-  color: black;
+/* Loader styles */
+.loader {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #4CAF50; /* Green */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 0;
   bottom: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding-top: 20px;
-}
-#extra{
-  padding: 5px 50px;
-}
-hr{
-  width: 93%;
-  margin: auto;
-  border-top: 1px solid  rgba(222, 219, 219, 0.349);
-}
-#newsletter{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding:  10px 50px;
-  font-size: 22px;;
+  left: 0;
+  right: 0;
+  margin:  auto;
 }
 
-strong{
-  color: #34A853;
-}
-.subscribe-email{
-  display: flex;
-  gap: 10px;
-}
-.subscribe-email > input{
-  padding: 10px 5px;
-  border-radius: 5px;
-  outline: none;
-  border: 1px solid rgba(128, 128, 128, 0.866);
-  color: black;
-  width: 250px;
-}
-.subscribe-email > button{
-  padding: 11px 10px;
-  border-radius: 5px;
-  background-color: #34A853;
-  border: none;
-  color: white;
-}
-#subscribe:hover{
-cursor: pointer;
-padding: 8px 8px;
-}
-#customer-service{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 5px 50px;
-}
-
-.help, .about{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.help a, .about a{
-  color: black;
-  text-decoration: none;
-}
-#privacy{
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  gap: 20% ;
-  padding: 5px 50px;
-  
-}
-.privacy-links > a{
-  color: black;
-  text-decoration: none;
-  margin-left: 10px;
+/* Spin animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* MOBILE RESPONSIVENESS */
 @media screen and (max-width: 600px){
   .header-nav {
-      display: none;
-  }
-  .log-in-button{
       display: none;
   }
   .header-logo img{
@@ -355,13 +349,11 @@ padding: 8px 8px;
   .header-container{
       justify-content: center;
       gap: 10px;
-      /* border: 2px solid red; */
       padding: 10px;
       padding-right: 30px;
       padding-top: 15px;
-  }
-  #user{
-      display: block;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, .1);
+
   }
   .offer-content{
       flex-direction: column;
@@ -406,7 +398,6 @@ padding: 8px 8px;
   .why-choose-us-container{
       flex-direction: column;
       padding: 20px;
-      margin-left: 0px;
   }
   .why-choose-us-left-container{
       margin-top: 30px;
@@ -414,13 +405,15 @@ padding: 8px 8px;
   .why-choose-us-delivery-option-content-container{
       padding-left: 0px;
   }
-
+  .why-choose-us-delivery-option-content{
+      padding: 20px;
+  }
   #why-choose-us-delivery-option-text{
       font-size: 12px;
   }
   /*BEST SELLER DISHES SECTION */
   .best-seller-dishes-container-content-container{
-      grid-template-columns: repeat(2,1fr);
+      grid-template-columns: repeat(1,1fr);
       padding: 20px;
   }
   .best-seller-dishes-container-content{
@@ -434,68 +427,6 @@ padding: 8px 8px;
   }
   .buy-now{
       width: 80px;
-      font-size: 10px;
-}
-@media only screen and (max-width: 768px){
-  #footer-container{
-      flex-direction: column;
+      font-size: 10px;
   }
-  #newsletter{
-      display: flex;
-      gap: 5px;
-      align-items: center;
-      padding:  10px 50px;
-      font-size: 22px;;
-  }
-  .subscribe-email{
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-  }
-  .subscribe-email > input{
-      padding: 5px 10px;
-      border-radius: 5px;
-      outline: none;
-      border: 1px solid rgba(128, 128, 128, 0.866);
-      color: black;
-      width: 90%;
-      margin: 0 auto;
-      font-size: 12px;
-  }
-  .subscribe-email > button{
-      padding: 6px 5px;
-      border-radius: 5px;
-      background-color: #34A853;
-      border: none;
-      color: white;
-      font-size: 12px;;
-      width: 50%;
-      margin: 0 auto;
-  }
-  #subscribe:hover{
-    cursor: pointer;
-    padding: 8px 8px;
-  }
-  #extra{
-      padding: 0;
-      text-align: center ;
-  }
-  #newsletter{
-      flex-direction: column;
-      text-align: center;
-      padding: 0;
-  }
-  #customer-service{
-      flex-direction: row;
-      gap: 5px;
-      padding: 0;
-  }
-  #privacy{
-      flex-direction: column;
-      text-align: center ;
-      padding: 0;
-      gap: 5px;
-  }
-}
-
 }
