@@ -67,7 +67,7 @@ const loader = document.getElementById("loader");
    
       async function getDishesCategory() {
         try {
-          const response = await fetch(`${baseUrl}/category`, {
+          const response = await fetch(`${baseUrl}/api/category`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
