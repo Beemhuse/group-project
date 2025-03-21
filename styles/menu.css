@@ -179,6 +179,59 @@ let formattedPrice = price.format(dish.price); */
     font-size: 16px;
     margin-bottom: 10px;
 }
+@media only screen and (max-width: 1800px) {
+    #Our-dishes {
+        width: 95%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+    }
+}
+@media only screen and (max-width: 1300px) {
+    #Our-dishes {
+        width: 95%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    #dish-image {
+        width: 100%;
+        height: 245px;
+    }
+    .dish-content {
+        display: flex;
+        width: 100%;
+        height: 130px;
+        gap: 50px;
+        justify-content: space-evenly;
+        padding: 25px 10px 10px 10px;
+        text-align: left;
+    }
+}
+@media only screen and (max-width: 992px) {
+    #Our-dishes {
+        width: 95%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    #dish-image {
+        width: 100%;
+        height: 245px;
+    }
+    .dish-content {
+        display: flex;
+        width: 100%;
+        height: 130px;
+        gap: 50px;
+        justify-content: space-evenly;
+        padding: 25px 10px 10px 10px;
+        text-align: left;
+    }
+}
 
 @media only screen and (max-width: 768px) {
 /* *{
@@ -225,6 +278,13 @@ let formattedPrice = price.format(dish.price); */
         box-shadow:  none;
     }
     
+    #Our-dishes {
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+       flex-direction: column;
+        gap: 20px;
+    }
 
     .dishes-menu {
         width: 100%;
