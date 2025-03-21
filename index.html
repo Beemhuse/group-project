@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles/index.css">
     <title>Euodia</title>
 </head>
@@ -19,18 +17,39 @@
             </div>
             <nav class="header-nav">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Our Menu</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./pages/menu.html">Our Menu</a></li>
+                    <li><a href="./pages/contact.html">Contact Us</a></li>
                 </ul>
             </nav>
             <div class="header-left-content">
                 <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
                 <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
-                <i class="fa-solid fa-user" style="color: #000000;" id="user"></i>
                 <button class="log-in-button">Log In</button>
             </div>
         </div>
+        <!-- Logout Modal -->
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+                <h3>Are you sure you want to log out?</h3>
+                <button id="confirmLogout">Yes</button>
+                <button id="cancelLogout">No</button>
+            </div>
+        </div>
+        <!-- userIcon onclick dropdown -->
+        <div class="dropdown-menu" id="dropdownMenu">
+            <ul>
+                <li>
+                    <a href="/dashboard.html" id="dashboardLink">
+                <i class="fa-solid fa-user-tie" style="color: #fff;" id="menu-icon"></i>Dashboard
+            </a>
+              </li>
+              <li><a href="#" id="logoutLink">
+            <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;" id="menu-icon"></i>Logout
+                </a>
+              </li>
+            </ul>
+          </div>
     </header>
     <section class="intro">
         <div class="intro-container">
@@ -128,84 +147,6 @@
             </div>
         </div>
     </section>
-                <!-- <div class="best-seller-dishes-container-content">
-                    <div class="others_details">
-                        <img src="/Images/dish.png" alt="">
-                        <span id="category_price">
-                            <h4 id="category">Jollof Rice</h4>
-                            <p id="price">N5,000</p>
-                        </span>
-                        <span id="desc_buy">
-                            <p id="desc">Tasty village rice</p>
-                            <button class="buy-now">Buy now</button>
-                        </span>
-                    </div>
-                </div>
-                <div class="best-seller-dishes-container-content">
-                    <div class="others_details">
-                        <img src="/Images/dish.png" alt="">
-                        <span id="category_price">
-                            <h4 id="category">Jollof Rice</h4>
-                            <p id="price">N5,000</p>
-                        </span>
-                        <span id="desc_buy">
-                            <p id="desc">Tasty village rice</p>
-                            <button class="buy-now">Buy now</button>
-                        </span>
-                    </div>
-                </div>
-                <div class="best-seller-dishes-container-content">
-                    <div class="others_details">
-                        <img src="/Images/dish.png" alt="">
-                        <span id="category_price">
-                            <h4 id="category">Jollof Rice</h4>
-                            <p id="price">N5,000</p>
-                        </span>
-                        <span id="desc_buy">
-                            <p id="desc">Tasty village rice</p>
-                            <button class="buy-now">Buy now</button>
-                        </span>
-                    </div>
-                </div>
-                <div class="best-seller-dishes-container-content">
-                    <div class="others_details">
-                        <img src="/Images/dish.png" alt="">
-                        <span id="category_price">
-                            <h4 id="category">Jollof Rice</h4>
-                            <p id="price">N5,000</p>
-                        </span>
-                        <span id="desc_buy">
-                            <p id="desc">Tasty village rice</p>
-                            <button class="buy-now">Buy now</button>
-                        </span>
-                    </div>
-                </div>
-                <div class="best-seller-dishes-container-content">
-                    <div class="others_details">
-                        <img src="/Images/dish.png" alt="">
-                        <span id="category_price">
-                            <h4 id="category">Jollof Rice</h4>
-                            <p id="price">N5,000</p>
-                        </span>
-                        <span id="desc_buy">
-                            <p id="desc">Tasty village rice</p>
-                            <button class="buy-now">Buy now</button>
-                        </span>
-                    </div>
-                </div>
-                <div class="best-seller-dishes-container-content">
-                    <div class="others_details">
-                        <img src="/Images/dish.png" alt="">
-                        <span id="category_price">
-                            <h4 id="category">Jollof Rice</h4>
-                            <p id="price">N5,000</p>
-                        </span>
-                        <span id="desc_buy">
-                            <p id="desc">Tasty village rice</p>
-                            <button class="buy-now">Buy now</button>
-                        </span>
-                    </div>
-                </div> -->
     <section class="last-section">
         <div class="last-section-container">
             <img src="/Images/last image.png" alt="last-eoudia-image" class="last-section-image">
@@ -216,7 +157,7 @@
         </div>
     </section>
     <script type="module" src="./index.js"></script>
-    <script type="module" src="/pages/auth/login.html"></script>
+    <script type="module" src="/scripts/verifyAcess.js"></script>
 
 </body>
 

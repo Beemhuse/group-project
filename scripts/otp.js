@@ -3,7 +3,7 @@ let messageContainer = document.getElementById("message-container");
 let messageText = document.getElementById("message");
 let messageIcon = document.getElementById("message-icon");
 // Import to baseUrl
-import { baseUrl } from "./baseurl.js";
+import { baseUrl } from "./baseUrl.js";
 // on document load
 document.addEventListener("DOMContentLoaded", () => {
 const otpInputs = document.querySelectorAll('input[type="text"]');
@@ -77,7 +77,7 @@ otpInputs.forEach((input, index) => {
           }, 2000); 
           messageContainer.style.transition = 'right 3s ease-out';  // Smooth transition   
           } else {
-            otpInput.style.border = "red";
+            otpInputs.style.border = "red";
             showMessage("Wrong OTP", "error");
             otpButton.disabled = false;
             loader.style.display = 'none';

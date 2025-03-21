@@ -24,7 +24,7 @@ passwordIcon.onclick = (e) => {
     }
 };
 // Consume the API
-import { baseUrl } from "./baseurl.js"; // importing the baseUrl from baseurl.js
+import { baseUrl } from "./baseUrl.js"; // importing the baseUrl from baseurl.js
 // Function to handle login form submission
 async function handleLogin(event) {
     event.preventDefault();
@@ -51,7 +51,7 @@ async function handleLogin(event) {
             sessionStorage.setItem("token", result.token); // Store token for authentication
             showMessage("Login successful!", "success");
             setTimeout(() => {
-                window.location.href = "/pages/auth/signup.html"; // Redirect to signup page
+                window.location.href = "/index.html"; // Redirect to dashboard
             }, 1200); 
             messageContainer.style.transition = 'right 3s ease-out';  // Smooth transition   
         } else {
