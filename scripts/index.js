@@ -100,7 +100,7 @@ window.onclick = function(event) {
 
   
 // import the baseUrl from baseUrl.js
-import { baseUrl } from "./scripts/baseUrl.js";
+// import { baseUrl } from "./scripts/baseUrl.js";
 // call in the dishesContainer
 const dishesContainer = document.querySelector('.best-seller-dishes-container-content-container');
 // call in the loader

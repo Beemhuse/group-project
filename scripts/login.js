@@ -24,7 +24,7 @@ passwordIcon.onclick = (e) => {
     }
 };
 // Consume the API
-import { baseUrl } from "./baseUrl.js"; // importing the baseUrl from baseurl.js
+// import { baseUrl } from "./baseUrl.js"; // importing the baseUrl from baseurl.js
 // Function to handle login form submission
 async function handleLogin(event) {
     event.preventDefault();
@@ -39,7 +39,7 @@ async function handleLogin(event) {
         password,
     };
     try {
-        const response = await fetch(`${baseUrl}/api/login`, {
+        const response = await fetch('https://student-food-be.onrender.com/api/login', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
