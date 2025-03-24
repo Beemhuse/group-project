@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/contact.css">
     <link rel="icon" href="../Images/Eudia-logo.png">
+    <link rel="stylesheet" href="../styles/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -16,23 +17,23 @@
 <body>
 
     <header>
-        <nav id="navbar">
-            <div class="nav-logo">
-                <img src="/Images/Eudia-logo.png" alt="Eudia logo" />
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="/Images/Eudia-logo.png" alt="">
             </div>
-
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../pages/menu.html">Our Menu</a></li>
-                <li><a href="../pages/contact.html">Contact Us</a></li>
-            </ul>
-
-            <ul class="nav-icons">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <i class="fa-solid fa-bag-shopping"></i>
-                <i class="fa-solid fa-user-plus "></i>
-            </ul>
-        </nav>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/menu.html">Our Menu</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-left-content">
+                <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+                <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
+                <button class="log-in-button">Log In</button>
+            </div>
+        </div>
 
     </header>
 
@@ -86,6 +87,7 @@
                 </form>
             </div>
         </div>
+        
 
     </main>
 

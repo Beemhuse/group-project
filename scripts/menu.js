@@ -1,4 +1,4 @@
-import { baseUrl } from "./baseUrl.js";
+import { baseUrl } from "../scripts/baseurl.js";
 console.log(baseUrl);
 
 
@@ -7,10 +7,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
   let dishData = []
 const buttonContainer = document.getElementById("what-we-offer");
+const loader = document.getElementById("loader");
    
     async function getDishes() {
       try {
-        const response = await fetch(`${baseUrl}/dishes`, {
+         loader.style.display = "block";
+        const response = await fetch(`${baseUrl}/api/dishes`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -27,6 +29,7 @@ const buttonContainer = document.getElementById("what-we-offer");
       } catch (error) {
         console.log("Error fetching dishes", error);
       }
+      loader.style.display = "none";
     }
     getDishes();
     
@@ -64,7 +67,7 @@ const buttonContainer = document.getElementById("what-we-offer");
    
       async function getDishesCategory() {
         try {
-          const response = await fetch(`${baseUrl}/category`, {
+          const response = await fetch(`${baseUrl}/api/category`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
