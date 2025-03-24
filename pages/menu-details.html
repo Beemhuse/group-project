@@ -14,48 +14,32 @@
 </head>
 
 <body>
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="/Images/Eudia-logo.png" alt="">
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="/pages/menu.html">Our Menu</a></li>
+                    <li><a href="/pages/contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-left-content">
+                <div class="cart-container">
+                <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+                 <span id="cart-count" class="cart-count"></span>
+                </div>
+                <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
+                <button class="log-in-button">Log In</button>
+            </div>
+        </div>
+    </header>
     <main>
         <section>
-            <div class="menu-detials">
-                <!-- <span class="page-tracker">
-            <p>Home</p> /
-            <p>Our Menu</p> /
-            <p>Oven baked potatoes</p>
-        </span> -->
-                <div class="menu-details-container">
-                    <div class="menu-details-container-content">
-                        <div class="food-image">
-                            <img src="/Images/baked-potatoes.png" alt="baked-potatoes">
-                        </div>
-                    </div>
-                    <div class="food-details">
-                        <div class="">
-                            <h2 id="food-name">OVEN BAKED SWEET POTATOES</h2>
-                            <p id="food-about">Oven baked potatoes spiced with sauce, made With Minced Meat,Shrimps,
-                                Coconut Flavor,Served with Spicy pepper and fresh olive mint.</p>
-                            <button class="size">Serving size: 0.06kg</button>
-                        </div>
-                        <span id="food-price">
-                            <i class="fa-solid fa-naira-sign" style="color: #616161;"></i>
-                            <p id="price">10,000</p>
-                        </span>
-                        <div class="quantity">
-                            <span class="quantity-content">
-                                <div class="number">
-                                    <button class="minus-btn" type="button">
-                                        <i class="fa-solid fa-minus"></i>
-                                    </button>
-                                </div>
-                                <input class="quantity-value" type="text" value="01" id="number-of-plates">
-                                <div class="number">
-                                    <button class="plus-btn" type="button">
-                                        <i class="fa-solid fa-plus"></i>
-                                    </button>
-                                </div>
-                                <button type="submit" class="order">Order</button>
-                            </span>
-                        </div>
-                    </div>
+            <div class="menu-detials-container">
+                <div class="menu-details-container-content">
                 </div>
             </div>
         </section>
@@ -64,90 +48,13 @@
                 <div class="food-lists-container">
                     <h2>Other dishes you’ll Love</h2>
                     <div class="food-lists-container-content-container">
-        <div id="loader" class="loader"></div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
     <script type="module" src="/scripts/menu-details.js"></script>
+    <script type="module" src="/scripts/verifyAcess.js"></script>
 </body>
+
 </html>
-<!-- <div class="food-lists-container-content">
-    <div class="others_details">
-        <img src="/Images/jellof-rice.png" alt="">
-        <span id="category_price">
-            <h4>Jollof Rice</h4>
-            <p>N5,000</p>
-        </span>
-        <span id="desc_buy">
-            <p id="desc">Tasty village rice</p>
-            <button class="buy-now">Buy now</button>
-        </span>
-    </div>
-</div>
-<div class="food-lists-container-content">
-    <div class="others_details">
-        <img src="/Images/jellof-rice.png" alt="">
-        <span id="category_price">
-            <h4>Jollof Rice</h4>
-            <p>N5,000</p>
-        </span>
-        <span id="desc_buy">
-            <p id="desc">Tasty village rice</p>
-            <button class="buy-now">Buy now</button>
-        </span>
-    </div>
-</div>
-<div class="food-lists-container-content">
-    <div class="others_details">
-        <img src="/Images/jellof-rice.png" alt="">
-        <span id="category_price">
-            <h4>Jollof Rice</h4>
-            <p>N5,000</p>
-        </span>
-        <span id="desc_buy">
-            <p id="desc">Tasty village rice</p>
-            <button class="buy-now">Buy now</button>
-        </span>
-    </div>
-</div>
-<div class="food-lists-container-content">
-    <div class="others_details">
-        <img src="/Images/jellof-rice.png" alt="">
-        <span id="category_price">
-            <h4>Jollof Rice</h4>
-            <p>N5,000</p>
-        </span>
-        <span id="desc_buy">
-            <p id="desc">Tasty village rice</p>
-            <button class="buy-now">Buy now</button>
-        </span>
-    </div>
-</div>
-<div class="food-lists-container-content">
-    <div class="others_details">
-        <img src="/Images/jellof-rice.png" alt="">
-        <span id="category_price">
-            <h4>Jollof Rice</h4>
-            <p>N5,000</p>
-        </span>
-        <span id="desc_buy">
-            <p id="desc">Tasty village rice</p>
-            <button class="buy-now">Buy now</button>
-        </span>
-    </div>
-</div>
-<div class="food-lists-container-content">
-    <div class="others_details">
-        <img src="/Images/jellof-rice.png" alt="">
-        <span id="category_price">
-            <h4>Jollof Rice</h4>
-            <p>N5,000</p>
-        </span>
-        <span id="desc_buy">
-            <p id="desc">Tasty village rice</p>
-            <button class="buy-now">Buy now</button>
-        </span>
-    </div>
-</div> -->

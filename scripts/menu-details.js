@@ -1,60 +1,105 @@
 // get the elements from the DOM
-const decrementButton = document.querySelector(".minus-btn")
-const incrementButton = document.querySelector(".plus-btn")
-const quantityValue = document.querySelector(".quantity-value")
+const dishContainer = document.querySelector('.menu-details-container-content');
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('slug');
-// console.log(myParam)
-// add the event listener to the decrementButton
-decrementButton.addEventListener("click", () => {
-   if(quantityValue.value <= 1){
-    quantityValue = 1;
-   }
-   else {
-    quantityValue.value = parseInt(quantityValue.value) - 1;
-   }
-})  
-// add the event listener to the incrementButton
+const loginButton = document.querySelector('.log-in-button');
+const cartCountElement = document.getElementById('cart-count');
 
-incrementButton.addEventListener("click", () => {
-   quantityValue.value = parseInt(quantityValue.value) + 1;
+loginButton.addEventListener("click", () => {
+    window.location.href = "/pages/auth/login.html";  // Redirect to login page
+  });
+async function fetchDishProperties() {
+   try {
+       const response = await fetch(`https://student-food-be.onrender.com/api/dishes/${myParam}`);       
+       if(response.ok){
+         console.log("response is okay")
+         const dish = await response.json();
+         displayDish(dish);
+
+         console.log(dish)
+       }else{
+           throw new Error('Network response was not ok');
+       } 
+      } catch (error) {
+       console.error('There was a problem fetching the dishes:', error);
+   }
+function displayDish(dish) {
+      const pageLeft = document.createElement('div')
+      pageLeft.setAttribute('class', 'menu-details-container-left-content')
+      pageLeft.innerHTML = `
+        <img src="${dish.imageUrl}" class="food-image" alt="${dish.title}">
+        `
+      const pageRight = document.createElement('div')
+      pageRight.setAttribute('class', 'menu-details-container-right-content')
+      pageRight.innerHTML = `
+                        <div class="">
+                            <h2 id="food-name">${dish.title}</h2>
+                            <p id="food-about">${dish.description}</p>
+                            <button class="size">Serving size: ${dish.size}</button>
+                        </div>
+                        <span id="food-price">
+                            <i class="fa-solid fa-naira-sign" style="color: #616161;"></i>
+                            <p id="price">${dish.price}</p>
+                        </span>
+                        <div class="quantity">
+                            <span class="quantity-content">
+                                <div class="sub-number number">
+                                    <button class="minus-btn" type="button">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                </div>
+                                <input class="quantity-value" type="text" value="01" id="number-of-plates">
+                                <div class="add-number number">
+                                    <button class="plus-btn" type="button">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                                <button type="submit" class="order">Order</button>
+                            </span>
+                        </div>
+      `
+      dishContainer.appendChild(pageLeft);
+      dishContainer.appendChild(pageRight);
+      const decrementButton = document.querySelector(".sub-number")
+      const incrementButton = document.querySelector(".add-number")
+      const quantityValue = document.querySelector(".quantity-value") 
+      let a = 1;
+      incrementButton.addEventListener("click", () => {
+          a++;
+          a = (a < 10) ? "0" + a : a;
+          quantityValue.value = a;
+        })
+        decrementButton.addEventListener("click", () => {
+            if(a>1){
+                a--;
+                a = (a < 10) ? "0" + a : a;
+   quantityValue.value = a;
+}
+if(a <= 1){
+    a =  "0" + a;
+}
 })
-
-
-  
+const orderButton = document.querySelector(".order")
+    orderButton.addEventListener("click", () => {
+    cartCountElement.style.visibility = "visible"
+     cartCountElement.innerText = quantityValue.value
+    
+})
+}}
+fetchDishProperties();
 // import the baseUrl from baseUrl.js
-// import { baseUrl } from "./baseUrl";// call in the dishesContainer
+// import { baseUrl } from "./baseUrl";
 const dishesContainer = document.querySelector('.food-lists-container-content-container');
-// console.log(dishesContainer);
-
-// call in the loader
-const loader = document.getElementById('loader');
-console.log(loader);
-
-// import the baseUrl from baseurl.js
-// Function to fetch dishes and display them
 async function fetchDishes() {
     try {
-        // Show loader while fetching data
-        loader.style.display = 'block';  // Ensure loader is visible after the delay
-        const response = await fetch("https://student-food-be.onrender.com/api/dishes");
-        console.log(response);
-        
+        const response = await fetch("https://student-food-be.onrender.com/api/dishes");      
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const dishes = await response.json();
-        // Once data is fetched, hide loader and display dishes
-        setTimeout(function () {
-            loader.style.display = 'none';  // Hide the loader
-        }, 3000);  // Delay of 3000ms (3 seconds)
-
-        setTimeout(function () {
             displayDishes(dishes);
-        }, 3000);  // Delay of 3000ms (3 seconds)
     } catch (error) {
         console.error('There was a problem fetching the dishes:', error);
-        loader.style.display = 'none';  // Hide loader in case of error
     }
 }
 // Function to display dishes in the HTML
@@ -109,3 +154,6 @@ function displayDishes(dishes) {
 }
 // // Fetch dishes on page load
 window.onload = fetchDishes;
+function openDetail(slug){
+   window.location.href = "menu-details.html?slug=" + slug
+}

@@ -1,4 +1,21 @@
-    const token = sessionStorage.getItem("token");
+//    for the hamburger
+let toggleButton = document.querySelector(".hamburger")
+
+toggleButton.addEventListener("click", () => {
+    show()
+})
+
+function show() {
+    toggleButton.classList.toggle("open")
+    document.querySelector(".header-nav").classList.toggle("active")
+
+
+}
+   
+   
+   
+   
+   const token = sessionStorage.getItem("token");
     const loginButton = document.querySelector('.log-in-button');  // assuming this exists on the dashboard page
     loginButton.addEventListener("click", () => {
         window.location.href = "/pages/auth/login.html";  // Redirect to login page
@@ -13,7 +30,7 @@
         const header = document.querySelector(".header-left-content")
         // Create the userIcon dynamically
         const userIcon = document.createElement('div'); 
-        // userIcon.setAttribute("class", "user-icon")    
+        userIcon.setAttribute("class", "user-icon")    
         // element.setAttribute("id", "newId");
         userIcon.innerHTML = `
                 <i class="fa-solid fa-user" style="color: #fff;"></i>        
@@ -69,7 +86,7 @@ window.onclick = function(event) {
 
 // for the dropdown
 // document.addEventListener("DOMContentLoaded", () => {
-    // const user_icon = document.querySelector(".user-icon");
+    const user_icon = document.querySelector(".user-icon");
     // console.log(user_icon)
     
   

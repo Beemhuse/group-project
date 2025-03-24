@@ -21,8 +21,7 @@ passwordIcon.onclick = (e) => {
         passwordIcon.classList.add("fa-eye-slash")++;
     }
 };
-// Importing the base URL for API requests
-// import { baseUrl } from "./baseUrl.js"; // importing the baseUrl from baseurl.js
+
 // Function to handle signup form submission
 async function handleSignup(event) {
   event.preventDefault(); // Prevent form submission

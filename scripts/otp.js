@@ -1,110 +1,106 @@
-let otpErrorMessage = document.querySelector(".code-error-message")
+let otpErrorMessage = document.querySelector(".code-error-message");
 let messageContainer = document.getElementById("message-container");
 let messageText = document.getElementById("message");
 let messageIcon = document.getElementById("message-icon");
-// Import to baseUrl
-import { baseUrl } from "./baseUrl.js";
+let otpButton = document.getElementById('send-button')
+console.log(otpButton);
+
+
 // on document load
-document.addEventListener("DOMContentLoaded", () => {
-const otpInputs = document.querySelectorAll('input[type="text"]');
-const otpForm = document.querySelector(".otp-password-form");
-// const otpInput = document.getElementById("otp");
-// Focus control between OTP inputs
-otpInputs.forEach((input, index) => {
-  input.addEventListener("input", () => {
-    if (input.value.length === input.maxLength && index < otpInputs.length - 1) {
-      otpInputs[index + 1].focus();
-    } else if (input.value === "" && index > 0) {
-      otpInputs[index - 1].focus();
-    }
-  });
+document.addEventListener("DOMContentLoaded", (e) => {
+  e.preventDefault()
+  // Select all OTP input elements
+  const otpInputs = document.querySelectorAll('input[type="text"]');
+  const loader = document.getElementById('loader');
+  const otpButtonText = document.getElementById('send-otp-button-text');
 
-  input.addEventListener("keydown", (event) => {
-    if (event.key === "Backspace" && input.value === "" && index > 0) {
-      otpInputs[index - 1].focus();
-      otpInputs[index - 1].value = "";
-    } else if (event.key === "Delete" && input.value === "" && index < otpInputs.length - 1) {
-      otpInputs[index + 1].focus();
-    }
-  });
-});
-
-
-    // Form submission handler
-    otpForm.addEventListener("submit", async (event) => {
-      event.preventDefault(); // Prevent default form submission behavior        
-    // Gather OTP values
-    const otp = Array.from(otpInputs).map(input => input.value).join("");
-    if (otp.length !== 6) {
-        otpErrorMessage.innerHTML = "Please enter the six digit code sent to your email";
-             // Make all the OTP input borders red if they're not filled correctly
-             otpInputs.forEach(input => {
-              if (input.value === "" || input.value.length !== 1) {
-                  input.style.border = "1px solid red";
-              } 
-          });
-        return;
+  // Add event listeners to each input field for input handling
+  otpInputs.forEach((input, index) => {
+    input.addEventListener('input', () => {
+      // Move to the next input after entering a digit
+      if (input.value.length === 1 && index < otpInputs.length - 1) {
+        otpInputs[index + 1].focus();
       }
-    const email = localStorage.getItem("email")
-      const userData = {
-        otp,
-        email,
+      checkOTP(otpInputs, loader, otpButtonText);  // Check if the OTP is fully filled and trigger action
+    });
+
+    // Move focus back on backspace
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Backspace' && index > 0 && input.value === '') {
+        otpInputs[index - 1].focus();
+      }
+    });
+  });
+
+  // Function to check if all OTP inputs are filled and automatically trigger OTP submission
+  function checkOTP(otpInputs, loader, otpButtonText) {
+    const otp = Array.from(otpInputs).map(input => input.value).join('');
+    if (otp.length === 6) {
+      // OTP is fully filled, trigger the action
+    otpButton.disabled = otp.length == 6;  // Disable button if not all inputs are filled
+
+      sendOTP(otp, loader, otpButtonText);  // Replace with your actual function to send the OTP
+    }
+  }
+
+  // Your custom function to handle OTP submission automatically
+  async function sendOTP(otp, loader, otpButtonText) {
+    const email = localStorage.getItem("email");
+    console.log(email);  // You can remove this in production
+
+    const userData = {
+      otp,
+      email,
     };
-    const otpButton = document.getElementById('send-button');
-    const loader = document.getElementById('loader');
-    const otpButtonText = document.getElementById('send-otp-button-text');
-    // effect of the button, it's textcontent and the loader
-    otpButton.disabled = true;
-    loader.style.display = 'inline-block';
+
+    // Disable the button, show loader, and hide button text while waiting
     otpButtonText.style.visibility = 'hidden';
-    // try the baseurl
-      try {
-        // Call the API to verify OTP
-        const response = await fetch(`${baseUrl}/api/verify-otp`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(userData),
-        });
-        const data = await response.json();
-        // Handle API response
-        if (response.ok) {
-            // otpInput.style.border = "green";
-          showMessage("Successful!", "success");
-          setTimeout(() => {
-            window.location.href = "/pages/auth/reset.html"; 
-          }, 2000); 
-          messageContainer.style.transition = 'right 3s ease-out';  // Smooth transition   
-          } else {
-            otpInputs.style.border = "red";
-            showMessage("Wrong OTP", "error");
-            otpButton.disabled = false;
-            loader.style.display = 'none';
-            otpButtonText.style.visibility = 'visible';
-          }
-        } catch (error) {
-            console.error('Otp error:', error);
-            showMessage("Wrong OTP", "error");
-            otpButton.disabled = false;
-            loader.style.display = 'none';
-            otpButtonText.style.visibility = 'visible';
-        }
-   })
-});
-// Show the slide-in message
-function showMessage(message, type) {
-  messageText.textContent = message;
-  messageContainer.classList.remove('hidden');
-  messageContainer.classList.add('show'); // Add the success or error class
-  messageIcon.className = `fas ${type === 'success' ? 'fa-check-circle' : 'fa-circle-exclamation'}`;
-  messageIcon.style.color = type === 'success' ? '#219653' : '#f41010'; // Green for success, red for error
-  // Hide the message after 3 seconds
-  setTimeout(() => {
+    loader.style.display = 'inline-block';
+
+    try {
+      // Call the API to verify OTP
+      const response = await fetch('https://student-food-be.onrender.com/api/verify-otp', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+
+      const data = await response.json();
+      
+      if (response.ok) {
+        showMessage("OTP verification successful!", "success");
+        setTimeout(() => {
+          window.location.href = "/pages/auth/reset.html";  // Redirect to reset page
+        }, 2000);
+      } else {
+        showMessage("Wrong OTP, please try again.", "error");
+        loader.style.display = 'none';
+        otpButtonText.style.visibility = 'visible';
+      }
+    } catch (error) {
+      console.error('OTP verification error:', error);
+      showMessage("Something went wrong. Please try again later.", "error");
+      loader.style.display = 'none';
+      otpButtonText.style.visibility = 'visible';
+    }
+  }
+
+  // Show the slide-in message
+  function showMessage(message, type) {
+    messageText.textContent = message;
+    messageContainer.classList.remove('hidden');
+    messageContainer.classList.add('show');
+    messageIcon.className = `fas ${type === 'success' ? 'fa-check-circle' : 'fa-circle-exclamation'}`;
+    messageIcon.style.color = type === 'success' ? '#219653' : '#f41010'; // Green for success, red for error
+    
+    // Hide the message after 3 seconds
+    setTimeout(() => {
       messageContainer.classList.remove('show');
       setTimeout(() => {
-          messageContainer.classList.add('hidden');
+        messageContainer.classList.add('hidden');
       }, 1000);
-  }, 3000);
-}
-
+    }, 3000);
+  }
+});
