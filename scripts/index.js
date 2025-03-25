@@ -37,10 +37,14 @@ if (loginButton) {
 
 
 if (token) {
+    signUpButtons.forEach(button => {
+        button.style.display = 'none'; // Hide the sign-up button
+    });
     // If the user is logged in, hide login button and show user icon
     if (loginButton) {
         loginButton.style.display = 'none'; // Hide the login button
     }
+
 
 
     const header = document.querySelector(".header-left-content")
@@ -77,6 +81,7 @@ if (token) {
     // When the user clicks the cancel button, close the modal
     cancelLogout.onclick = function () {
         logoutModal.style.visibility = "hidden";
+        closeDropDown()
     }
 
     // When the user clicks the confirm button, log the user out (or add your logout logic here)
@@ -90,9 +95,12 @@ if (token) {
     window.onclick = function (event) {
         if (event.target === logoutModal) {
             logoutModal.style.visibility = "hidden";
+            closeDropDown()
         }
     }
-
+ function closeDropDown(){
+     dropdownMenu.style.transform = "scale(0)"
+ }
     // const logoutButton = document.getElementById('logout-btn');
     // logoutButton.addEventListener('click', () => {
     //     sessionStorage.removeItem('token');  // Remove the token on logout
