@@ -51,7 +51,7 @@ async function handleLogin(event) {
             sessionStorage.setItem("token", result.token); // Store token for authentication
             showMessage("Login successful!", "success");
             setTimeout(() => {
-                window.location.href = "./index.html"; // Redirect to dashboard
+                window.location.href = "/index.html"; //  direct to dashboard
             }, 1200); 
             messageContainer.style.transition = 'right 3s ease-out';  // Smooth transition   
         } else {
