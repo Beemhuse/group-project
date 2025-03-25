@@ -1,7 +1,4 @@
-import { baseUrl } from "../scripts/baseurl.js";
-console.log(baseUrl);
-
-
+ 
 
 document.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
@@ -12,7 +9,7 @@ const loader = document.getElementById("loader");
     async function getDishes() {
       try {
          loader.style.display = "block";
-        const response = await fetch(`${baseUrl}/api/dishes`, {
+        const response = await fetch(`https://student-food-be.onrender.com/api/dishes`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -61,13 +58,14 @@ const loader = document.getElementById("loader");
                         </div>`;
 
           container.appendChild(menu);
+          menu.addEventListener("click", () => openDetails(result.slug.current))
           
         });
       }
    
       async function getDishesCategory() {
         try {
-          const response = await fetch(`${baseUrl}/api/category`, {
+          const response = await fetch(`https://student-food-be.onrender.com/api/category`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
@@ -120,6 +118,9 @@ const loader = document.getElementById("loader");
     const filteredDishes = categories === 'All'? dishData : dishData.filter((dish) => dish.category?.title?.toLowerCase() === categories.toLowerCase());
    displayDishes(filteredDishes);
   
+  }
+  function openDetails(slug){
+    window.location.href = `menu-details.html?slug=${slug}`;
   }
 });
 

@@ -1,5 +1,4 @@
-import { baseUrl } from "../scripts/baseurl.js";
-console.log(baseUrl);
+ 
 
 // Fetching the data from the API
 document.addEventListener("DOMContentLoaded", () => {
@@ -9,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     try {
-      const response = await fetch(`${baseUrl}/api/contact`, {
+      const response = await fetch(`https://student-food-be.onrender.com/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -26,12 +25,18 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       } else {
-       
-        alert(result.message || "Message Sent");
+        let message = document.getElementById("message-sent")
+        message.innerHTML = "Message Sent succeffully!";
+        message.style.display = "block";
+        setTimeout(() => {
+          message.style.display = "none";
+            contactForm.reset();
+
+        }, 2000);  
+      
 
       }
 
-      window.location.href = "../index.html";
 
     } catch (error) {
       console.error("Error:", error);
