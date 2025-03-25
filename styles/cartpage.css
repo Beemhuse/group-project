@@ -22,7 +22,6 @@ body {
     font-weight: bold;
     text-align: center;
     box-shadow: 0px 1px 5px 5px rgba(199, 199, 199, 0.2);
-    ;
 
 }
 
@@ -37,10 +36,9 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 1px 5px 5px rgba(199, 199, 199, 0.2);
-    ;
 }
 
-#dishes-title {
+.dishes-title {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -71,6 +69,11 @@ body {
     border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
+}
+.dish-image{
+    width: 50px;
+    height: 50px;
+    
 }
 
 #shop-btn {
@@ -152,7 +155,7 @@ body {
         margin-top: 0;
     }
 
-    .orders {
+    #orders {
         flex-direction: column;
         width: 50%;
         margin-left: 0;
