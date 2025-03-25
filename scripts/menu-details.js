@@ -4,7 +4,10 @@ const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('slug');
 const loginButton = document.querySelector('.log-in-button');
 const cartCountElement = document.getElementById('cart-count');
-let a = 1;
+const cartIcon = document.querySelector('.fa-cart-shopping');
+console.log(cartIcon);
+
+// let a = 1;
 
 loginButton.addEventListener("click", () => {
     window.location.href = "/pages/auth/login.html";  // Redirect to login page
@@ -112,8 +115,8 @@ function displayDish(dish) {
 // Function to update cart count
 function updateCartCount() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-
+    // let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    let totalItems = cart.length;
     cartCountElement.style.visibility = totalItems > 0 ? "visible" : "hidden";
     cartCountElement.innerText = totalItems;
 }
@@ -128,7 +131,9 @@ function updateCartQuantity(slug, newQuantity) {
     }
     updateCartCount();
 }
-
+cartIcon.addEventListener('click',() => {
+    window.location.href = "/pages/cartpage.html"; // direct to cartpage
+})
 // Fetch dishes for menu list
 const dishesContainer = document.querySelector('.food-lists-container-content-container');
 async function fetchDishes() {

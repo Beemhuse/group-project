@@ -16,10 +16,26 @@ function show() {
 
 
 const token = sessionStorage.getItem("token");
-const loginButton = document.querySelector('.log-in-button');  // assuming this exists on the dashboard page
-loginButton.addEventListener("click", () => {
-    window.location.href = "/pages/auth/login.html";  // Redirect to login page
+// Get all elements with the class 'log-in-button'
+// Select the login and sign-up buttons
+const loginButton = document.querySelector('.log-in-button');
+const signUpButtons = document.querySelectorAll('.sign-up-button');
+
+// Add event listeners to the login buttons
+signUpButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        window.location.href = "/pages/auth/signup.html";  // Redirect to the login page
+    });
 });
+
+// Add event listener to the sign-up button
+if (loginButton) {
+    loginButton.addEventListener("click", () => {
+        window.location.href = "/pages/auth/login.html";  // Redirect to the signup page
+    });
+}
+
+
 if (token) {
     // If the user is logged in, hide login button and show user icon
     if (loginButton) {

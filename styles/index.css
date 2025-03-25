@@ -120,7 +120,7 @@
   align-items: center;
   gap: 20px;
 }
-.log-in-button{
+.sign-up-button{
   padding: 12px;
   width: 100px;
   border-radius: 18px;
@@ -381,8 +381,11 @@ i{
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-.mobile{
-  /* display: none; */
+#sign-up-mobile{
+  display: none;
+}
+#login-mobile{
+  display: none;
 }
 /* MOBILE RESPONSIVENESS */
 @media screen and (max-width: 600px){
@@ -452,10 +455,14 @@ i{
 .header-nav.active{
     right: 0;
 } 
-.log-in-button{
+.sign-up-button{
   display: none;
 }
-.mobile{
+#sign-up-mobile{
+  display: block;
+  padding: 8px;
+}
+#login-mobile{
   display: block;
   padding: 8px;
   width: 100px;
