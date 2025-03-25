@@ -113,18 +113,15 @@ button{
     color: #9CA3AF;
     transition: color 0.3s ease;
     margin-bottom: 30px; 
-    text-decoration: underline; 
 }
 #sign-up-opt:focus{
     outline: none;
 }
 #sign-up-opt a{
     color: #34A853;
-    text-decoration: none;
     cursor: pointer; 
     font-weight: 500;
     margin-left: 5px;
-    text-decoration: none; 
 }
 #sign-up-opt a:hover{
     color: #219653;
