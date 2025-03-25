@@ -4,6 +4,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('slug');
 const loginButton = document.querySelector('.log-in-button');
 const cartCountElement = document.getElementById('cart-count');
+let a = 1;
 
 loginButton.addEventListener("click", () => {
     window.location.href = "/pages/auth/login.html";  // Redirect to login page
