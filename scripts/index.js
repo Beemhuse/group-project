@@ -1,6 +1,7 @@
 //    for the hamburger
 let toggleButton = document.querySelector(".hamburger")
-
+const userIcon = document.getElementById('user-icon')
+const dropdownMenu = document.querySelector('.dropdown-menu')
 toggleButton.addEventListener("click", () => {
     show()
 })
@@ -37,31 +38,23 @@ if (loginButton) {
 
 
 if (token) {
+    signUpButtons.forEach(button => {
+        button.style.display = 'none'; // Hide the sign-up button
+    });
     // If the user is logged in, hide login button and show user icon
     if (loginButton) {
         loginButton.style.display = 'none'; // Hide the login button
     }
-
-
-    const header = document.querySelector(".header-left-content")
-    // Create the userIcon dynamically
-    const userIcon = document.createElement('div');
-    userIcon.setAttribute("class", "user-icon")
-    // element.setAttribute("id", "newId");
-    userIcon.innerHTML = `
-                <i class="fa-solid fa-user" style="color: #fff;"></i>        
-        `
-    userIcon.classList.add('user')
-    header.appendChild(userIcon)
-    const dropdownMenu = document.getElementById("dropdownMenu");
-    dropdownMenu.style.transform = "scale(0)"
-
-    // // Toggle dropdown menu when user icon is clicked
+    userIcon.style.display = 'block' 
+    let userIconStyle = document.createElement('div')     
+    userIconStyle.setAttribute('class', 'user')
+    const headerLeftContent = document.querySelector('.header-left-content')
+    headerLeftContent.appendChild(userIconStyle)
+    userIconStyle.appendChild(userIcon)
     userIcon.addEventListener("click", (event) => {
+        dropdownMenu.classList.toggle('showDropdown')
         // Prevent the click event from bubbling up to the document
-        event.stopPropagation();
-        const isVisible = dropdownMenu.style.transform === "scale(0)";
-        dropdownMenu.style.transform = isVisible ? "scale(1)" : "scale(0)";
+        // event.stopPropagation();
     });
     // // Add logout functionality
     // Get the logout modal and the buttons
@@ -77,6 +70,7 @@ if (token) {
     // When the user clicks the cancel button, close the modal
     cancelLogout.onclick = function () {
         logoutModal.style.visibility = "hidden";
+        closeDropDown()
     }
 
     // When the user clicks the confirm button, log the user out (or add your logout logic here)
@@ -90,9 +84,12 @@ if (token) {
     window.onclick = function (event) {
         if (event.target === logoutModal) {
             logoutModal.style.visibility = "hidden";
+            closeDropDown()
         }
     }
-
+ function closeDropDown(){
+     dropdownMenu.style.transform = "scale(0)"
+ }
     // const logoutButton = document.getElementById('logout-btn');
     // logoutButton.addEventListener('click', () => {
     //     sessionStorage.removeItem('token');  // Remove the token on logout
