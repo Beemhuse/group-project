@@ -24,9 +24,9 @@
             </div>
             <nav class="header-nav">
                 <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./pages/menu.html">Our Menu</a></li>
-                    <li><a href="./pages/contact.html">Contact Us</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/menu.html">Our Menu</a></li>
+                    <li><a href="../pages/contact.html">Contact Us</a></li>
                 </ul>
             </nav>
             <div class="header-left-content">
@@ -47,17 +47,36 @@
             <button class="available-dishes">Pastries </button>
         </div>
 
-        <div id="order-details">
-            <p>Product</p>
-            <p>Price</p>
-            <p>Quantity</p>
-            <p>Subtotal</p>
-        </div>
+      
 
         <div id="order-in-your-cart">
+            <div id="order-details">
+                <p>Product</p>
+                <p>Price</p>
+                <p>Quantity</p>
+                <p>Subtotal</p>
+            </div>
+            <div class="orders">
+                <div id="dishes-title">
+                    <i class="fa-solid fa-trash"></i>
+                    <img src="../Images/menu_images/Jollof_Rice.png" width="50px" alt="">
+                    <p>jollof rice</p>
+                </div>
+                <div id="dish-price">
+                   <span>20000</span>
+                </div>
+                <div id="add-more-dishes">
+                    <div id="remove-dish"> <i class="fa-solid fa-minus"></i></div>
+                    <input type="text" value="01" id="quantity-value">
+                    <div id="add-dish"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div id="dish-subtotal">
+                    <span>20000</span>
+                </div>
 
-            <button id="shop-btn" type="submit">Return to Shop</button>
+            </div>
         </div>
+        <button id="shop-btn" type="submit">Return to Shop</button>
         <div id="cart-summary">
             <h2>Cart Total</h2>
             <div id="subtotal">
@@ -67,7 +86,8 @@
             <hr>
             <div id="shipping">
                 <p>Shipping:</p>
-                <textarea name="shipping" id="shipping" cols="25" rows="3" placeholder="Enter your address to view shipping options"></textarea>
+                <textarea name="shipping" id="shipping" cols="25" rows="3"
+                    placeholder="Enter your address to view shipping options"></textarea>
             </div>
             <hr>
 
@@ -121,6 +141,7 @@
             </div>
         </div>
     </footer>
+    <script src="../scripts/cartpage.js"></script>
 
 </body>
 
