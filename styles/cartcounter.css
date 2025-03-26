@@ -6,10 +6,10 @@
 .cart-container{
     position: relative;
 }
-.header-left-content .cart-count {
+.cart-count {
     position: absolute;
-    top: -15px;
-    right: -10px; 
+    top: 17px;
+    right: 10.2%; 
     background-color: red; 
     height:20px;
     width: 5px;
@@ -22,5 +22,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    visibility: hidden;
+    /* visibility: hidden; */
 }
