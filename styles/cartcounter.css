@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cart-container{
+    position: relative;
+}
+.header-left-content .cart-count {
+    position: absolute;
+    top: -15px;
+    right: -10px;  /* Position it on the right side */
+    background-color: red;  /* Red background */
+    height:20px;
+    width: 5px;
+    color: white;  /* White text color */
+    border-radius: 50%;  /* Circle shape */
+    padding: 2px 8px;  /* Space inside the circle */
+    font-size: 8px; 
+    font-weight: bold;  /* Bold font */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+  }
