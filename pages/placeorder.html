@@ -13,50 +13,64 @@
 
                               <!--SHEDRACH-->
 <body>
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="/Images/Eudia-logo.png" alt="">
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./pages/menu.html">Our Menu</a></li>
+                    <li><a href="./pages/contact.html">Contact Us</a></li>
+                    <button class="sign-up-button" id="sign-up-mobile">Sign In</button>
+                    <button class="log-in-button" id="login-mobile">Log In</button>
 
-    <nav id="navbar">
-        <div class="nav-logo">
-            <img src="/Images/Eudia-logo.png" alt="Eudia logo" />
+                </ul>
+            </nav>
+            <div class="header-left-content">
+                <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+                <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
+                <!-- <div class="user"> -->
+                    <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
+                <!-- </div> -->
+
+                <button class="sign-up-button">Sign In</button>
+            </div>
+            <button class="hamburger">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </button>
         </div>
-
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Our Menu</a></li>
-            <li><a href="#">Contact Us</a></li>
-        </ul>
-
-        <ul class="nav-icons">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <i class="fa-solid fa-user-plus "></i>
-            <li><a href="#" style="border-radius: 5px; border: 1px solid green;">Log In</a></li>
-        </ul>
-
-            <ul id="login">
-            <li><a href="#" style="border-radius: 5px; border: 1px solid green;">Log In</a></li>
+        <!-- Logout Modal -->
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+                <h3>Are you sure you want to log out?</h3>
+                <button id="confirmLogout">Yes</button>
+                <button id="cancelLogout">No</button>
+            </div>
+        </div>
+        <!-- userIcon onclick dropdown -->
+        <div class="dropdown-menu" id="dropdownMenu">
+            <ul>
+                <li>
+                    <a href="/dashboard.html" id="dashboardLink">
+                        <i class="fa-solid fa-user-tie" style="color: #fff;" id="menu-icon"></i>Dashboard
+                    </a>
+                </li>
+                <li><a href="#" id="logoutLink">
+                        <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;" id="menu-icon"></i>Logout
+                    </a>
+                </li>
             </ul>
-    </nav>
-
-<!--
-        <nav>
-        <div class="navdiv" style="display: flex;">
-            <img src="../images/logo.png" alt="">
-
-            <div class="navlinks" style="display: flex;">
-                <a href="">Home</a>
-                <a href="">Our Menu</a>
-                <a href="">Contact Us</a>
-            </div>
-    
-            <div class="navicons">
-                <i class="fa-regular fa-cart-shopping"></i>
-                <i class="fa-light fa-bag-shopping"></i>
-                <i class="fa-light fa-user"></i>
-            </div>
         </div>
-    </nav>
--->
+    </header>
 
-    <nav>
+    
+    
+    
+    <main>
         <div id="button-links-div"> 
             <a href="" class="button-links" id="rice-dishes">Rice Dishes</a>
             <a href="" class="button-links" id="protein">Protein</a>
@@ -67,10 +81,6 @@
             <a href="" class="button-links" id="drinks">Drinks</a>
             <a href="" class="button-links" id="others">Others</a>
         </div>
-    </nav>
-
-
-    <main>
 
         <div class="maindiv">
 
