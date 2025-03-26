@@ -1,4 +1,7 @@
 // Get elements from the DOM
+let messageContainer = document.getElementById("message-container");
+let messageText = document.getElementById("message");
+let messageIcon = document.getElementById("message-icon");
 const dishContainer = document.querySelector('.menu-details-container-content');
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('slug');
@@ -90,26 +93,57 @@ function displayDish(dish) {
         }
     });
 
+    // orderButton.addEventListener("click", () => {
+    //     let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    //     // Check if the item already exists in the cart
+    //     const existingItem = cart.find(item => item.slug === myParam);
+    //     if (existingItem) {
+    //         existingItem.quantity = parseInt(quantityValue.value, 10);
+    //     } else {
+    //         cart.push({
+    //             slug: myParam,
+    //             title: dish.title,
+    //             price: dish.price,
+    //             imageUrl: dish.imageUrl,
+    //             quantity: parseInt(quantityValue.value, 10),
+    //         });
+    //     }
+
+    //     localStorage.setItem("cart", JSON.stringify(cart));
+    //     updateCartCount();
+    // });
     orderButton.addEventListener("click", () => {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
+    
         // Check if the item already exists in the cart
         const existingItem = cart.find(item => item.slug === myParam);
-        if (existingItem) {
-            existingItem.quantity = parseInt(quantityValue.value, 10);
-        } else {
-            cart.push({
-                slug: myParam,
-                title: dish.title,
-                price: dish.price,
-                imageUrl: dish.imageUrl,
-                quantity: parseInt(quantityValue.value, 10),
-            });
+        try {
+            if (existingItem) {
+                existingItem.quantity = parseInt(quantityValue.value, 10);
+            } else {
+                cart.push({
+                    slug: myParam,
+                    title: dish.title,
+                    price: dish.price,
+                    imageUrl: dish.imageUrl,
+                    quantity: parseInt(quantityValue.value, 10),
+                });
+            }
+    
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+    
+            // Show success alert
+            showMessage(`${dish.title} successfullly added to cart`, "success");
+            
+        } catch (error) {
+            // Show error alert if there's an issue
+            showMessage('Failed to add to cart', "error");
+            console.error("Error adding to cart:", error);
         }
-
-        localStorage.setItem("cart", JSON.stringify(cart));
-        updateCartCount();
     });
+    
 }
 
 // Function to update cart count
@@ -208,3 +242,19 @@ window.onload = () => {
     fetchDishProperties();
     updateCartCount();
 };
+
+
+function showMessage(message, type) {
+    messageText.textContent = message;
+    messageContainer.classList.remove('hidden');
+    messageContainer.classList.add('show'); // Add the success or error class
+    messageIcon.className = `fas ${type === 'success' ? 'fa-check-circle' : 'fa-circle-exclamation'}`;
+    messageIcon.style.color = type === 'success' ? '#219653' : '#f41010'; // Green for success, red for error
+    // Hide the message after 3 seconds
+    setTimeout(() => {
+        messageContainer.classList.remove('show');
+        setTimeout(() => {
+            messageContainer.classList.add('hidden');
+        }, 1000);
+    }, 3000);
+}

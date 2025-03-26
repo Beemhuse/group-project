@@ -51,7 +51,7 @@
         .catch(error => {
             // Handle network or server errors
             console.log('Network or server error:', error);
-            showMessage("Otp sent unsuccessful", "error");
+            showMessage("Oops! Something went wrong while sending the OTP. Please try again.", "error");
             sendOtpButton.disabled = false;
             loader.style.display = 'none';
             btnText.style.visibility = 'visible';
