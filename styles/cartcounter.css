@@ -1,7 +1,7 @@
 .cart-container{
     position: relative;
 }
-.header-left-content .cart-count {
+.cart-count {
     position: absolute;
     top: -15px;
     right: -10px; 
