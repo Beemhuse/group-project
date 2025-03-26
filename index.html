@@ -9,6 +9,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/styles/index.css">
     <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/access.css">
+    <link rel="stylesheet" href="/styles/cartcounter.css">
 
     <title>Euodia</title>
 </head>
@@ -31,6 +33,7 @@
             </nav>
             <div class="header-left-content">
                 <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+                <span id="cart-count" class="cart-count"></span>
                 <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
                 <div class="user">
                     <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
@@ -211,7 +214,9 @@
             </div>
         </div>
     </footer>
-    <script type="module" src="/scripts/index.js"></script>
+    <script src="/scripts/index.js"></script>
+    <script src="/scripts/access.js"></script>
+    
 
 </body>
 

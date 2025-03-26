@@ -1,8 +1,7 @@
 const dishesContainer = document.querySelector('.best-seller-dishes-container-content-container');
 const loader = document.getElementById('loader');
 let loading = false;
-const token = sessionStorage.getItem("token");
-
+    
 async function fetchDishes() {
     try {
         // Show loader while fetching data

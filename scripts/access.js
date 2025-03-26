@@ -7,7 +7,11 @@ const cancelLogout = document.getElementById("cancelLogout");
 const confirmLogout = document.getElementById("confirmLogout");
 const loginButton = document.querySelector('.log-in-button');
 const signUpButtons = document.querySelectorAll('.sign-up-button');
+console.log(signUpButtons);
+
 const user_icon = document.querySelector(".user-icon");
+const token = sessionStorage.getItem("token");
+
 
 logoutBtn.onclick = function () {
     logoutModal.style.visibility = "visible";
