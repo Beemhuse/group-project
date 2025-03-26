@@ -139,4 +139,9 @@ header{
 i{
   cursor: pointer;
 }
-/* ORDER SECTION */
+#sign-up-mobile{
+    display: none;
+  }
+  #login-mobile{
+    display: none;
+  }

@@ -7,6 +7,8 @@ const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('slug');
 const loginButton = document.querySelector('.log-in-button');
 const cartCountElement = document.getElementById('cart-count');
+console.log(cartCountElement);
+
 const cartIcon = document.querySelector('.fa-cart-shopping');
 console.log(cartIcon);
 
@@ -92,27 +94,6 @@ function displayDish(dish) {
             updateCartQuantity(myParam, parseInt(a, 10));
         }
     });
-
-    // orderButton.addEventListener("click", () => {
-    //     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    //     // Check if the item already exists in the cart
-    //     const existingItem = cart.find(item => item.slug === myParam);
-    //     if (existingItem) {
-    //         existingItem.quantity = parseInt(quantityValue.value, 10);
-    //     } else {
-    //         cart.push({
-    //             slug: myParam,
-    //             title: dish.title,
-    //             price: dish.price,
-    //             imageUrl: dish.imageUrl,
-    //             quantity: parseInt(quantityValue.value, 10),
-    //         });
-    //     }
-
-    //     localStorage.setItem("cart", JSON.stringify(cart));
-    //     updateCartCount();
-    // });
     orderButton.addEventListener("click", () => {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
     

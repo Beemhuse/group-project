@@ -9,6 +9,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../styles/placeorder.css">
     <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/access.css">
+    <!-- <link rel="stylesheet" href="../styles/cartcounter.css"> -->
     <title>cart</title>
 </head>
 
@@ -22,9 +24,9 @@
             </div>
             <nav class="header-nav">
                 <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./pages/menu.html">Our Menu</a></li>
-                    <li><a href="./pages/contact.html">Contact Us</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/menu.html">Our Menu</a></li>
+                    <li><a href="../pages/contact.html">Contact Us</a></li>
                     <button class="sign-up-button" id="sign-up-mobile">Sign In</button>
                     <button class="log-in-button" id="login-mobile">Log In</button>
 
@@ -32,10 +34,11 @@
             </nav>
             <div class="header-left-content">
                 <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+                <span id="cart-count" class="cart-count"></span>
                 <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
-                <!-- <div class="user"> -->
-                <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
-                <!-- </div> -->
+                <div class="user">
+                    <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
+                </div>
 
                 <button class="sign-up-button">Sign In</button>
             </div>
@@ -73,12 +76,16 @@
         <div id="container">
             <div id="form-container">
                 <form action="">
-                    <label for="fullname">Full Name</label><br>
-                    <input type="text" id="fullname" required><br>
+                    <div>
+                        <label for="fullname">Full Name</label><br>
+                        <input type="text" id="fullname" required><br>
+                    </div>
 
-                    <label for="address">Street Address</label><br>
-                    <input type="text" id="address" required><br> <br>
-                    <input type="text" required><br>
+                    <div>
+                        <label for="address">Street Address</label><br>
+                        <input type="text" id="address" required><br>
+                        <input type="text" required><br>
+                    </div>
 
                     <label for="apartment">Apartment,Floor,etc. (Optional)</label><br>
                     <input type="text" id="apartment" required><br>
@@ -93,7 +100,7 @@
                     <input type="email" id="email" required>
 
                     <h3>ORDER NOTES (OPTIONAL)</h3>
-                    <textarea name="" id="Order Note" cols="25" rows="3"
+                    <textarea name="" id="Order Note" cols="50" rows="10"
                         placeholder="Special notes about your orders, e.g. special notes for delivery"></textarea>
 
                 </form>
@@ -118,7 +125,7 @@
                         <label>$15,000.00</label> -->
                 </div>
                 <div id="cart-summary">
-                     
+
                     <div id="subtotal">
                         <p>Subtotal:</p>
                         <span id="subtotalgap"> </span>
@@ -163,7 +170,7 @@
                     <div class="payment-card">
                         <img src="/images/menu_images/paystack-wc 1.png" alt="">
                     </div>
-                    <button id="place-order-btn" >Place Order</button>
+                    <button id="place-order-btn">Place Order</button>
                 </div>
             </div>
         </div>
@@ -236,6 +243,7 @@
     </footer>
 
     <script src="./scripts/checkout.js"></script>
+    <script src="../scripts/access.js"></script>
 </body>
 
 </html>

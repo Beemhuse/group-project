@@ -36,28 +36,28 @@
     gap: 20px;
     
 }
-.cart-container{
+/* .cart-container{
     position: relative;
   }
   .header-left-content .cart-count {
     position: absolute;
     top: -15px;
-    right: -10px;  /* Position it on the right side */
-    background-color: red;  /* Red background */
+    right: -10px; 
+    background-color: red;  
     height:20px;
     width: 5px;
-    color: white;  /* White text color */
-    border-radius: 50%;  /* Circle shape */
-    padding: 2px 8px;  /* Space inside the circle */
+    color: white;  
+    border-radius: 50%;  
+    padding: 2px 8px;  
     font-size: 8px; 
-    font-weight: bold;  /* Bold font */
+    font-weight: bold; 
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     visibility: hidden;
   }
-  
+   */
   .log-in-button{
     padding: 12px;
     width: 100px;

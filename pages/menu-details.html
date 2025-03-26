@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/styles/menu-details.css">
     <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/access.css">
+    <link rel="stylesheet" href="/styles/cartcounter.css">
     <title>Menu Details</title>
 </head>
 
@@ -27,16 +29,17 @@
                     <li><a href="./pages/contact.html">Contact Us</a></li>
                     <button class="sign-up-button" id="sign-up-mobile">Sign In</button>
                     <button class="log-in-button" id="login-mobile">Log In</button>
-
                 </ul>
             </nav>
             <div class="header-left-content">
+                <div class="cart-container">
                 <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+                 <span id="cart-count" class="cart-count"></span>
+                </div>
                 <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
                 <div class="user">
                     <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
                 </div>
-
                 <button class="sign-up-button">Sign In</button>
             </div>
             <button class="hamburger">
@@ -66,6 +69,7 @@
                     </a>
                 </li>
             </ul>
+        </div>
         </div>
     </header>
     <main>
@@ -129,7 +133,7 @@
         </div>
     </footer>
     <script type="module" src="/scripts/menu-details.js"></script>
-    <script type="module" src="/scripts/Acess.js"></script>
+    <script type="module" src="/scripts/access.js"></script>
 </body>
 
 </html>

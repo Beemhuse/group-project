@@ -1,7 +1,7 @@
  *{
     padding: none;
     margin: none;
-    /* border: 1px soid green; */
+    /* border: 1px solid green; */
  }
 
  body{
@@ -9,41 +9,65 @@
     font-family: Arial, sans-serif;
 }
 #container{
-    margin: 30px;
+    margin-top: 30px;;
+    margin-left: 3%;
     display: flex;
     flex-direction:  row;
-    gap: 30px;
+    gap: 50px;
 }
 #form-container{
     width: 60%;
-    padding: 10px;
+    display: flex;
+    gap: 10px;
     background-color: white;
+}
+form{
+    width: 100%;
+
+}
+label::after{
+    content: "*";
+    color: red;
+}
+#form-container input{
+    width: 100%;
+    background-color:  #e8eaece2;
+    padding : 10px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-#form-container input{
-    background-color:  #e8eaece2;
+#form-container textarea {
+    width: 100%;
+    background-color:  #f9fafb;
     padding : 10px;
-    width: 96%;
     outline: none;
     border-radius: 5px;
     border: none;
 }
 #payment-container{
-    width: 40%;
+    width: 30%;
     padding: 10px;
+    border: 1px solid black;
     background-color: white;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-
-
-label::after{
-    content: "*";
-    color: red;
+#cart-summary{
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
+
+
+
+
 
  
 
