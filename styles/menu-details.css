@@ -235,6 +235,40 @@
     align-items: center;
     padding: 8px 10px 0 10px;
   }
+  .message-container {
+    position: fixed;
+    top: 100px;
+    right: -300px; /* Initially out of view */
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: right 1s ease-out;
+    z-index: 1000;
+}
+.message-container p {
+    margin: 0;
+    font-size: 16px;
+}
+.message-container.hidden {
+    display: none;
+}
+.message-container.show {
+    right: 20px; /* Slide in */
+}
+.message-icon.error {
+    background-color: #f44336; /* Red for error */
+}
+.message-icon.success {
+    background-color: #4CAF50; /* Green for success */
+}
+.message-container i {
+    margin-right: 10px;
+}
+
 @media screen and (max-width:600px){
     body{
         overflow-x: hidden;

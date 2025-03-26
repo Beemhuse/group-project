@@ -45,8 +45,9 @@ header{
 }
 /* dropdown */
 /* logout */
-#user-icon{
+.user{
   display: none;
+  cursor: pointer;
 }
 .modal {
   position: fixed;

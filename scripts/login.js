@@ -1,6 +1,7 @@
 // Getting the elements
 let password = document.getElementById("password");
 let passwordIcon = document.getElementById("password-icon");
+let passwordErrorMessage = document.querySelector(".password-error-message")
 let messageContainer = document.getElementById("message-container");
 let messageText = document.getElementById("message");
 let messageIcon = document.getElementById("message-icon");
@@ -10,7 +11,7 @@ let passwordInput = document.getElementById("password");
 let loginForm = document.querySelector(".login-form")
 const loader = document.getElementById('loader');
 const btnText = document.getElementById('log-in-button-text');
-// Password view
+
 passwordIcon.onclick = (e) => {
     e.preventDefault();
     if (password.type === "password") {
@@ -23,11 +24,18 @@ passwordIcon.onclick = (e) => {
         passwordIcon.classList.add("fa-eye-slash");
     }
 };
-// Consume the API
-// import { baseUrl } from "./baseUrl.js"; // importing the baseUrl from baseurl.js
-// Function to handle login form submission
 async function handleLogin(event) {
     event.preventDefault();
+    if(passwordInput.value.length < 8){
+        showMessage("Password must be 8 characters long", "error");
+        return;
+    }
+    else{
+        showMessage("Password is valid", "success");
+        loginButton.disabled = false; // Enable the login button
+        loader.style.display = 'none';
+        btnText.style.visibility = 'visible';
+    }    
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
     loginButton.disabled = true; // Disable the login button

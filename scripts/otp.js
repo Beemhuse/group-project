@@ -2,13 +2,12 @@ let otpErrorMessage = document.querySelector(".code-error-message");
 let messageContainer = document.getElementById("message-container");
 let messageText = document.getElementById("message");
 let messageIcon = document.getElementById("message-icon");
-let otpButton = document.getElementById('send-button')
+let otpButton = document.getElementById('send-button');
 console.log(otpButton);
-
 
 // on document load
 document.addEventListener("DOMContentLoaded", (e) => {
-  e.preventDefault()
+  e.preventDefault();
   // Select all OTP input elements
   const otpInputs = document.querySelectorAll('input[type="text"]');
   const loader = document.getElementById('loader');
@@ -37,8 +36,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     const otp = Array.from(otpInputs).map(input => input.value).join('');
     if (otp.length === 6) {
       // OTP is fully filled, trigger the action
-    otpButton.disabled = otp.length == 6;  // Disable button if not all inputs are filled
-
+      otpButton.disabled = otp.length === 6;  // Disable button if not all inputs are filled
       sendOTP(otp, loader, otpButtonText);  // Replace with your actual function to send the OTP
     }
   }
@@ -76,12 +74,16 @@ document.addEventListener("DOMContentLoaded", (e) => {
         }, 2000);
       } else {
         showMessage("Wrong OTP, please try again.", "error");
+        // Re-enable the button for retry
+        otpButton.disabled = false;
         loader.style.display = 'none';
         otpButtonText.style.visibility = 'visible';
       }
     } catch (error) {
       console.error('OTP verification error:', error);
       showMessage("Something went wrong. Please try again later.", "error");
+      // Re-enable the button for retry
+      otpButton.disabled = false;
       loader.style.display = 'none';
       otpButtonText.style.visibility = 'visible';
     }
@@ -103,4 +105,32 @@ document.addEventListener("DOMContentLoaded", (e) => {
       }, 1000);
     }, 3000);
   }
+
+  // Re-enable the OTP button when it is clicked to try again
+  otpButton.addEventListener('click', (e) => {
+    // Prevent the default action (if any) and ensure button click triggers the function again
+    e.preventDefault();
+
+    // Check if any OTP input field is empty
+    let isEmpty = false;
+    otpInputs.forEach(input => {
+      if (input.value === "") {
+        isEmpty = true;
+        input.style.borderColor = "red";  // Add red border to the empty input
+      } else {
+        input.style.borderColor = ""; // Remove red border if the input is filled
+      }
+    });
+
+    // If all inputs are empty, show the same red border behavior
+    if (isEmpty) {
+      showMessage("Please fill in all the OTP fields completely.", "error");
+    }
+
+    // Only proceed to send OTP if all inputs are filled
+    const otp = Array.from(otpInputs).map(input => input.value).join('');
+    if (otp.length === 6 && !isEmpty) {
+      sendOTP(otp, loader, otpButtonText);
+    }
+  });
 });
