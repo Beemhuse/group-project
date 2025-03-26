@@ -1,126 +1,8 @@
-//    for the hamburger
-let toggleButton = document.querySelector(".hamburger")
-const userIcon = document.getElementById('user-icon')
-const dropdownMenu = document.querySelector('.dropdown-menu')
-toggleButton.addEventListener("click", () => {
-    show()
-})
-
-function show() {
-    toggleButton.classList.toggle("open")
-    document.querySelector(".header-nav").classList.toggle("active")
-
-
-}
-
-
-
-
-const token = sessionStorage.getItem("token");
-// Get all elements with the class 'log-in-button'
-// Select the login and sign-up buttons
-const loginButton = document.querySelector('.log-in-button');
-const signUpButtons = document.querySelectorAll('.sign-up-button');
-
-// Add event listeners to the login buttons
-signUpButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        window.location.href = "/pages/auth/signup.html";  // Redirect to the login page
-    });
-});
-
-// Add event listener to the sign-up button
-if (loginButton) {
-    loginButton.addEventListener("click", () => {
-        window.location.href = "/pages/auth/login.html";  // Redirect to the signup page
-    });
-}
-
-
-if (token) {
-    signUpButtons.forEach(button => {
-        button.style.display = 'none'; // Hide the sign-up button
-    });
-    // If the user is logged in, hide login button and show user icon
-    if (loginButton) {
-        loginButton.style.display = 'none'; // Hide the login button
-    }
-    userIcon.style.display = 'block' 
-    let userIconStyle = document.createElement('div')     
-    userIconStyle.setAttribute('class', 'user')
-    const headerLeftContent = document.querySelector('.header-left-content')
-    headerLeftContent.appendChild(userIconStyle)
-    userIconStyle.appendChild(userIcon)
-    userIcon.addEventListener("click", (event) => {
-        dropdownMenu.classList.toggle('showDropdown')
-        // Prevent the click event from bubbling up to the document
-        // event.stopPropagation();
-    });
-    // // Add logout functionality
-    // Get the logout modal and the buttons
-    const logoutBtn = document.getElementById("logoutLink")
-    const logoutModal = document.getElementById("logoutModal");
-    const cancelLogout = document.getElementById("cancelLogout");
-    const confirmLogout = document.getElementById("confirmLogout");
-
-    // When the user clicks the logout button, open the modal
-    logoutBtn.onclick = function () {
-        logoutModal.style.visibility = "visible";
-    }
-    // When the user clicks the cancel button, close the modal
-    cancelLogout.onclick = function () {
-        logoutModal.style.visibility = "hidden";
-        closeDropDown()
-    }
-
-    // When the user clicks the confirm button, log the user out (or add your logout logic here)
-    confirmLogout.onclick = function () {
-        // Here you can add your actual logout logic, like redirecting the user or clearing session storage
-        sessionStorage.removeItem('token');  // Remove the token on logout
-        location.reload(); // Reload the page to reset UI
-        // logoutModal.style.display = "none";
-    }
-    // When the user clicks anywhere outside the modal, close it
-    window.onclick = function (event) {
-        if (event.target === logoutModal) {
-            logoutModal.style.visibility = "hidden";
-            closeDropDown()
-        }
-    }
- function closeDropDown(){
-     dropdownMenu.style.transform = "scale(0)"
- }
-    // const logoutButton = document.getElementById('logout-btn');
-    // logoutButton.addEventListener('click', () => {
-    //     sessionStorage.removeItem('token');  // Remove the token on logout
-    //     location.reload(); // Reload the page to reset UI
-    // });
-}
-
-// for the dropdown
-// document.addEventListener("DOMContentLoaded", () => {
-const user_icon = document.querySelector(".user-icon");
-// console.log(user_icon)
-
-
-// // Close dropdown when clicking outside the user icon or menu
-// document.addEventListener("click", (event) => {
-//   if (!user_icon.contains(event.target) && !dropdownMenu.contains(event.target)) {
-//     dropdownMenu.style.display = "none";
-//   }
-// });
-
-
-
-// import the baseUrl from baseUrl.js
-// import { baseUrl } from "./scripts/baseUrl.js";
-// call in the dishesContainer
 const dishesContainer = document.querySelector('.best-seller-dishes-container-content-container');
-// call in the loader
 const loader = document.getElementById('loader');
-// import the baseUrl from baseurl.js
-// Function to fetch dishes and display them
-let loading = false
+let loading = false;
+const token = sessionStorage.getItem("token");
+
 async function fetchDishes() {
     try {
         // Show loader while fetching data
@@ -151,7 +33,7 @@ function displayDishes(dishes) {
         dishImage.src = dish.imageUrl; // Assuming the API provides an imageUrl field
         dishImage.alt = dish.title;
         dishImage.classList.add('dish-image');
-        // Name
+        // Title
         const dishName = document.createElement('div');
         dishName.classList.add('dish-name');
         dishName.textContent = dish.title;
@@ -163,7 +45,6 @@ function displayDishes(dishes) {
         const buyButton = document.createElement('button');
         buyButton.classList.add('buy-now');
         buyButton.textContent = 'Buy now';
-        // buyButton.onclick = () => alert(`You are buying ${dish.title}`);
         // Price
         const dishPrice = document.createElement('div');
         dishPrice.classList.add('dish-price');
@@ -186,7 +67,6 @@ function displayDishes(dishes) {
         q.appendChild(buyButton)
         q.classList.add("descBuy")
         dishCard.addEventListener("click", () => openDetail(dish.slug.current))
-        // dishesContainer.appendChild(dishCard);
         dishesContainer.appendChild(dishCard)
     }
     )
