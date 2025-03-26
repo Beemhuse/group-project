@@ -62,7 +62,7 @@ label::after{
     background-color: white;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
 }
 #shipping, #service-amount, #tax-amount, #subtotal, #total{
     display: flex;

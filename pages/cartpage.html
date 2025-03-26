@@ -10,6 +10,8 @@
     <link rel="icon" href="../Images/Eudia-logo.png">
     <link rel="stylesheet" href="../styles/cartpage.css">
     <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/access.css">
+    <link rel="stylesheet" href="../styles/cartcounter.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,9 +26,9 @@
             </div>
             <nav class="header-nav">
                 <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./pages/menu.html">Our Menu</a></li>
-                    <li><a href="./pages/contact.html">Contact Us</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/menu.html">Our Menu</a></li>
+                    <li><a href="../pages/contact.html">Contact Us</a></li>
                     <button class="sign-up-button" id="sign-up-mobile">Sign In</button>
                     <button class="log-in-button" id="login-mobile">Log In</button>
 
@@ -34,10 +36,11 @@
             </nav>
             <div class="header-left-content">
                 <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+                <span id="cart-count" class="cart-count"></span>
                 <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
-                <!-- <div class="user"> -->
+                <div class="user">
                     <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
-                <!-- </div> -->
+                </div>
 
                 <button class="sign-up-button">Sign In</button>
             </div>
@@ -176,6 +179,7 @@
         </div>
     </footer>
     <script src="../scripts/cartpage.js"></script>
+    <script src="../scripts/access.js"></script>
 
 </body>
 
