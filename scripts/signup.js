@@ -21,7 +21,7 @@ passwordIcon.onclick = (e) => {
         passwordIcon.classList.add("fa-eye-slash")++;
     }
 };
-
+ 
 // Function to handle signup form submission
 async function handleSignup(event) {
   event.preventDefault(); // Prevent form submission

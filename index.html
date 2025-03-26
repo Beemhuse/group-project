@@ -4,8 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+
     <title>Euodia</title>
 </head>
 
@@ -20,14 +24,19 @@
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./pages/menu.html">Our Menu</a></li>
                     <li><a href="./pages/contact.html">Contact Us</a></li>
-                <!-- <button class="log-in-button">Log In</button> -->
+                    <button class="sign-up-button" id="sign-up-mobile">Sign In</button>
+                    <button class="log-in-button" id="login-mobile">Log In</button>
 
                 </ul>
             </nav>
             <div class="header-left-content">
                 <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
                 <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
-                <button class="log-in-button">Log In</button>
+                <!-- <div class="user"> -->
+                    <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
+                <!-- </div> -->
+
+                <button class="sign-up-button">Sign In</button>
             </div>
             <button class="hamburger">
                 <div id="bar1" class="bar"></div>
@@ -48,15 +57,15 @@
             <ul>
                 <li>
                     <a href="/dashboard.html" id="dashboardLink">
-                <i class="fa-solid fa-user-tie" style="color: #fff;" id="menu-icon"></i>Dashboard
-            </a>
-              </li>
-              <li><a href="#" id="logoutLink">
-            <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;" id="menu-icon"></i>Logout
-                </a>
-              </li>
+                        <i class="fa-solid fa-user-tie" style="color: #fff;" id="menu-icon"></i>Dashboard
+                    </a>
+                </li>
+                <li><a href="#" id="logoutLink">
+                        <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;" id="menu-icon"></i>Logout
+                    </a>
+                </li>
             </ul>
-          </div>
+        </div>
     </header>
     <section class="intro">
         <div class="intro-container">
@@ -150,7 +159,7 @@
                     tomatoe all tossed in your choice of dressing.</p>
             </div>
             <div class="best-seller-dishes-container-content-container">
-        <div id="loader" class="loader"></div>
+                <div id="loader" class="loader"></div>
             </div>
         </div>
     </section>
@@ -163,8 +172,47 @@
             </div>
         </div>
     </section>
+    <footer>
+        <div id="footer-container">
+            <div>
+                <div id="newsletter">
+                    <h2>Join Our <strong>Newsletter</strong> </h2>
+                    <div class="subscribe-email">
+                        <input type=" email" placeholder="Enter your email address">
+                        <button id="subscribe">Subscribe</button>
+                    </div>
+                </div>
+                <p id="extra">Be the first to know about our latest updates, exclusive offers and more</p>
+            </div>
+            <hr>
+            <div id="customer-service">
+                <div class="help">
+                    <h3>Help</h3>
+                    <a href="#">Customer Support</a>
+                    <a href="#"> Email Support <i class="fa-solid fa-square-arrow-up-right"></i></i></i></a>
+                    <a href="#">Delivery Details <i class="fa-solid fa-square-arrow-up-right"></i></i></i></a>
+                </div>
+                <div class="about">
+                    <h3>About</h3>
+                    <a href="#">Contact</a>
+                    <a href="#">Service</a>
+                </div>
+            </div>
+            <hr>
+            <div id="privacy">
+                <div class="privacy-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Refund Policy</a>
+                </div>
+                <div>
+                    <p>�� 2025 All rights reserved Euodia Whole Foods</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- <script type="module" src="./scripts/menu-details.js"></script> -->
-    <script type="module" src="./scripts/index.js"></script>
+    <script type="module" src="/scripts/index.js"></script>
 
 </body>
 

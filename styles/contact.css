@@ -37,7 +37,20 @@ body {
  text-decoration: none;
  color: black;
 }
-
+#message-sent{
+    width: 20%;
+    padding: 30px 15px;
+    margin-top: 50px;
+    background-color: white; 
+    color: #34A853;;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 200px;
+    left: 40%;
+    display: none;
+}
 
 #contact-us-container {
     width: 90%;
@@ -129,19 +142,6 @@ textarea {
     margin-top: 30px;
     padding: 15px 25px;
     border-radius: 10px;
-}
-
-alert{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #34A853;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-align: center;
-    z-index: 100;
 }
 @media only screen and (max-width: 768px){
     
