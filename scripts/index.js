@@ -25,6 +25,10 @@ async function fetchDishes() {
 // Function to display dishes in the HTML
 function displayDishes(dishes) {
     dishes?.forEach(dish => {
+        const formattedPrice = new Intl.NumberFormat("en-NG", {
+            style: "currency",
+            currency: "NGN",
+          }).format(dish.price);
         const dishCard = document.createElement('div');
         dishCard.classList.add('best-seller-dishes-container-content');
         // Image
@@ -47,7 +51,7 @@ function displayDishes(dishes) {
         // Price
         const dishPrice = document.createElement('div');
         dishPrice.classList.add('dish-price');
-        dishPrice.textContent = `$${dish.price}`;
+        dishPrice.textContent = `${formattedPrice}`;
         // Append elements to the card
         dishCard.appendChild(dishImage);
         dishCard.appendChild(dishName);

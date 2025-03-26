@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="/Images/logo.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/styles/checkout.css">
+    <link rel="stylesheet" href="/styles/cartcounter.css">
+    <link rel="stylesheet" href="/styles/access.css">
+    <title>Check out</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="/Images/Eudia-logo.png" alt="">
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./pages/menu.html">Our Menu</a></li>
+                    <li><a href="./pages/contact.html">Contact Us</a></li>
+                    <button class="sign-up-button" id="sign-up-mobile">Sign In</button>
+                    <button class="log-in-button" id="login-mobile">Log In</button>
+                </ul>
+            </nav>
+            <div class="header-left-content">
+                <div class="cart-container">
+                <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+                 <span id="cart-count" class="cart-count"></span>
+                </div>
+                <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
+                <div class="user">
+                    <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
+                </div>
+                <button class="sign-up-button">Sign In</button>
+            </div>
+            <button class="hamburger">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </button>
+        </div>
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+                <h3>Are you sure you want to log out?</h3>
+                <button id="confirmLogout">Yes</button>
+                <button id="cancelLogout">No</button>
+            </div>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <ul>
+                <li>
+                    <a href="/dashboard.html" id="dashboardLink">
+                        <i class="fa-solid fa-user-tie" style="color: #fff;" id="menu-icon"></i>Dashboard
+                    </a>
+                </li>
+                <li><a href="#" id="logoutLink">
+                        <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;" id="menu-icon"></i>Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="checkout">
+                <div class="checkout-container">
+                    <h2>Checkout</h2>
+                    <div class="checkout-container-content">
+                        <div class="checkout-detaill">
+                            <span class="label">Order Id:</span>
+                            <span class="value">2933</span>
+                        </div>
+                        <div class="checkout-detaill">
+                            <span class="label">Date:</span>
+                            <span class="value">May 21, 2021</span>
+                        </div>
+                        <div class="checkout-detaill">
+                            <span class="label">Total:</span>
+                            <span class="value"><i class="fa-solid fa-naira-sign" style="color: #616161;"></i>2933</span>
+                        </div>
+                        <div class="checkout-detaill">
+                            <span class="label">Payment method:</span>
+                            <span class="value">Paid with card</span>
+                        </div>
+                        <p id="gratitude">Thank you for your order, please click the link below to check your order</p>
+                    </div>
+                  <button> <a href="#">check my order</a></button> 
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="/scripts/access.js"></script>
+</body>
+</html>

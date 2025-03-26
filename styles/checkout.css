@@ -3,8 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-   margin-top: 10%;
+.checkout{
+    margin-top: 15px;
 }
 .checkout-container h2{
     text-align: center;
@@ -46,10 +46,13 @@ body{
     font-size: 15px;
 }
 a{
-    color: red;
+    color: 16A34A;
     cursor: pointer;
+    text-decoration: none;
 }
-
+button{
+    padding: 10px;
+}
 @media screen and (max-width: 600px){
 .checkout-container h2{
     margin-bottom: 30px;

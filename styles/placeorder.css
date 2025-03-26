@@ -64,6 +64,45 @@ label::after{
     flex-direction: column;
     gap: 15px;
 }
+#shipping, #service-amount, #tax-amount, #subtotal, #total{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: space-between;
+}
+#shipping textarea{
+    border: none;
+}
+#payment-mode-details{
+    padding: 10px 10px;
+    background-color: white;
+    width: 100%;
+}
+#checkbox{
+    margin: 10px;;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.payment-card{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#place-order-btn{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color:  #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
 
 
