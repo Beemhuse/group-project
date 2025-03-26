@@ -35,6 +35,10 @@ async function fetchDishProperties() {
 }
 
 function displayDish(dish) {
+    const formattedPrice = new Intl.NumberFormat("en-NG", {
+        style: "currency",
+        currency: "NGN",
+      }).format(dish.price);
     const pageLeft = document.createElement('div');
     pageLeft.setAttribute('class', 'menu-details-container-left-content');
     pageLeft.innerHTML = `<img src="${dish.imageUrl}" class="food-image" alt="${dish.title}">`;
@@ -48,8 +52,7 @@ function displayDish(dish) {
             <button class="size">Serving size: ${dish.size}</button>
         </div>
         <span id="food-price">
-            <i class="fa-solid fa-naira-sign" style="color: #616161;"></i>
-            <p id="price">${dish.price}</p>
+            <p id="price">${formattedPrice}</p>
         </span>
         <div class="quantity">
             <span class="quantity-content">
@@ -167,6 +170,10 @@ async function fetchDishes() {
 // Function to display dishes in the menu list
 function displayDishes(dishes) {
     dishes?.forEach(dish => {
+        const formattedPrice = new Intl.NumberFormat("en-NG", {
+            style: "currency",
+            currency: "NGN",
+          }).format(dish.price);
         const dishCard = document.createElement('div');
         dishCard.setAttribute('class', 'food-lists-container-content');
 
@@ -190,7 +197,7 @@ function displayDishes(dishes) {
 
         const dishPrice = document.createElement('div');
         dishPrice.classList.add('dish-price');
-        dishPrice.textContent = `$${dish.price}`;
+        dishPrice.textContent = `${formattedPrice}`;
 
         let d = document.createElement('span');
         let q = document.createElement('span');
