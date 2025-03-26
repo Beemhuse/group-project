@@ -27,15 +27,25 @@ document.addEventListener("DOMContentLoaded", () => {
   cartDish.forEach((dish, index) => {
     let dishElement = document.createElement("div");
     dishElement.classList.add("orders");
+
+    const formattedPrice = new Intl.NumberFormat("en-NG", {
+      style: "currency",
+      currency: "NGN",
+    }).format(dish.price);
+    
+    const formattedSubtotal = new Intl.NumberFormat("en-NG", {
+      style: "currency",
+      currency: "NGN",
+    }).format(dish.price * dish.quantity);
+
     dishElement.innerHTML = `
               <div class="dishes-title">
               <button class="remove-btn" data-index="${index}"> <i class="fa-solid fa-trash"></i></button>
-                   
                       <img src="${dish.imageUrl}" alt="${dish.title }" class="dish-image" >
-                    <h3 class="cart-title">${dish.title}</h3>
+                    <p class="cart-title">${dish.title}</p>
                 </div>
                 <div class="dish-price">
-                   <p class="cart-price">N${dish.price}</p>
+                   <p class="cart-price">${formattedPrice}</p>
                 </div>
                 <div id="add-more-dishes">
                     <div class="remove-dish"> <i class="fa-solid fa-minus"></i></div>
@@ -45,8 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="add-dish"><i class="fa-solid fa-plus"></i></div>
                 </div>
                 <div id="dish-subtotal">
-                     <p class="cart-subtotal">N${
-                       dish.price * dish.quantity
+                     <p class="cart-subtotal">${
+                      formattedSubtotal
                      }</p>
                 </div>
                 
@@ -91,12 +101,33 @@ function removeItem(event) {
   let cartDish = JSON.parse(localStorage.getItem("cart")) || [];
   let index = event.target.getAttribute("data-index");
 
-  cartDish.splice(index, 1); // Remove the item from the array
-  localStorage.setItem("cart", JSON.stringify(cartDish));
+  const modal = document.createElement('div');
+  modal.classList.add('delete-modal');
+  modal.innerHTML = `
+  <div class="modal">
+      <p>Are you sure you want to remove this dish from your Cart?</p>
+      <button type="button" class="confirm-button">Yes</button>
+      <button type="button" class="cancel-button">Cancel</button>
+  </div>
+  `;
 
-  // Refresh the cart display
+  modal.querySelector('.confirm-button').addEventListener('click', () => {
+      modal.remove();
+      cartDish.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cartDish));
+  });
+
+  document.body.appendChild(modal);
+  modal.querySelector('.cancel-button').addEventListener('click', () => {
+      modal.remove();
+  });
+  
+
   document.dispatchEvent(new Event("DOMContentLoaded"));
 }
+ 
+ 
+
 function updateSubtotal(event) {
     function updateSubtotal() {
         let cartDish = JSON.parse(localStorage.getItem("cart")) || [];
@@ -133,6 +164,41 @@ function updateSubtotal(event) {
     document.dispatchEvent(new Event("DOMContentLoaded"));
 });
 
+function sumSubtotal() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || []; // Retrieve cart data
+  let summedSubtotal = document.getElementById("subtotalgap");
+  let sumTotal = document.getElementById("total");
+
+  if (!summedSubtotal) {
+    console.error("Element with id 'subtotal' not found.");
+    return;
+  }
+
+  let subtotal = cart.reduce((total, dish) => total + (dish.price * dish.quantity), 0);
+  let formattedSubtotal = new Intl.NumberFormat("en-NG", {
+    style: "currency",
+    currency: "NGN",
+  }).format(subtotal);
+
+  summedSubtotal.textContent = formattedSubtotal;
+  sumTotal.textContent = formattedSubtotal; 
+}
+
+// Call the function to update subtotal on page load
+document.addEventListener("DOMContentLoaded", sumSubtotal);
+
+document.addEventListener("change", (event) => {
+  if (event.target.classList.contains("cart-quantity")) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let index = event.target.getAttribute("data-index");
+    let newQuantity = parseInt(event.target.value);
+
+    cart[index].quantity = newQuantity < 1 ? 1 : newQuantity; // Prevents negative values
+
+    localStorage.setItem("cart", JSON.stringify(cart)); // Save back to storage
+    sumSubtotal(); // Update subtotal display
+  }
+});
 
 
  
