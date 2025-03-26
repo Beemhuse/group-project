@@ -31,6 +31,16 @@ async function handleSignup(event) {
   const signInButton = document.getElementById('create-account-button');
   const loader = document.getElementById('loader');
   const signInButtonText = document.getElementById('sign-in-button-text');
+    if(password.length < 8){
+        showMessage("Password must be 8 characters long", "error");
+        return
+    }
+    else{
+        showMessage("Password is valid", "success");
+         signInButton.disabled = false;
+        loader.style.display = 'none';
+        signInButtonText.style.visibility = 'visible';
+    }
   // Disable the button and show the loader
   signInButton.disabled = true;
   loader.style.display = 'inline-block';

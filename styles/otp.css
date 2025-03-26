@@ -93,12 +93,11 @@ form{
 }
 button{
     margin-top: 10px;
-    width: 320px;  /*i will work on this when next i have this kinda project */
+    width: 320px;
     height: 44px;
     border-radius: 5px;
     outline: none;
-    /* background-color: #5fd37e; */
-    background-color: #5ec77a;
+    background-color: #48a861;
     border: none;
     color: #ffffff;
     cursor: pointer;
@@ -108,7 +107,7 @@ button{
     position: relative;
 }
 button:disabled {
-    /* cursor: not-allowed; */
+    cursor: not-allowed;
     background-color: #34A853;
 }
 #loader {
@@ -133,7 +132,7 @@ button:disabled {
 .message-container {
     position: fixed;
     top: 20px;
-    right: -300px; /* Initially out of view */
+    right: -300px; 
     background-color: #f4f4f4;
     padding: 15px;
     border-radius: 8px;
@@ -146,19 +145,20 @@ button:disabled {
 }
 .message-container p {
     margin: 0;
-    font-size: 16px;
+    font-size: 12px;
+    font-family: sans-serif;
 }
 .message-container.hidden {
     display: none;
 }
 .message-container.show {
-    right: 20px; /* Slide in */
+    right: 20px;
 }
 .message-icon.error {
-    background-color: #f44336; /* Red for error */
+    background-color: #f44336; 
 }
 .message-icon.success {
-    background-color: #4CAF50; /* Green for success */
+    background-color: #4CAF50; 
 }
 .message-container i {
     margin-right: 10px;

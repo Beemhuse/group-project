@@ -63,13 +63,18 @@ label{
     color: #9CA3AF;
     margin-top: 50px;
 }
-.password-error-message{
+/* .password-error-message{
     color: red;
-    display: none;
     font-size: 10px;
     margin-top: -8px;
     text-indent: 2px;  
 }
+.confirm-password-error-message{
+    color: red;
+    font-size: 10px;
+    margin-top: -8px;
+    text-indent: 2px;  
+} */
 .user-password-content,
 .user-confirm-password-content{
     display: flex;
