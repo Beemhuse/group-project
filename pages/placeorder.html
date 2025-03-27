@@ -9,8 +9,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../styles/placeorder.css">
     <link rel="stylesheet" href="../styles/footer.css">
-    <link rel="stylesheet" href="../styles/access.css">
-    <link rel="stylesheet" href="../styles/cartcounter.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="icon" href="/Images/head-logo.png">
     <title>cart</title>
 </head>
 
@@ -24,22 +24,22 @@
             </div>
             <nav class="header-nav">
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../pages/menu.html">Our Menu</a></li>
-                    <li><a href="../pages/contact.html">Contact Us</a></li>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/menu.html">Our Menu</a></li>
+                    <li><a href="/pages/contact.html">Contact Us</a></li>
                     <button class="sign-up-button" id="sign-up-mobile">Sign In</button>
                     <button class="log-in-button" id="login-mobile">Log In</button>
-
                 </ul>
             </nav>
             <div class="header-left-content">
+                <div class="cart-container">
                 <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
-                <span id="cart-count" class="cart-count"></span>
+                 <span id="cart-count" class="cart-count"></span>
+                </div>
                 <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
                 <div class="user">
                     <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
                 </div>
-
                 <button class="sign-up-button">Sign In</button>
             </div>
             <button class="hamburger">
@@ -48,7 +48,6 @@
                 <div id="bar3" class="bar"></div>
             </button>
         </div>
-        <!-- Logout Modal -->
         <div id="logoutModal" class="modal">
             <div class="modal-content">
                 <h3>Are you sure you want to log out?</h3>
@@ -56,7 +55,6 @@
                 <button id="cancelLogout">No</button>
             </div>
         </div>
-        <!-- userIcon onclick dropdown -->
         <div class="dropdown-menu" id="dropdownMenu">
             <ul>
                 <li>
@@ -69,6 +67,7 @@
                     </a>
                 </li>
             </ul>
+        </div>
         </div>
     </header>
 
@@ -244,6 +243,7 @@
 
     <script src="./scripts/checkout.js"></script>
     <script src="../scripts/access.js"></script>
+    <script src="../scripts/cartcounter.js"></script>
 </body>
 
 </html>

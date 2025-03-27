@@ -33,6 +33,7 @@ label::after{
     width: 100%;
     background-color:  #e8eaece2;
     padding : 10px;
+    margin-top: 5px;
     outline: none;
     border-radius: 5px;
     border: none;
@@ -47,6 +48,12 @@ label::after{
     outline: none;
     border-radius: 5px;
     border: none;
+}
+ label{
+    margin-bottom: 10px;
+}
+#form-container h3 {
+    margin-top: 10px;;
 }
 #payment-container{
     width: 30%;
@@ -102,6 +109,31 @@ label::after{
     border: none;
     cursor: pointer;
     border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px){
+    #container{
+        flex-direction: column;
+    }
+    #form-container{
+        width: 100%;
+    }
+    #payment-container{
+        width: 100%;
+    }
+    #shipping textarea{
+        width: 100%;
+    }
+    #payment-mode-details{
+        width: 100%;
+    }
+    #checkbox{
+        margin-top: 10px;
+    }
+    #place-order-btn{
+        margin-top: 20px;
+        width: 100%;
+    }
 }
 
 

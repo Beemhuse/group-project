@@ -7,7 +7,8 @@
     <title>Contact Us</title>
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/contact.css">
-    <link rel="icon" href="../Images/Eudia-logo.png">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="icon" href="/Images/head-logo.png">
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -23,18 +24,51 @@
             </div>
             <nav class="header-nav">
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../pages/menu.html">Our Menu</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/menu.html">Our Menu</a></li>
+                    <li><a href="/pages/contact.html">Contact Us</a></li>
+                    <button class="sign-up-button" id="sign-up-mobile">Sign In</button>
+                    <button class="log-in-button" id="login-mobile">Log In</button>
                 </ul>
             </nav>
             <div class="header-left-content">
+                <div class="cart-container">
                 <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+                 <span id="cart-count" class="cart-count"></span>
+                </div>
                 <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
-                <button class="log-in-button">Log In</button>
+                <div class="user">
+                    <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
+                </div>
+                <button class="sign-up-button">Sign In</button>
+            </div>
+            <button class="hamburger">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </button>
+        </div>
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+                <h3>Are you sure you want to log out?</h3>
+                <button id="confirmLogout">Yes</button>
+                <button id="cancelLogout">No</button>
             </div>
         </div>
-
+        <div class="dropdown-menu" id="dropdownMenu">
+            <ul>
+                <li>
+                    <a href="/dashboard.html" id="dashboardLink">
+                        <i class="fa-solid fa-user-tie" style="color: #fff;" id="menu-icon"></i>Dashboard
+                    </a>
+                </li>
+                <li><a href="#" id="logoutLink">
+                        <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;" id="menu-icon"></i>Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
     </header>
 
     <main>
@@ -139,6 +173,8 @@
     </footer>
 
     <script type="module" src="../scripts/contact.js"></script>
+    <script src="../scripts/access.js"></script>
+    <script src="../scripts/cartcounter.js"></script>
 </body>
 
 </html>
