@@ -70,7 +70,6 @@ button {
     height: 42px;
     transition: background-color 0.3s ease
 }
-
 button:hover{
     background-color: #219653
 }
@@ -111,7 +110,6 @@ button:hover{
 #send-otp-btn:disabled {
     cursor: not-allowed;
 }
-
 #loader {
     display: none;
     position: absolute;

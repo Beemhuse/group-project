@@ -175,30 +175,30 @@ button{
 
 /* MOBILE PHONE RESPONSIVENESS */
 @media screen and (max-width: 600px){
-    #reset-heading{
-        font-size: 30px;
-        width: 300px;
-        text-align: center;
-    }
-       #reset-introduction{ 
-        padding-bottom: 25px;
-        font-size: 14px;
-        width: 300px;
-        text-align: center;
-    }
-    .reset-container-content{
-        width: 95%;
-        padding: 40px 20px 40px 20px;
-    }
-    .reset-form input{
-        width: 100%;
-    }
-    #reset-button{
-        width: 300px;
-    }
-    .alrightrev{
-        text-align: center;
-        font-size: 10px;
-        color: #9CA3AF;
-    }
+#reset-heading{
+    font-size: 30px;
+    width: 300px;
+    text-align: center;
+}
+    #reset-introduction{ 
+    padding-bottom: 25px;
+    font-size: 14px;
+    width: 300px;
+    text-align: center;
+}
+.reset-container-content{
+    width: 95%;
+    padding: 40px 20px 40px 20px;
+}
+.reset-form input{
+    width: 100%;
+}
+#reset-button{
+    width: 300px;
+}
+.alrightrev{
+    text-align: center;
+    font-size: 10px;
+    color: #9CA3AF;
+}
 }

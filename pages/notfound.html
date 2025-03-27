@@ -4,10 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/notfound.css">
-    <link rel="icon" href="/Images/logo.png">
+    <link rel="icon" href="/Images/head-logo.png">
+    <link rel="icon" href="/styles/footer.css">
+    <link rel="icon" href="/styles/header.css">
     <title>404 [Not found]</title>
 </head>
 <body>
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="/Images/Eudia-logo.png" alt="">
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/menu.html">Our Menu</a></li>
+                    <li><a href="/pages/contact.html">Contact Us</a></li>
+                    <button class="sign-up-button" id="sign-up-mobile">Sign In</button>
+                    <button class="log-in-button" id="login-mobile">Log In</button>
+                </ul>
+            </nav>
+            <div class="header-left-content">
+                <div class="cart-container">
+                <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+                 <span id="cart-count" class="cart-count"></span>
+                </div>
+                <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
+                <div class="user">
+                    <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
+                </div>
+                <button class="sign-up-button">Sign In</button>
+            </div>
+            <button class="hamburger">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </button>
+        </div>
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+                <h3>Are you sure you want to log out?</h3>
+                <button id="confirmLogout">Yes</button>
+                <button id="cancelLogout">No</button>
+            </div>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <ul>
+                <li>
+                    <a href="/dashboard.html" id="dashboardLink">
+                        <i class="fa-solid fa-user-tie" style="color: #fff;" id="menu-icon"></i>Dashboard
+                    </a>
+                </li>
+                <li><a href="#" id="logoutLink">
+                        <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;" id="menu-icon"></i>Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </header>
     <main>
         <section>
             <div class="not-found">
@@ -22,218 +77,3 @@
     </main>
 </body>
 </html>
-let password = document.getElementById("password");
-let passwordIcon = document.getElementById("password-icon");
-
-passwordIcon.onclick = (e) => {
-    e.preventDefault();
-    if (password.type === "password") {
-        password.type = "text";
-        passwordIcon.classList.remove("fa-eye-slash");
-        passwordIcon.classList.add("fa-eye");
-    } else {
-        password.type = "password";
-        passwordIcon.classList.remove("fa-eye");
-        passwordIcon.classList.add("fa-eye-slash");
-    }
-};
-
-import { baseUrl } from "./baseurl.js"; // Assuming baseUrl is being used for somewhere else in the project
-
-// Get the form and input field
-let emailInput = document.querySelector("#email");
-let passwordInput = document.querySelector("#password");
-const logInForm = document.querySelector(".login-form");
-
-// Function to handle login form submission
-async function handleLogin(event) {
-    event.preventDefault();
-
-    // Call in the email input, the loader, the login button, password input, and its text
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
-
-    const logInButton = document.getElementById('log-in-btn');
-    const loader = document.getElementById('loader');
-    const btnText = document.getElementById('log-in-button-text');
-    const loaderContainer = document.getElementById('loader-container');
-    const loadingBar = document.getElementById('loadingBar');
-    let message = document.getElementById("message");
-    let messageIcon = document.querySelector(".fa-circle-check");
-
-    // Disable the button, show loader, and hide button text while waiting
-    logInButton.disabled = true;
-    loader.style.display = 'inline-block';
-    btnText.style.visibility = 'hidden';
-
-    // Prepare the data to send to API
-    const userData = {
-        email,
-        password,
-    };
-
-    try {
-        const response = await fetch(`${baseUrl}/api/login`, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(userData), // Convert form data to JSON
-        });
-
-        const result = await response.json();
-
-        // Only show the loader bar if the response is OK
-        if (response.ok) {
-            console.log(result);
-            // Show the loader and slide it in from the right
-            loaderContainer.classList.remove('hidden');
-            loaderContainer.style.right = '20px';  // Slide it to the visible area
-
-            // Start the loading bar at 100%
-            let width = 100;
-            loadingBar.style.width = width + '%';  // Set initial width to 100%
-
-            // Smoothly decrease the width of the loading bar
-            const decreaseWidth = () => {
-                if (width > 0) {
-                    width -= 1;  // Decrease width by 1%
-                    loadingBar.style.width = width + '%';  // Update the width
-                    setTimeout(decreaseWidth, 50);  // Call the function every 50ms for a smooth effect
-                }
-                // When the width reaches 30% or lower, wait for 20 seconds and then slide out
-                if (width <= 30) {
-                    // Wait for 20 seconds before redirecting
-                    setTimeout(() => {
-                        // Slide the loader bar out gently
-                        loaderContainer.style.transition = 'right 1s ease-out';  // Smooth transition
-                        loaderContainer.style.right = '-300px';  // Move it out of view
-
-                        // After the transition ends, redirect to the signup page
-                        setTimeout(() => {
-                            window.location.href = "/pages/auth/signup.html"; // Redirect to signup page
-                        }, 100); // Wait for the transition to finish (1 second)
-                    }, 10); // Wait for 20 seconds
-                }
-            };
-
-            // Start the width decrease process
-            decreaseWidth();
-
-            sessionStorage.setItem("token", result.token); // Store token for authentication
-
-        } else {
-            throw new Error(result.error || "Something went wrong");
-        }
-    } catch (error) {
-        console.error('Error logging in:', error);
-
-    }
-}
-
-// Attach the login form submission handler
-logInForm.addEventListener('submit', handleLogin);
-let password = document.getElementById("password");
-let passwordIcon = document.getElementById("password-icon");
-
-passwordIcon.onclick = (e) => {
-    e.preventDefault();
-    if (password.type === "password") {
-        password.type = "text";
-        passwordIcon.classList.remove("fa-eye-slash");
-        passwordIcon.classList.add("fa-eye");
-    } else {
-        password.type = "password";
-        passwordIcon.classList.remove("fa-eye");
-        passwordIcon.classList.add("fa-eye-slash");
-    }
-};
-
-import { baseUrl } from "./baseurl.js"; // Assuming baseUrl is being used for somewhere else in the project
-
-// Get the form and input field
-let emailInput = document.querySelector("#email");
-let passwordInput = document.querySelector("#password");
-const logInForm = document.querySelector(".login-form");
-
-// Function to handle login form submission
-async function handleLogin(event) {
-    event.preventDefault();
-
-    // Call in the email input, the loader, the login button, password input, and its text
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
-
-    const logInButton = document.getElementById('log-in-btn');
-    const loader = document.getElementById('loader');
-    const btnText = document.getElementById('log-in-button-text');
-    const loaderContainer = document.getElementById('loader-container');
-    const loadingBar = document.getElementById('loadingBar');
-
-    // Disable the button, show loader, and hide button text while waiting
-    logInButton.disabled = true;
-    loader.style.display = 'inline-block';
-    btnText.style.visibility = 'hidden';
-
-    // Prepare the data to send to API
-    const userData = {
-        email,
-        password,
-    };
-
-    try {
-        const response = await fetch(`${baseUrl}/api/login`, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(userData), // Convert form data to JSON
-        });
-
-        const result = await response.json();
-
-        // Only show the loader bar if the response is OK
-        if (response.ok) {
-            console.log(result);
-            // Show the loader and slide it in from the right
-            loaderContainer.classList.remove('hidden');
-            loaderContainer.style.right = '20px';  // Slide it to the visible area
-
-            // Start the loading bar at 100%
-            let width = 100;
-            loadingBar.style.width = width + '%';  // Set initial width to 100%
-
-            // Smoothly decrease the width of the loading bar
-            const decreaseWidth = () => {
-                if (width > 0) {
-                    width -= 1;  // Decrease width by 1%
-                    loadingBar.style.width = width + '%';  // Update the width
-                    setTimeout(decreaseWidth, 50);  // Call the function every 50ms for a smooth effect
-                }
-                if (width <= 40) {
-                    setTimeout(() => {
-                        // Slide the loader bar out gently
-                        loaderContainer.style.transition = 'right 1s ease-out';  // Smooth transition
-                        loaderContainer.style.right = '-300px';  // Move it out of view
-                        // After the transition ends, redirect to the login page
-                            window.location.href = "/pages/auth/signup.html"; // Redirect to signup page
-                    }, 100); // Wait for 100 milliseconds
-                }
-            };
-
-            // Start the width decrease process
-            decreaseWidth();
-
-            sessionStorage.setItem("token", result.token); // Store token for authentication
-
-        } else {
-            throw new Error(result.error || "Something went wrong");
-        }
-    } catch (error) {
-        console.error('Error logging in:', error);
-        alert('An error occurred. Please try again later.');
-    }
-}
-
-// Attach the login form submission handler
-logInForm.addEventListener('submit', handleLogin);
