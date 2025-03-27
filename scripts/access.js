@@ -64,7 +64,9 @@ signUpButtons.forEach(button => {
         window.location.href = "/pages/auth/signup.html";  // Redirect to the signup page
     });
 });
-
+loginButton.addEventListener('click', () => {
+    window.location.href = "/pages/auth/login.html";  // Redirect to the login page
+})
 // Handle login button click (removed duplicate code)
 if (token) {
     signUpButtons.forEach(button => {
