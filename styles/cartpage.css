@@ -37,6 +37,45 @@ body {
     align-items: center;
     box-shadow: 0px 1px 5px 5px rgba(199, 199, 199, 0.2);
 }
+.delete-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(48, 175, 78);
+    color: black;
+    padding: 100px;
+    border-radius: 8px;
+    
+  }
+  
+  #modal {
+    text-align: center;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10000
+  }
+  
+  #confirm-button, #cancel-button {
+    margin: 5px;
+    padding: 10px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .cancel-button {
+    background: gray;
+  }
+  
+  
+ 
 
 .dishes-title {
     display: flex;
@@ -101,7 +140,6 @@ body {
     margin-left: 53%;
     border: 1px solid black;
     background-color: white;
-    ;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -121,7 +159,6 @@ body {
 }
 
 #cart-summary hr {
-
     border-top: 1px solid rgba(0, 0, 0, 0.314);
 }
 

@@ -100,36 +100,6 @@ function updateQuantity(event) {
   // Refresh the cart display
   document.dispatchEvent(new Event("DOMContentLoaded"));
 }
-
-// Remove item from cart
-function removeItem(event) {
-  let cartDish = JSON.parse(localStorage.getItem("cart")) || [];
-  let index = event.target.getAttribute("data-index");
-
-  const modal = document.createElement('div');
-  modal.classList.add('delete-modal');
-  modal.innerHTML = `
-  <div class="modal">
-      <p>Are you sure you want to remove this dish from your Cart?</p>
-      <button type="button" class="confirm-button">Yes</button>
-      <button type="button" class="cancel-button">Cancel</button>
-  </div>
-  `;
-
-  modal.querySelector('.confirm-button').addEventListener('click', () => {
-      modal.remove();
-      cartDish.splice(index, 1);
-      localStorage.setItem("cart", JSON.stringify(cartDish));
-  });
-
-  document.body.appendChild(modal);
-  modal.querySelector('.cancel-button').addEventListener('click', () => {
-      modal.remove();
-  });
-  
-
-  document.dispatchEvent(new Event("DOMContentLoaded"));
-}
  
  
 
@@ -202,6 +172,45 @@ document.addEventListener("change", (event) => {
 
     localStorage.setItem("cart", JSON.stringify(cart)); // Save back to storage
     sumSubtotal(); // Update subtotal display
+  }
+});
+
+function removeItem(event) {
+  let cartDish = JSON.parse(localStorage.getItem("cart")) || [];
+  let removeButton = event.target.closest(".remove-btn");
+
+  if (!removeButton)  {
+    console.log(error)
+  }
+
+  let index = Number(removeButton.getAttribute("data-index")); // Get the correct index
+  const modalmessage = document.getElementById("modal");
+  console.log(modalmessage)
+  const modal = document.createElement('div');
+  modal.classList.add('delete-modal'); // Ensure this class has visible CSS
+  modal.innerHTML = modalmessage.innerHTML;
+  modal.style.display = "block"; // Ensure this class has visible CSS
+  document.body.appendChild(modal);
+  let confirm = document.querySelector(".confirm-button")
+  let cancel = document.querySelector(".cancel-button")
+
+  confirm.addEventListener('click', () => {
+    console.log("confirmed")
+    modal.remove();
+    cartDish.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cartDish));
+    document.dispatchEvent(new Event("DOMContentLoaded"));
+  })
+  cancel.addEventListener('click', () => {
+    console.log("cancelled")
+    modal.remove();
+  })
+
+}
+
+document.addEventListener("click", (event) => {
+  if (event.target.closest(".remove-btn")) {
+    removeItem(event);
   }
 });
 
