@@ -9,63 +9,77 @@ const loginButton = document.querySelector('.log-in-button');
 const signUpButtons = document.querySelectorAll('.sign-up-button');
 const token = sessionStorage.getItem("token");
 
-loginButton.addEventListener("click", () => {
-    window.location.href = "/pages/auth/login.html";  // Redirect to login page
-});
+
+// Show dropdown
+function showDropDown() {
+    dropdownMenu.classList.toggle('showDropdown');
+}
+
+// Handle logout button click
 logoutBtn.onclick = function () {
     logoutModal.style.visibility = "visible";
-}
+    dropdownMenu.style.transform = "scale(0)";  // Close dropdown when opening modal
+};
+
+// Cancel logout, close modal and dropdown
 cancelLogout.onclick = function () {
     logoutModal.style.visibility = "hidden";
-    closeDropDown()
-}
+    closeDropDown();  // Ensure dropdown closes
+};
+
+// Confirm logout
 confirmLogout.onclick = function () {
     sessionStorage.removeItem('token');  // Remove the token on logout
-    location.reload(); // Reload the page to reset UI
+    location.reload(); // Reload page to reset UI
     logoutModal.style.display = "none";
-}
-// When the user clicks anywhere outside the modal, close it
+    closeDropDown();  // Ensure dropdown closes after logout
+};
+
+// When clicking outside the modal, close the modal and dropdown
 window.onclick = function (event) {
     if (event.target === logoutModal) {
         logoutModal.style.visibility = "hidden";
-        closeDropDown()
+        closeDropDown();  // Close dropdown when clicking outside modal
     }
+};
+
+// Close dropdown
+function closeDropDown() {
+    dropdownMenu.style.transform = "scale(0)";  // Close the dropdown
 }
-function closeDropDown(){
- dropdownMenu.style.transform = "scale(0)"
-}
+
+// Toggle the hamburger menu
 toggleButton.addEventListener("click", () => {
-    show()
-})
+    show();  // Toggle hamburger menu
+});
 
 function show() {
-    toggleButton.classList.toggle("open")
-    document.querySelector(".header-nav").classList.toggle("active")
+    toggleButton.classList.toggle("open");
+    document.querySelector(".header-nav").classList.toggle("active");
 }
-// Add event listeners to the login buttons
+
+// Add event listeners to sign-up buttons
 signUpButtons.forEach(button => {
     button.addEventListener("click", () => {
-        window.location.href = "/pages/auth/signup.html";  // Redirect to the login page
+        window.location.href = "/pages/auth/signup.html";  // Redirect to the signup page
     });
 });
-// Add event listener to the sign-up button
-if (loginButton) {
-    loginButton.addEventListener("click", () => {
-        window.location.href = "/pages/auth/login.html";  // Redirect to the signup page
-    });
-}
+
+// Handle login button click (removed duplicate code)
 if (token) {
     signUpButtons.forEach(button => {
-        button.style.display = 'none';
+        button.style.display = 'none';  // Hide sign-up buttons if logged in
     });
     if (loginButton) {
-        loginButton.style.display = 'none';
+        loginButton.style.display = 'none';  // Hide login button if logged in
     }
-    userIcon.style.display = 'flex' 
-    userIcon.addEventListener("click", (event) => {
-        dropdownMenu.classList.toggle('showDropdown')
-    }); 
+    userIcon.style.display = 'flex';  // Show user icon if logged in
+} else {
+    userIcon.style.display = 'none';  // Hide user icon if not logged in
 }
-else{
-    userIcon.style.display = 'none' 
-}
+
+// Toggle dropdown when clicking on the user icon
+userIcon.addEventListener('click', () => {
+    showDropDown();  // Toggle dropdown when the user clicks the user icon
+});
+

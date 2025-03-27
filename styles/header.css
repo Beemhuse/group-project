@@ -13,7 +13,7 @@ header{
  right: -250px;
  width: 230px;
  height: 100vh;
- background-color: #333;
+ background-color: #F2994A;
  padding: 10px;
  z-index: 20;
  display: flex;
@@ -32,7 +32,7 @@ header{
 .dropdown-menu ul li a{ 
   display: flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 15px;
   cursor: pointer;
   text-decoration: none;
   color: #fff;
@@ -122,7 +122,7 @@ header{
   text-decoration: none;
   color: #4B5563;
 }
-.header-nav ul a:hover{
+.header-nav ul a:active{
   border-bottom: 2px solid #16A34A;
   padding-bottom: 6px;
 }

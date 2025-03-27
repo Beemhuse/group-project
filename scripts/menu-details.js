@@ -81,22 +81,25 @@ function displayDish(dish) {
     orderButton.addEventListener("click", () => {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
         const existingItem = cart.find(item => item.slug === myParam);
+    
         try {
+            const newQuantity = parseInt(quantityValue.value, 10); // Get the new quantity from the input
+    
             if (existingItem) {
-                // If the item already exists in the cart, update the quantity if it has changed
+                // If the item already exists in the cart, check if the quantity is different
                 const previousQuantity = existingItem.quantity;
-                const newQuantity = parseInt(quantityValue.value, 10);
+    
                 if (previousQuantity !== newQuantity) {
+                    // Update the quantity if it is different
                     existingItem.quantity = newQuantity;
-                    // Save the updated cart to localStorage
                     localStorage.setItem("cart", JSON.stringify(cart));
-                    updateCartCount();
+                    updateCartCount(); // Update the cart count
     
                     // Show success message indicating the item quantity was updated
-                    showMessage(`The quantity of ${dish.title} has been updated in your cart.`, "success");
+                    showMessage(`${dish.title} quantity updated`, "success");
                 } else {
                     // Show a message saying the item is already in the cart
-                    showMessage(`${dish.title} is already in your cart.`, "info");
+                    showMessage(`${dish.title} is already in your cart`, "info");
                 }
             } else {
                 // If the item is not already in the cart, add it
@@ -105,11 +108,10 @@ function displayDish(dish) {
                     title: dish.title,
                     price: dish.price,
                     imageUrl: dish.imageUrl,
-                    quantity: parseInt(quantityValue.value, 10),
+                    quantity: newQuantity,
                 });
-                // Save the updated cart to localStorage
                 localStorage.setItem("cart", JSON.stringify(cart));
-                updateCartCount();
+                updateCartCount(); // Update the cart count
     
                 // Show success message for adding to the cart
                 showMessage(`${dish.title} successfully added to cart`, "success");
@@ -120,6 +122,7 @@ function displayDish(dish) {
             console.error("Error adding to cart:", error);
         }
     });
+    
     
     
 }
