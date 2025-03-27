@@ -5,11 +5,16 @@ let price = document.getElementById("dish-price");
 let dishImage = document.getElementById("dish-image");
 let dishTitle = document.getElementById("dish-title");
 let returnButton = document.getElementById("shop-btn");
+let checkoutButton = document.getElementById("checkout-btn");
 let a = 1;
 
 returnButton.addEventListener("click", () => {
   window.location.href = "../pages/menu-details.html";
 });
+  checkoutButton.addEventListener("click", () => {
+    window.location.href = "../pages/placeorder.html";
+  });
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
