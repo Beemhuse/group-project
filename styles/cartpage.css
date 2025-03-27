@@ -144,28 +144,79 @@ body {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
+    *{
+        /* border: 1px solid green; */
+        padding: 0;
+        margin: 0;
+    }
     #order-in-your-cart {
         display: flex;
+        flex-direction: column;
         margin-top: 20px;
+        gap: 15px;
         justify-content: left;
         width: 100%;
     }
 
     #order-details {
-        flex-direction: column;
+        flex-direction: row;
         align-items: left;
-        gap: 80px;
-        width: 50%;
-        margin-left: 0;
-        margin-top: 0;
+        gap: 30px;
+        width: 100%;
+        padding: 7px 0;
+        margin: 0;
     }
 
-    #orders {
-        flex-direction: column;
-        width: 50%;
-        margin-left: 0;
-        margin-top: 0;
+    .orders {
+        flex-direction: row;
+        width: 100%;
+        padding: 7px 0;
+        gap: 5px;
+        margin: 0;
+        gap: 5px;
+    }
+
+    .dishes-title {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        margin-top: 5px;
+        width: 15%;
+        align-items: center;
+    }
+    
+    #add-more-dishes {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+    
+    #add-more-dishes input {
+        width: 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgba(209, 206, 206, 0.595);
+        color: black;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+    
+    #add-more-dishes i {
+        padding: 5px ;
+
+    }
+    .dish-image{
+        width: 30px;
+        height: 30px;
+        border-radius: none;
+        
+    }
+    .dish-price{
+        width: 5%;
+        text-align: left;
     }
 
 

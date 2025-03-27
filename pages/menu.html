@@ -19,59 +19,57 @@
 <body>
     <!-- Charity -->
     <header>
-        <div class="header-container">
-            <div class="header-logo">
-                <img src="/Images/Eudia-logo.png" alt="">
-            </div>
-            <nav class="header-nav">
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../pages/menu.html">Our Menu</a></li>
-                    <li><a href="../pages/contact.html">Contact Us</a></li>
-                    <button class="sign-up-button" id="sign-up-mobile">Sign In</button>
-                    <button class="log-in-button" id="login-mobile">Log In</button>
-
-                </ul>
-            </nav>
-            <div class="header-left-content">
-                <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
-                <span id="cart-count" class="cart-count"></span>
-                <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
-                <div class="user">
-                    <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
+            <div class="header-container">
+                <div class="header-logo">
+                    <img src="/Images/Eudia-logo.png" alt="">
                 </div>
-
-                <button class="sign-up-button">Sign In</button>
+                <nav class="header-nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/pages/menu.html">Our Menu</a></li>
+                        <li><a href="/pages/contact.html">Contact Us</a></li>
+                        <button class="sign-up-button" id="sign-up-mobile">Sign In</button>
+                        <button class="log-in-button" id="login-mobile">Log In</button>
+                    </ul>
+                </nav>
+                <div class="header-left-content">
+                    <div class="cart-container">
+                    <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+                     <span id="cart-count" class="cart-count"></span>
+                    </div>
+                    <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
+                    <div class="user">
+                        <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
+                    </div>
+                    <button class="sign-up-button">Sign In</button>
+                </div>
+                <button class="hamburger">
+                    <div id="bar1" class="bar"></div>
+                    <div id="bar2" class="bar"></div>
+                    <div id="bar3" class="bar"></div>
+                </button>
             </div>
-            <button class="hamburger">
-                <div id="bar1" class="bar"></div>
-                <div id="bar2" class="bar"></div>
-                <div id="bar3" class="bar"></div>
-            </button>
-        </div>
-        <!-- Logout Modal -->
-        <div id="logoutModal" class="modal">
-            <div class="modal-content">
-                <h3>Are you sure you want to log out?</h3>
-                <button id="confirmLogout">Yes</button>
-                <button id="cancelLogout">No</button>
+            <div id="logoutModal" class="modal">
+                <div class="modal-content">
+                    <h3>Are you sure you want to log out?</h3>
+                    <button id="confirmLogout">Yes</button>
+                    <button id="cancelLogout">No</button>
+                </div>
             </div>
-        </div>
-        <!-- userIcon onclick dropdown -->
-        <div class="dropdown-menu" id="dropdownMenu">
-            <ul>
-                <li>
-                    <a href="/dashboard.html" id="dashboardLink">
-                        <i class="fa-solid fa-user-tie" style="color: #fff;" id="menu-icon"></i>Dashboard
-                    </a>
-                </li>
-                <li><a href="#" id="logoutLink">
-                        <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;" id="menu-icon"></i>Logout
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <ul>
+                    <li>
+                        <a href="/dashboard.html" id="dashboardLink">
+                            <i class="fa-solid fa-user-tie" style="color: #fff;" id="menu-icon"></i>Dashboard
+                        </a>
+                    </li>
+                    <li><a href="#" id="logoutLink">
+                            <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;" id="menu-icon"></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            </div>
     <div id="bg">
         <img id="headerImage" src="../Images/menu_images/headerbg.jpeg" alt="">
         <div class="header-title">
