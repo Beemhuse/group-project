@@ -32,7 +32,6 @@ label{
     margin: 10px 0 0 10px;
 }
 .login-container-content{
-    /* width: 32%; */
     display: flex;
     justify-content: center;
     align-items: center;

@@ -7,10 +7,11 @@ const cancelLogout = document.getElementById("cancelLogout");
 const confirmLogout = document.getElementById("confirmLogout");
 const loginButton = document.querySelector('.log-in-button');
 const signUpButtons = document.querySelectorAll('.sign-up-button');
-// const user_icon = document.querySelector(".user-icon");
 const token = sessionStorage.getItem("token");
 
-
+loginButton.addEventListener("click", () => {
+    window.location.href = "/pages/auth/login.html";  // Redirect to login page
+});
 logoutBtn.onclick = function () {
     logoutModal.style.visibility = "visible";
 }

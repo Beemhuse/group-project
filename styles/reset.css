@@ -103,7 +103,7 @@ label{
 }
 button{
     margin-top: 12px;
-    width: 350px;/*i will work on this when next i have this kinda project */
+    width: 350px;
     height: 46px;
     border-radius: 5px;
     outline: none;
@@ -142,7 +142,7 @@ button{
 .message-container {
     position: fixed;
     top: 20px;
-    right: -300px; /* Initially out of view */
+    right: -300px;
     background-color: #f4f4f4;
     padding: 15px;
     border-radius: 8px;
@@ -161,13 +161,13 @@ button{
     display: none;
 }
 .message-container.show {
-    right: 20px; /* Slide in */
+    right: 20px;
 }
 .message-icon.error {
-    background-color: #f44336; /* Red for error */
+    background-color: #f44336;
 }
 .message-icon.success {
-    background-color: #4CAF50; /* Green for success */
+    background-color: #4CAF50;
 }
 .message-container i {
     margin-right: 10px;
@@ -175,30 +175,30 @@ button{
 
 /* MOBILE PHONE RESPONSIVENESS */
 @media screen and (max-width: 600px){
-    #reset-heading{
-        font-size: 30px;
-        width: 300px;
-        text-align: center;
-    }
-       #reset-introduction{ 
-        padding-bottom: 25px;
-        font-size: 14px;
-        width: 300px;
-        text-align: center;
-    }
-    .reset-container-content{
-        width: 95%;
-        padding: 40px 20px 40px 20px;
-    }
-    .reset-form input{
-        width: 100%;
-    }
-    #reset-button{
-        width: 300px;
-    }
-    .alrightrev{
-        text-align: center;
-        font-size: 10px;
-        color: #9CA3AF;
-    }
+#reset-heading{
+    font-size: 30px;
+    width: 300px;
+    text-align: center;
+}
+    #reset-introduction{ 
+    padding-bottom: 25px;
+    font-size: 14px;
+    width: 300px;
+    text-align: center;
+}
+.reset-container-content{
+    width: 95%;
+    padding: 40px 20px 40px 20px;
+}
+.reset-form input{
+    width: 100%;
+}
+#reset-button{
+    width: 300px;
+}
+.alrightrev{
+    text-align: center;
+    font-size: 10px;
+    color: #9CA3AF;
+}
 }

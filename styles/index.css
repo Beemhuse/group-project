@@ -15,8 +15,6 @@
 }
 #food{
   width: 35%;
-}
-#food{
   margin-top:20px;
 }
 #come{
@@ -270,10 +268,10 @@
   }
 .header-nav ul a:hover{
     border-bottom: none;
-}  
+  }  
 .header-nav ul{
   flex-direction: column;
-}
+  }
 .header-nav{
   position: fixed;
   bottom: 0%;
@@ -291,7 +289,7 @@
   }
   .header-logo{
   z-index: 3;
-}
+  }
   .hamburger{
     display: block;
     width: 30px;
@@ -301,8 +299,7 @@
     background-color: #fff;
     background:  0 0;
     z-index: 3;
-    }
-  
+  }
 .bar{
   position: absolute;
   top: 3px;
@@ -313,20 +310,20 @@
   }
 #bar2{
     top: 11px;
-}
+  }
 #bar3{
   top: 19px;
-}
+  }
 .header-nav.active{
     right: 0;
-} 
+  } 
 .sign-up-button{
   display: none;
-}
+  }
 #sign-up-mobile{
   display: block;
   padding: 8px;
-}
+  }
 #login-mobile{
   display: block;
   padding: 8px;
@@ -336,19 +333,19 @@
   color: #16A34A;
   background: none;
   cursor: pointer;
-}
+  }
 .hamburger.open #bar1{
   background-color: #AFAFAF;
   transform: rotate(45deg) translate(6px, 5px);
 
-}
+  }
 .hamburger.open #bar2{
   background-color: transparent;
-}
+  }
 .hamburger.open #bar3{
   background-color: #AFAFAF;
   transform: rotate(-45deg) translate(6px, -5px);
-}
+  }
   /* Toggling nav */
   .header-logo img{
       width: 80%;
