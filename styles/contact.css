@@ -144,7 +144,30 @@ textarea {
     margin-top: 30px;
     padding: 15px 25px;
     border-radius: 10px;
+    position: relative;
 }
+/* Loader styles */
+.loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #4CAF50; /* Green */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    display: none;
+    top: 27%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:  auto;
+  }
+  
+  /* Spin animation */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 @media only screen and (max-width: 768px){
     
     #what-we-offer {
