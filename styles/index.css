@@ -267,6 +267,13 @@
   .intro-right-content img{
       width: 100%;
   }
+  .offer-content{
+    flex-direction: column;
+    gap: 5px;
+}
+.offer{
+    margin-top: 50px;
+}
   #come{
       font-size: 30px;
   }
