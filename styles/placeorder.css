@@ -23,7 +23,7 @@
 }
 form{
     width: 100%;
-
+    
 }
 label::after{
     content: "*";
@@ -112,6 +112,10 @@ label::after{
 }
 
 @media only screen and (max-width: 600px){
+    form{
+        padding-top: 20px;
+    }
+    
     #container{
         flex-direction: column;
     }
