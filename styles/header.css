@@ -13,7 +13,7 @@ header{
  right: -250px;
  width: 230px;
  height: 100vh;
- background-color: #333;
+ background-color: #F2994A;
  padding: 10px;
  z-index: 20;
  display: flex;
@@ -32,7 +32,7 @@ header{
 .dropdown-menu ul li a{ 
   display: flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 15px;
   cursor: pointer;
   text-decoration: none;
   color: #fff;
@@ -122,7 +122,7 @@ header{
   text-decoration: none;
   color: #4B5563;
 }
-.header-nav ul a:hover{
+.header-nav ul a:active{
   border-bottom: 2px solid #16A34A;
   padding-bottom: 6px;
 }
@@ -155,4 +155,126 @@ i{
 }
 #login-mobile{
     display: none;
+}
+@media screen and (max-width:600px){
+  header{
+    position: fixed;
+    background-color: white;
+    height: 60px;
+    z-index: 50;
+    width: 100%;
+    border: solid red;
+  }
+  /* Toggling nav */
+  .header-container{
+    top: 0;
+    transition: all 0.5s;
+  }
+  .user{
+    display: none;
+  }
+.header-nav ul a:hover{
+    border-bottom: none;
+  }  
+.header-nav ul{
+  flex-direction: column;
+  }
+.header-nav{
+  position: fixed;
+  bottom: 0%;
+  background-color: #F2994A;
+  width: 100%;
+  height: calc(100% - 60px);
+  align-items: right;
+  right: -500px; 
+  transition: all 0.5s;
+  cursor: pointer;
+  justify-content: end;
+  align-items: start;
+  padding-right: 10px;
+  padding-top: 40px;
+  border: solid red;
+
+  }
+    /* Toggling nav */
+    .header-logo img{
+      width: 80%;
+  }
+  .header-container{
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+      padding-right: 30px;
+      padding-top: 15px;
+      z-index: 1;
+  }
+  .offer-content{
+      flex-direction: column;
+      gap: 5px;
+  }
+  .offer{
+      margin-top: 50px;
+  }
+  .header-left-content{
+      gap: 10px;
+  }
+  .header-logo{
+  z-index: 3;
+  }
+  .hamburger{
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: none;
+    background-color: #fff;
+    background:  0 0;
+    z-index: 3;
+  }
+.bar{
+  position: absolute;
+  top: 3px;
+  background-color: #AFAFAF;
+  width: 100%;
+  height: 3px;
+  transition: all .3s ease-in;
+  }
+#bar2{
+    top: 11px;
+  }
+#bar3{
+  top: 19px;
+  }
+.header-nav.active{
+    right: 0;
+  } 
+.sign-up-button{
+  display: none;
+  }
+#sign-up-mobile{
+  display: block;
+  padding: 8px;
+  }
+#login-mobile{
+  display: block;
+  padding: 8px;
+  width: 100px;
+  border-radius: 18px;
+  border: 1px solid #16A34A;
+  color: #16A34A;
+  background: none;
+  cursor: pointer;
+  }
+.hamburger.open #bar1{
+  background-color: #AFAFAF;
+  transform: rotate(45deg) translate(6px, 5px);
+
+  }
+.hamburger.open #bar2{
+  background-color: transparent;
+  }
+.hamburger.open #bar3{
+  background-color: #AFAFAF;
+  transform: rotate(-45deg) translate(6px, -5px);
+  }
 }

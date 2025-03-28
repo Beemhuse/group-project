@@ -27,7 +27,7 @@ passwordIcon.onclick = (e) => {
 async function handleLogin(event) {
     event.preventDefault();
     if(passwordInput.value.length < 8){
-        showMessage("Password must be 8 characters long", "error");
+        showMessage("Password must be at least 8 characters long", "error");
         return;
     }
     else{
