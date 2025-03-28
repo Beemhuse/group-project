@@ -16,7 +16,6 @@
 </head>
 
 <body>
-
     <header>
         <div class="header-container">
             <div class="header-logo">
@@ -72,16 +71,6 @@
     </header>
 
     <main>
-        <div id="what-we-offer">
-            <button class="available-dishes">All</button>
-            <button class="available-dishes">Rice</button>
-            <button class="available-dishes">Salads </button>
-            <button class="available-dishes">Protein </button>
-            <button class="available-dishes">Soup </button>
-            <button class="available-dishes"> Drinks </button>
-            <button class="available-dishes">Pastries </button>
-        </div>
-
         <div id="home-contact">
             <a href="">Home</a>/
             <a href="">Contact Us</a>
@@ -120,10 +109,13 @@
                     <input type="text" id="name" placeholder="Your Name" required>
                     <input type="email" id="email" placeholder="Your Email" required>
                     <textarea id="message" placeholder="Your Message" cols="66" rows="10"></textarea>
-                    <button id="message-btn">Send Message</button>
+                    <button id="message-btn">Send Message
+                        <div id="loader" class="loader"></div>
+                    </button>
                 </form>
             </div>
         </div>
+       
         
 
     </main>

@@ -1,48 +1,53 @@
- 
+const loader = document.getElementById("loader");
+let loading = false;
 
 document.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
-  let dishData = []
-const buttonContainer = document.getElementById("what-we-offer");
-const loader = document.getElementById("loader");
-   
-    async function getDishes() {
-      try {
-         loader.style.display = "block";
-        const response = await fetch(`https://student-food-be.onrender.com/api/dishes`, {
+  let dishData = [];
+  const buttonContainer = document.getElementById("what-we-offer");
+  loading = true;
+  loader.style.display = "block";
+
+  async function getDishes() {
+    try {
+      loader.style.display = "block";
+      const response = await fetch(
+        `https://student-food-be.onrender.com/api/dishes`,
+        {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
           },
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
         }
-        let result = await response.json();
-        dishData=result
-        displayDishes(result);
+      );
 
-      } catch (error) {
-        console.log("Error fetching dishes", error);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-      loader.style.display = "none";
+      let result = await response.json();
+      dishData = result;
+      displayDishes(result);
+    } catch (error) {
+      console.log("Error fetching dishes", error);
     }
-    getDishes();
-    
-      function displayDishes(result) {
-        const container = document.getElementById("Our-dishes");
-        container.innerHTML = "";
-        result.forEach((result) => {
-          const menu = document.createElement("div");
-          menu.classList.add("dishes-menu");
+    loader.style.display = "none";
+  }
+  getDishes();
 
-          const formattedPrice = new Intl.NumberFormat("en-NG", {
-            style: "currency",
-            currency: "NGN",
-          }).format(result.price);
+  function displayDishes(result) {
+    const container = document.getElementById("Our-dishes");
+    container.innerHTML = "";
+    result.forEach((result) => {
+      const menu = document.createElement("div");
+      menu.classList.add("dishes-menu");
 
-          menu.innerHTML = `
+      const formattedPrice = new Intl.NumberFormat("en-NG", {
+        style: "currency",
+        currency: "NGN",
+        maximumFractionDigits: 0, 
+      }).format(result.price);
+
+      menu.innerHTML = `
                         <div class="dish">
                             <img id="dish-image" src=${result.imageUrl} alt=${result.name} width="120px">
                             <div class="dish-content">
@@ -57,44 +62,45 @@ const loader = document.getElementById("loader");
                             </div>
                         </div>`;
 
-          container.appendChild(menu);
-          menu.addEventListener("click", () => openDetails(result.slug.current))
-          
-        });
-      }
-   
-      async function getDishesCategory() {
-        try {
-          const response = await fetch(`https://student-food-be.onrender.com/api/category`, {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          let result = await response.json();
-           console.log(result);
-          displayCategoryButtons(result);
-         
-          
-        } catch (error) {
-          console.log("Error fetching dishes", error);
+      container.appendChild(menu);
+      menu.addEventListener("click", () => openDetails(result.slug.current));
+    });
+  }
+
+  async function getDishesCategory() {
+    try {
+      const response = await fetch(
+        `https://student-food-be.onrender.com/api/category`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
-        
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-      getDishesCategory();
-  
+      let result = await response.json();
+      console.log(result);
+      displayCategoryButtons(result);
+    } catch (error) {
+      console.log("Error fetching dishes", error);
+    }
+  }
+  getDishesCategory();
 
   function displayCategoryButtons(result) {
-     if (!buttonContainer) {
+    if (!buttonContainer) {
       alert("Container with ID 'what-we-offer' not found!");
       return;
     }
     buttonContainer.innerHTML = "";
-    const categories = ["All", ...new Set(result?.categories?.map((categories) => categories.title))];  
-    console.log(categories)
+    const categories = [
+      "All",
+      ...new Set(result?.categories?.map((categories) => categories.title)),
+    ];
+    console.log(categories);
     categories.forEach((categories) => {
       const button = document.createElement("button");
       button.classList.add("available-dishes");
@@ -102,42 +108,31 @@ const loader = document.getElementById("loader");
       buttonContainer.appendChild(button);
       button.addEventListener("click", (e) => {
         e.preventDefault();
-          filterData(categories, result);
-          
+        filterData(categories, result);
       });
     });
   }
 
-  function filterData(categories, ) {
+  function filterData(categories) {
     if (categories === "All") {
       getDishes();
       return;
     }
     console.log(dishData);
-      
-    const filteredDishes = categories === 'All'? dishData : dishData.filter((dish) => dish.category?.title?.toLowerCase() === categories.toLowerCase());
-   displayDishes(filteredDishes);
-  
+
+    const filteredDishes =
+      categories === "All"
+        ? dishData
+        : dishData.filter(
+            (dish) =>
+              dish.category?.title?.toLowerCase() === categories.toLowerCase()
+          );
+    displayDishes(filteredDishes);
   }
-  function openDetails(slug){
+  function openDetails(slug) {
     window.location.href = `menu-details.html?slug=${slug}`;
   }
 });
-
-
-  
-
- 
-
-
-
-
-
-
-
-
-
-
 
 // const menuData = "./menu.json";
 
@@ -284,5 +279,3 @@ const loader = document.getElementById("loader");
 
 //   getData();
 // });
-
- 

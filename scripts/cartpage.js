@@ -11,11 +11,9 @@ let a = 1;
 returnButton.addEventListener("click", () => {
   window.location.href = "../pages/menu-details.html";
 });
-  checkoutButton.addEventListener("click", () => {
-    window.location.href = "../pages/placeorder.html";
-  });
-
-
+checkoutButton.addEventListener("click", () => {
+  window.location.href = "../pages/placeorder.html";
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   let cartDish = JSON.parse(localStorage.getItem("cart")) || [];
@@ -37,16 +35,17 @@ document.addEventListener("DOMContentLoaded", () => {
       style: "currency",
       currency: "NGN",
     }).format(dish.price);
-    
+
     const formattedSubtotal = new Intl.NumberFormat("en-NG", {
       style: "currency",
       currency: "NGN",
+      maximumFractionDigits: 0, 
     }).format(dish.price * dish.quantity);
 
     dishElement.innerHTML = `
               <div class="dishes-title">
               <button class="remove-btn" data-index="${index}"> <i class="fa-solid fa-trash"></i></button>
-                      <img src="${dish.imageUrl}" alt="${dish.title }" class="dish-image" >
+                      <img src="${dish.imageUrl}" alt="${dish.title}" class="dish-image" >
                     <p class="cart-title">${dish.title}</p>
                 </div>
                 <div class="dish-price">
@@ -54,24 +53,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div id="add-more-dishes">
                     <div class="remove-dish"> <i class="fa-solid fa-minus"></i></div>
-                    <input type="text" value="${
-                      dish.quantity
-                    }" min="1" class="cart-quantity" data-index="${index}" id="quantity-value">
+                    <input type="text" value="${dish.quantity}" min="1" class="cart-quantity" data-index="${index}" id="quantity-value">
                     <div class="add-dish"><i class="fa-solid fa-plus"></i></div>
                 </div>
                 <div id="dish-subtotal">
-                     <p class="cart-subtotal">${
-                      formattedSubtotal
-                     }</p>
-                </div>
-                
-                
+                     <p class="cart-subtotal">${formattedSubtotal}</p>
+                </div>            
         `;
 
     cartContainer.appendChild(dishElement);
   });
 
-  // Attach event listeners for quantity update and remove button
   updateCartListeners();
   updateSubtotal();
 });
@@ -101,72 +93,48 @@ function updateQuantity(event) {
   document.dispatchEvent(new Event("DOMContentLoaded"));
 }
 
-// Remove item from cart
-function removeItem(event) {
-  let cartDish = JSON.parse(localStorage.getItem("cart")) || [];
-  let index = event.target.getAttribute("data-index");
-
-  const modal = document.createElement('div');
-  modal.classList.add('delete-modal');
-  modal.innerHTML = `
-  <div class="modal">
-      <p>Are you sure you want to remove this dish from your Cart?</p>
-      <button type="button" class="confirm-button">Yes</button>
-      <button type="button" class="cancel-button">Cancel</button>
-  </div>
-  `;
-
-  modal.querySelector('.confirm-button').addEventListener('click', () => {
-      modal.remove();
-      cartDish.splice(index, 1);
-      localStorage.setItem("cart", JSON.stringify(cartDish));
-  });
-
-  document.body.appendChild(modal);
-  modal.querySelector('.cancel-button').addEventListener('click', () => {
-      modal.remove();
-  });
-  
-
-  document.dispatchEvent(new Event("DOMContentLoaded"));
-}
- 
- 
-
 function updateSubtotal(event) {
-    function updateSubtotal() {
-        let cartDish = JSON.parse(localStorage.getItem("cart")) || [];
-        let cartItems = document.querySelectorAll(".orders");
-    
-        cartItems.forEach((item, index) => {
-            let price = item.querySelector(".cart-price").textContent.replace("N", "").trim();
-            let quantity = item.querySelector(".cart-quantity").value;
-            let subtotal = item.querySelector(".cart-subtotal");
-    
-            let priceValue = parseFloat(price);
-            let quantityValue = parseInt(quantity);
-    
-            subtotal.textContent = `N${(priceValue * quantityValue).toFixed(2)}`;
-        });
-    }
-    
+  function updateSubtotal() {
+    let cartDish = JSON.parse(localStorage.getItem("cart")) || [];
+    let cartItems = document.querySelectorAll(".orders");
+
+    cartItems.forEach((item, index) => {
+      let price = item
+        .querySelector(".cart-price")
+        .textContent.replace("N", "")
+        .trim();
+      let quantity = item.querySelector(".cart-quantity").value;
+      let subtotal = item.querySelector(".cart-subtotal");
+
+      let priceValue = parseFloat(price);
+      let quantityValue = parseInt(quantity);
+
+      subtotal.textContent = `N${(priceValue * quantityValue).toFixed(2)}`;
+    });
+  }
+}
+
+document.addEventListener("click", (event) => {
+  let cartDish = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (event.target.closest(".add-dish")) {
+    let index = event.target
+      .closest(".add-dish")
+      .parentElement.querySelector(".cart-quantity")
+      .getAttribute("data-index");
+    cartDish[index].quantity++;
   }
 
-  document.addEventListener("click", (event) => {
-    let cartDish = JSON.parse(localStorage.getItem("cart")) || [];
+  if (event.target.closest(".remove-dish")) {
+    let index = event.target
+      .closest(".remove-dish")
+      .parentElement.querySelector(".cart-quantity")
+      .getAttribute("data-index");
+    cartDish[index].quantity = Math.max(1, cartDish[index].quantity - 1);
+  }
 
-    if (event.target.closest(".add-dish")) {
-        let index = event.target.closest(".add-dish").parentElement.querySelector(".cart-quantity").getAttribute("data-index");
-        cartDish[index].quantity++;
-    }
-
-    if (event.target.closest(".remove-dish")) {
-        let index = event.target.closest(".remove-dish").parentElement.querySelector(".cart-quantity").getAttribute("data-index");
-        cartDish[index].quantity = Math.max(1, cartDish[index].quantity - 1);
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cartDish));
-    document.dispatchEvent(new Event("DOMContentLoaded"));
+  localStorage.setItem("cart", JSON.stringify(cartDish));
+  document.dispatchEvent(new Event("DOMContentLoaded"));
 });
 
 function sumSubtotal() {
@@ -179,14 +147,19 @@ function sumSubtotal() {
     return;
   }
 
-  let subtotal = cart.reduce((total, dish) => total + (dish.price * dish.quantity), 0);
+  let subtotal = cart.reduce(
+    (total, dish) => total + dish.price * dish.quantity,
+    0
+  );
   let formattedSubtotal = new Intl.NumberFormat("en-NG", {
     style: "currency",
     currency: "NGN",
-  }).format(subtotal);
+    maximumFractionDigits: 0,  // Removes extra decimal places
+  }).format(subtotal, );
 
   summedSubtotal.textContent = formattedSubtotal;
-  sumTotal.textContent = formattedSubtotal; 
+  sumTotal.textContent = formattedSubtotal;
+  localStorage.setItem("subtotal", JSON.stringify(subtotal));
 }
 
 // Call the function to update subtotal on page load
@@ -205,5 +178,47 @@ document.addEventListener("change", (event) => {
   }
 });
 
+function removeItem(event) {
+  let cartDish = JSON.parse(localStorage.getItem("cart")) || [];
+  let removeButton = event.target.closest(".remove-btn");
+  let index = Number(removeButton.getAttribute("data-index")); // Get the correct index
 
+  if (!removeButton) {
+    console.log(error);
+  }
+
+  const modal = document.createElement("div");
+  modal.classList.add("remove-modal"); // Ensure this class has visible CSS
+  const messageText = document.createElement("p");
+  messageText.textContent = "Are you sure you want to remove this item?";
+  const dialog = document.createElement("div");
+  dialog.classList.add("dialog");
+  const confirmBtn = document.createElement("button");
+  confirmBtn.textContent = "Yes";
+  confirmBtn.classList.add("confirm-btn");
+  const cancelBtn = document.createElement("button");
+  cancelBtn.textContent = "Cancel";
+  cancelBtn.classList.add("cancel-btn");
+  modal.appendChild(messageText);
+  modal.appendChild(confirmBtn);
+  modal.appendChild(cancelBtn);
+  dialog.appendChild(confirmBtn);
+  dialog.appendChild(cancelBtn);
+  modal.appendChild(dialog);
+  document.body.appendChild(modal);
+  let confirm = document.querySelector(".confirm-btn");
+  let cancel = document.querySelector(".cancel-btn");
+  
+  confirm.addEventListener("click", (e) => {
+    if (e.target.classList.contains("confirm-btn")) {
+      modal.remove();
+      cartDish.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cartDish));
+      document.dispatchEvent(new Event("DOMContentLoaded"));
+    }
+  });
+  cancel.addEventListener("click", () => {
+    modal.remove();
+  });
+}
  

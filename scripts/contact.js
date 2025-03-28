@@ -1,6 +1,6 @@
+// Fetching the data from the API
  
 
-// Fetching the data from the API
 document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.getElementById("input-fields");
 
@@ -8,33 +8,41 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     try {
-      const response = await fetch(`https://student-food-be.onrender.com/api/contact`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
+      const response = await fetch(
+        `https://student-food-be.onrender.com/api/contact`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
             name: document.getElementById("name").value,
-          email: document.getElementById("email").value,
-          message: document.getElementById("message").value,
-        }),
-      });
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value,
+          }),
+        }
+      );
       const result = await response.json();
       console.log(result);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
-      } else{
-        showMessage();
-  
+      } else {
+        showMessage("Message sent successfully");
+        loader.style.display = "none";
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+        event.target.reset();
       }
-
     } catch (error) {
       console.error("Error:", error);
     }
   }
   if (contactForm) {
-    contactForm.addEventListener("submit", (event) =>submitMessage(event, "contact"));
+    contactForm.addEventListener("submit", (event) =>
+      submitMessage(event, "contact")
+    );
   }
 });
 
