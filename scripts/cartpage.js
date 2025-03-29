@@ -24,6 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (cartDish.length === 0) {
     cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+    cartContainer.style.display = "flex";
+    cartContainer.style.alignItems = "center";
+    cartContainer.style.justifyContent = "center";
+    cartContainer.style.color = "green";
+    cartContainer.style.fontSize = "30px";
+    returnButton.style.backgroundColor = "red";
     return;
   }
 
@@ -34,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formattedPrice = new Intl.NumberFormat("en-NG", {
       style: "currency",
       currency: "NGN",
+      maximumFractionDigits: 0, 
     }).format(dish.price);
 
     const formattedSubtotal = new Intl.NumberFormat("en-NG", {
