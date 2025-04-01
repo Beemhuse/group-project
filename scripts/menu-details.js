@@ -1,29 +1,16 @@
-// Get elements from the DOM
 let messageContainer = document.getElementById("message-container");
 let messageText = document.getElementById("message");
 let messageIcon = document.getElementById("message-icon");
 const dishContainer = document.querySelector('.menu-details-container-content');
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('slug');
-const loginButton = document.querySelector('.log-in-button');
-const cartCountElement = document.getElementById('cart-count');
-const cartIcon = document.querySelector('.fa-cart-shopping');
-console.log(cartIcon);
-
-// let a = 1;
-
-loginButton.addEventListener("click", () => {
-    window.location.href = "/pages/auth/login.html";  // Redirect to login page
-});
 
 async function fetchDishProperties() {
     try {
         const response = await fetch(`https://student-food-be.onrender.com/api/dishes/${myParam}`);
         if (response.ok) {
-            console.log("response is okay");
             const dish = await response.json();
             displayDish(dish);
-            console.log(dish);
         } else {
             throw new Error('Network response was not ok');
         }
@@ -33,6 +20,10 @@ async function fetchDishProperties() {
 }
 
 function displayDish(dish) {
+    const formattedPrice = new Intl.NumberFormat("en-NG", {
+        style: "currency",
+        currency: "NGN",
+      }).format(dish.price);
     const pageLeft = document.createElement('div');
     pageLeft.setAttribute('class', 'menu-details-container-left-content');
     pageLeft.innerHTML = `<img src="${dish.imageUrl}" class="food-image" alt="${dish.title}">`;
@@ -46,8 +37,7 @@ function displayDish(dish) {
             <button class="size">Serving size: ${dish.size}</button>
         </div>
         <span id="food-price">
-            <i class="fa-solid fa-naira-sign" style="color: #616161;"></i>
-            <p id="price">${dish.price}</p>
+            <p id="price">${formattedPrice}</p>
         </span>
         <div class="quantity">
             <span class="quantity-content">
@@ -69,21 +59,17 @@ function displayDish(dish) {
 
     dishContainer.appendChild(pageLeft);
     dishContainer.appendChild(pageRight);
-
     const decrementButton = document.querySelector(".sub-number");
     const incrementButton = document.querySelector(".add-number");
     const quantityValue = document.querySelector(".quantity-value");
     const orderButton = document.querySelector(".order");
-
     let a = 1;
-
     incrementButton.addEventListener("click", () => {
         a++;
         a = (a < 10) ? "0" + a : a;
         quantityValue.value = a;
         updateCartQuantity(myParam, parseInt(a, 10));
     });
-
     decrementButton.addEventListener("click", () => {
         if (a > 1) {
             a--;
@@ -92,70 +78,54 @@ function displayDish(dish) {
             updateCartQuantity(myParam, parseInt(a, 10));
         }
     });
-
-    // orderButton.addEventListener("click", () => {
-    //     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    //     // Check if the item already exists in the cart
-    //     const existingItem = cart.find(item => item.slug === myParam);
-    //     if (existingItem) {
-    //         existingItem.quantity = parseInt(quantityValue.value, 10);
-    //     } else {
-    //         cart.push({
-    //             slug: myParam,
-    //             title: dish.title,
-    //             price: dish.price,
-    //             imageUrl: dish.imageUrl,
-    //             quantity: parseInt(quantityValue.value, 10),
-    //         });
-    //     }
-
-    //     localStorage.setItem("cart", JSON.stringify(cart));
-    //     updateCartCount();
-    // });
     orderButton.addEventListener("click", () => {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    
-        // Check if the item already exists in the cart
         const existingItem = cart.find(item => item.slug === myParam);
+    
         try {
+            const newQuantity = parseInt(quantityValue.value, 10); // Get the new quantity from the input
+    
             if (existingItem) {
-                existingItem.quantity = parseInt(quantityValue.value, 10);
+                // If the item already exists in the cart, check if the quantity is different
+                const previousQuantity = existingItem.quantity;
+    
+                if (previousQuantity !== newQuantity) {
+                    // Update the quantity if it is different
+                    existingItem.quantity = newQuantity;
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                    updateCartCount(); // Update the cart count
+    
+                    // Show success message indicating the item quantity was updated
+                    showMessage(`${dish.title} quantity updated`, "success");
+                } else {
+                    // Show a message saying the item is already in the cart
+                    showMessage(`${dish.title} is already in your cart`, "info");
+                }
             } else {
+                // If the item is not already in the cart, add it
                 cart.push({
                     slug: myParam,
                     title: dish.title,
                     price: dish.price,
                     imageUrl: dish.imageUrl,
-                    quantity: parseInt(quantityValue.value, 10),
+                    quantity: newQuantity,
                 });
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateCartCount(); // Update the cart count
+    
+                // Show success message for adding to the cart
+                showMessage(`${dish.title} successfully added to cart`, "success");
             }
-    
-            localStorage.setItem("cart", JSON.stringify(cart));
-            updateCartCount();
-    
-            // Show success alert
-            showMessage(`${dish.title} successfullly added to cart`, "success");
-            
         } catch (error) {
-            // Show error alert if there's an issue
+            // Show error message if there's an issue adding to the cart
             showMessage('Failed to add to cart', "error");
             console.error("Error adding to cart:", error);
         }
     });
     
+    
+    
 }
-
-// Function to update cart count
-function updateCartCount() {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    // let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    let totalItems = cart.length;
-    cartCountElement.style.visibility = totalItems > 0 ? "visible" : "hidden";
-    cartCountElement.innerText = totalItems;
-}
-
-// Function to update cart quantity in localStorage
 function updateCartQuantity(slug, newQuantity) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let item = cart.find(item => item.slug === slug);
@@ -165,9 +135,6 @@ function updateCartQuantity(slug, newQuantity) {
     }
     updateCartCount();
 }
-cartIcon.addEventListener('click',() => {
-    window.location.href = "/pages/cartpage.html"; // direct to cartpage
-})
 // Fetch dishes for menu list
 const dishesContainer = document.querySelector('.food-lists-container-content-container');
 async function fetchDishes() {
@@ -182,10 +149,13 @@ async function fetchDishes() {
         console.error('There was a problem fetching the dishes:', error);
     }
 }
-
 // Function to display dishes in the menu list
 function displayDishes(dishes) {
     dishes?.forEach(dish => {
+        const formattedPrice = new Intl.NumberFormat("en-NG", {
+            style: "currency",
+            currency: "NGN",
+          }).format(dish.price);
         const dishCard = document.createElement('div');
         dishCard.setAttribute('class', 'food-lists-container-content');
 
@@ -209,7 +179,7 @@ function displayDishes(dishes) {
 
         const dishPrice = document.createElement('div');
         dishPrice.classList.add('dish-price');
-        dishPrice.textContent = `$${dish.price}`;
+        dishPrice.textContent = `${formattedPrice}`;
 
         let d = document.createElement('span');
         let q = document.createElement('span');

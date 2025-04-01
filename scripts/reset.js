@@ -11,6 +11,18 @@ document.addEventListener("DOMContentLoaded", () => {
     resetPasswordForm.addEventListener("submit", async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
     // Get value from the confirm password and your email from the local storage
+
+         // Check if passwords match
+         if (confirmPasswordInput.value !== newPasswordInput.value) {
+          showMessage("Passwords do not match", "error");
+          return; // Exit the function if passwords don't match
+      }
+
+      // Check if the confirm password has at least 8 characters
+      if (confirmPasswordInput.value.length < 8) {
+          showMessage("Password must be at least 8 characters long", "error");
+          return; // Exit the function if password is too short
+      }
     const newPassword = confirmPasswordInput.value;
     const email = localStorage.getItem("email")
     // Get the userData together
@@ -36,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
               },
               body: JSON.stringify({...userData}),
             });
-            const data = await response.json();
+            const result = await response.json();
             if (response.ok) {
               // Show success message and transition
             showMessage("Password reset successful", "success");

@@ -32,7 +32,7 @@ async function handleSignup(event) {
   const loader = document.getElementById('loader');
   const signInButtonText = document.getElementById('sign-in-button-text');
     if(password.length < 8){
-        showMessage("Password must be 8 characters long", "error");
+        showMessage("Password must be at least 8 characters long", "error");
         return
     }
     else{

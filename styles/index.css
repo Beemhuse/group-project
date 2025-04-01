@@ -3,143 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-header{
-  position: relative;
-  z-index: 1;
-}
-/* dropdown */
-.dropdown-menu {
- position: fixed;
- top: 80px;
- right: -250px;
- width: 230px;
- height: 100vh;
- background-color: #333;
- padding: 10px;
- z-index: 20;
- display: flex;
- justify-content: center;
- transition: right 0.3s ease; /* Smooth transition */
- /* align-items: center; */
-}
-.dropdown-menu.showDropdown{
-  right: 0;
-}
-.dropdown-menu ul {
-  list-style: none;
-  display: flex;
-  gap: 3px;
-  flex-direction: column;
-}
-.dropdown-menu ul li a{ 
-  display: flex;
-  align-items: center;
-  font-size: 12px;
-  /* color: red; */
-  cursor: pointer;
-  text-decoration: none;
-  color: #fff;
-  /* color: #2c2525; */
-  gap: 5px;
-  transition: background-color 0.3s;
-}
-/* dropdown */
-/* logout */
-.user{
-  display: none;
-  cursor: pointer;
-}
-.modal {
-  position: fixed;
-  top: 0;
-  z-index: 1; /* Sit on top */
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
-}
-.hamburger{
-  display: none;
-}
-.modal-content {
-  background-color: rgb(211, 206, 206);
-  padding: 20px 20px 15px 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-#confirmLogout, #cancelLogout{
-  padding: 10px 20px;
-  margin: 10px;
-  border: none;
-  background-color: #F2994A;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-#confirmLogout:hover, #cancelLogout:hover {
-  background-color: #eb7a18;
-}
-/* logout */
-
-.header-container{
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  padding-left: 60px;
-  padding-right: 60px;
-  position: sticky;
-  top: 10px;
-  box-shadow: 1px 3px 4px rgba(0, 0, 0, .1);
-}
-.user{
-  background-color: #757575;
-  height: 32px;
-  width: 32px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.header-nav ul a{
-  text-decoration: none;
-  color: #4B5563;
-}
-.header-nav ul a:hover{
-  border-bottom: 2px solid #16A34A;
-  padding-bottom: 6px;
-}
-.header-nav ul{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  list-style-type: none;
-}
-.header-left-content{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.sign-up-button{
-  padding: 12px;
-  width: 100px;
-  border-radius: 18px;
-  border: 1px solid #16A34A;
-  color: #16A34A;
-  background: none;
-  cursor: pointer;
-}
-i{
-  cursor: pointer;
-}
-/* ORDER SECTION */
 .intro-container{
   padding: 20px;
   display: flex;
@@ -152,8 +15,6 @@ i{
 }
 #food{
   width: 35%;
-}
-#food{
   margin-top:20px;
 }
 #come{
@@ -220,7 +81,7 @@ i{
   margin-top: 30px;
 }
 .why-choose-us-delivery-option-content-container{
-  margin-top: 20px;
+  margin-top: 10px;
   padding-left: 40px;
 }
 .why-choose-us-delivery-option-content{
@@ -285,14 +146,13 @@ i{
   box-shadow: 1px 3px 4px rgba(0, 0, 0, .1);
   border-radius: 12px;
   padding-bottom: 40px;
-  margin-top: 40px;
   width: 100%;
-  height: 350px;
+  height: 340px;
   cursor: pointer;
 }
 .dish-image{
   width: 100% ;
-  height: 250px;
+  height: 240px;
   object-fit: cover;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
@@ -310,6 +170,7 @@ i{
 }
 .dish-price{
   color: #4B5563;
+  font-weight: bold;
 }
 .dish-description{
   font-size: 15px;
@@ -388,137 +249,14 @@ i{
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-#sign-up-mobile{
-  display: none;
-}
-#login-mobile{
-  display: none;
-}
 /* MOBILE RESPONSIVENESS */
 @media screen and (max-width: 600px){
-  header{
-    position: fixed;
-    background-color: white;
-    height: 80px;
-    z-index: 50;
-  }
-  /* Toggling nav */
-  .header-container{
-    top: 0;
-    transition: all 0.5s;
-  }
-  .user{
-    display: none;
-  }
-.header-nav ul a:hover{
-    border-bottom: none;
-}  
-.header-nav ul{
-  flex-direction: column;
-}
-.header-nav{
-  position: fixed;
-  bottom: 0%;
-  background-color: #F2994A;
-  width: 100%;
-  height: calc(100% - 80px);
-  align-items: right;
-  right: -500px; 
-  transition: all 0.5s;
-  cursor: pointer;
-  justify-content: end;
-  align-items: start;
-  padding-right: 10px;
-  padding-top: 40px;
-  }
-  .header-logo{
-  z-index: 3;
-}
-  .hamburger{
-    display: block;
-    width: 30px;
-    height: 30px;
-    position: relative;
-    border: none;
-    background-color: #fff;
-    background:  0 0;
-    z-index: 3;
-    }
-  
-.bar{
-  position: absolute;
-  top: 3px;
-  background-color: #AFAFAF;
-  width: 100%;
-  height: 3px;
-  transition: all .3s ease-in;
-  }
-#bar2{
-    top: 11px;
-}
-#bar3{
-  top: 19px;
-}
-.header-nav.active{
-    right: 0;
-} 
-.sign-up-button{
-  display: none;
-}
-#sign-up-mobile{
-  display: block;
-  padding: 8px;
-}
-#login-mobile{
-  display: block;
-  padding: 8px;
-  width: 100px;
-  border-radius: 18px;
-  border: 1px solid #16A34A;
-  color: #16A34A;
-  background: none;
-  cursor: pointer;
-}
-.hamburger.open #bar1{
-  background-color: #AFAFAF;
-  transform: rotate(45deg) translate(6px, 5px);
-
-}
-.hamburger.open #bar2{
-  background-color: transparent;
-}
-.hamburger.open #bar3{
-  background-color: #AFAFAF;
-  transform: rotate(-45deg) translate(6px, -5px);
-}
-  /* Toggling nav */
-  .header-logo img{
-      width: 80%;
-  }
-  .header-container{
-      justify-content: center;
-      gap: 10px;
-      padding: 10px;
-      padding-right: 30px;
-      padding-top: 15px;
-      z-index: 1;
-  }
-  .offer-content{
-      flex-direction: column;
-      gap: 5px;
-  }
-  .offer{
-      margin-top: 50px;
-  }
-  .header-left-content{
-      gap: 10px;
-  }
   /* ORDER SECTION */
   .intro-container{
       flex-direction: column;
       align-items: center;
       margin-bottom: -20px;
-  }
+      }
   .intro-left-content{
       margin-top: 8%;
       margin-left: 30px;
@@ -529,6 +267,13 @@ i{
   .intro-right-content img{
       width: 100%;
   }
+  .offer-content{
+    flex-direction: column;
+    gap: 5px;
+}
+.offer{
+    margin-top: 50px;
+}
   #come{
       font-size: 30px;
   }

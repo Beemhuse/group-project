@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/notfound.css">
-    <link rel="icon" href="/Images/head-logo.png">
-    <link rel="icon" href="/styles/footer.css">
-    <link rel="icon" href="/styles/header.css">
-    <title>404 [Not found]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="/Images/head-logo.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/styles/checkout.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <title>Check out</title>
 </head>
 <body>
     <header>
@@ -17,9 +21,9 @@
             </div>
             <nav class="header-nav">
                 <ul>
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/pages/menu.html">Our Menu</a></li>
-                    <li><a href="/pages/contact.html">Contact Us</a></li>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./pages/menu.html">Our Menu</a></li>
+                    <li><a href="./pages/contact.html">Contact Us</a></li>
                     <button class="sign-up-button" id="sign-up-mobile">Sign In</button>
                     <button class="log-in-button" id="login-mobile">Log In</button>
                 </ul>
@@ -65,15 +69,31 @@
     </header>
     <main>
         <section>
-            <div class="not-found">
-                <div class="not-found-container">
-                    <img src="/Images/Sad.png" alt="">
-                    <h2>404 Not found</h2>
-                    <p id="notice">Your visited page not found. You may go home page.</p>
-                    <button id="return">Return to homepage</button>
+            <div class="checkout">
+                <div class="checkout-container">
+                    <h2>Checkout</h2>
+                    <div class="checkout-container-content">
+                        <div class="checkout-detaill">
+                            <span class="label">Order Id:</span>
+                            <span class="value">2933</span>
+                        </div>
+                        <div class="checkout-detaill">
+                            <span class="label">Date:</span>
+                            <span id="date-value" class="value"></span>
+                        </div>
+                        <div class="checkout-detaill">
+                            <span class="label">Total:</span>
+                            <span id="total-value" class="value"></span>
+                        </div>
+                        <p id="gratitude">Thank you for your order, please click the link below to check your order</p>
+                    </div>
+                  <button id="placeholder-page"> <a href="/pages/placeorder.html">check my order</a></button> 
                 </div>
             </div>
         </section>
     </main>
+    <script src="/scripts/access.js"></script>
+    <script src="/scripts/checkout.js"></script>
+    <script src="/scripts/cartcounter.js"></script>
 </body>
 </html>

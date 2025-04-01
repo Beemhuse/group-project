@@ -10,7 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/styles/menu-details.css">
+    <link rel="icon" href="/Images/head-logo.png">
     <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/header.css">
     <title>Menu Details</title>
 </head>
 
@@ -22,9 +24,11 @@
             </div>
             <nav class="header-nav">
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="/index.html">Home</a></li>
                     <li><a href="/pages/menu.html">Our Menu</a></li>
                     <li><a href="/pages/contact.html">Contact Us</a></li>
+                    <button class="sign-up-button" id="sign-up-mobile">Sign In</button>
+                    <button class="log-in-button" id="login-mobile">Log In</button>
                 </ul>
             </nav>
             <div class="header-left-content">
@@ -33,8 +37,37 @@
                  <span id="cart-count" class="cart-count"></span>
                 </div>
                 <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
-                <button class="log-in-button">Log In</button>
+                <div class="user">
+                    <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
+                </div>
+                <button class="sign-up-button">Sign In</button>
             </div>
+            <button class="hamburger">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </button>
+        </div>
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+                <h3>Are you sure you want to log out?</h3>
+                <button id="confirmLogout">Yes</button>
+                <button id="cancelLogout">No</button>
+            </div>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <ul>
+                <li>
+                    <a href="/dashboard.html" id="dashboardLink">
+                        <i class="fa-solid fa-user-tie" style="color: #fff;" id="menu-icon"></i>Dashboard
+                    </a>
+                </li>
+                <li><a href="#" id="logoutLink">
+                        <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;" id="menu-icon"></i>Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
         </div>
     </header>
     <main>
@@ -64,7 +97,7 @@
                 <div id="newsletter">
                     <h2>Join Our <strong>Newsletter</strong> </h2>
                     <div class="subscribe-email">
-                        <input type=" email" placeholder="Enter your email address">
+                        <input name="email" type="email" placeholder="Enter your email address" autocomplete="email">
                         <button id="subscribe">Subscribe</button>
                     </div>
                 </div>
@@ -97,8 +130,9 @@
             </div>
         </div>
     </footer>
-    <script type="module" src="/scripts/menu-details.js"></script>
-    <script type="module" src="/scripts/verifyAcess.js"></script>
+    <script src="/scripts/menu-details.js"></script>
+    <script src="/scripts/access.js"></script>
+    <script src="/scripts/cartcounter.js"></script>
 </body>
 
 </html>

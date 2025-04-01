@@ -224,7 +224,7 @@ button{
 .message-container {
     position: fixed;
     top: 20px;
-    right: -300px; /* Initially out of view */
+    right: -300px; 
     background-color: #f4f4f4;
     padding: 15px;
     border-radius: 8px;
@@ -243,13 +243,13 @@ button{
     display: none;
 }
 .message-container.show {
-    right: 20px; /* Slide in */
+    right: 20px;
 }
 .message-icon.error {
-    background-color: #f44336; /* Red for error */
+    background-color: #f44336;
 }
 .message-icon.success {
-    background-color: #4CAF50; /* Green for success */
+    background-color: #4CAF50; 
 }
 .message-container i {
     margin-right: 10px;
@@ -270,7 +270,6 @@ button{
     }
     .sign-up-container-content{
         padding: 50px 40px 15px 40px;
-        /* border: 2px solid red; */
         width: 95%;
     }
     .terms-condition label,

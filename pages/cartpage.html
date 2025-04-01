@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart Page</title>
-    <link rel="stylesheet" href="../styles/index.css">
-    <link rel="stylesheet" href="../styles/menu.css">
-    <link rel="icon" href="../Images/Eudia-logo.png">
+    <link rel="icon" href="/Images/head-logo.png">
     <link rel="stylesheet" href="../styles/cartpage.css">
     <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,34 +17,60 @@
 
 <body>
     <header>
-        <div class="header-container">
-            <div class="header-logo">
-                <img src="/Images/Eudia-logo.png" alt="">
+            <div class="header-container">
+                <div class="header-logo">
+                    <img src="/Images/Eudia-logo.png" alt="">
+                </div>
+                <nav class="header-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../pages/menu.html">Our Menu</a></li>
+                        <li><a href="../pages/contact.html">Contact Us</a></li>
+                        <button class="sign-up-button" id="sign-up-mobile">Sign In</button>
+                        <button class="log-in-button" id="login-mobile">Log In</button>
+                    </ul>
+                </nav>
+                <div class="header-left-content">
+                    <div class="cart-container">
+                    <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+                     <span id="cart-count" class="cart-count"></span>
+                    </div>
+                    <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
+                    <div class="user">
+                        <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
+                    </div>
+                    <button class="sign-up-button">Sign In</button>
+                </div>
+                <button class="hamburger">
+                    <div id="bar1" class="bar"></div>
+                    <div id="bar2" class="bar"></div>
+                    <div id="bar3" class="bar"></div>
+                </button>
             </div>
-            <nav class="header-nav">
+            <div id="logoutModal" class="modal">
+                <div class="modal-content">
+                    <h3>Are you sure you want to log out?</h3>
+                    <button id="confirmLogout">Yes</button>
+                    <button id="cancelLogout">No</button>
+                </div>
+            </div>
+            <div class="dropdown-menu" id="dropdownMenu">
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../pages/menu.html">Our Menu</a></li>
-                    <li><a href="../pages/contact.html">Contact Us</a></li>
+                    <li>
+                        <a href="/dashboard.html" id="dashboardLink">
+                            <i class="fa-solid fa-user-tie" style="color: #fff;" id="menu-icon"></i>Dashboard
+                        </a>
+                    </li>
+                    <li><a href="#" id="logoutLink">
+                            <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;" id="menu-icon"></i>Logout
+                        </a>
+                    </li>
                 </ul>
-            </nav>
-            <div class="header-left-content">
-                <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
-                <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
-                <button class="log-in-button">Log In</button>
             </div>
-        </div>
+            </div>
+
     </header>
     <main>
-        <div id="what-we-offer">
-            <button class="available-dishes">All</button>
-            <button class="available-dishes">Rice</button>
-            <button class="available-dishes">Salads </button>
-            <button class="available-dishes">Protein </button>
-            <button class="available-dishes">Soup </button>
-            <button class="available-dishes"> Drinks </button>
-            <button class="available-dishes">Pastries </button>
-        </div>
 
 
 
@@ -76,6 +101,37 @@
 
             </div>
         </div>
+
+        <div id="mobile-order-in-your-cart">
+            <div id="order-details">
+                <p>Product</p>
+                <p>Price</p>
+                <p>Quantity</p>
+                <p>Subtotal</p>
+            </div>
+            <div id="orders">
+                <div id="dishes-title">
+                    <i class="fa-solid fa-trash"></i>
+                    <img src="../Images/menu_images/Jollof_Rice.png" id="dish-image" width="50px" alt="">
+                    <p id="dish-title">jollof rice</p>
+                </div>
+                <div id="dish-price">
+                    <span>20000</span>
+                </div>
+                <div id="add-more-dishes">
+                    <div id="remove-dish"> <i class="fa-solid fa-minus"></i></div>
+                    <input type="text" value="01" id="quantity-value">
+                    <div id="add-dish"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div id="dish-subtotal">
+                    <span>20000</span>
+                </div>
+
+            </div>
+        </div>
+
+
+
         <button id="shop-btn" type="submit">Return to Shop</button>
         <div id="cart-summary">
             <h2>Cart Total</h2>
@@ -100,6 +156,7 @@
             <button id="checkout-btn">Process to Checkout</button>
 
         </div>
+        
     </main>
 
     <footer>
@@ -142,6 +199,8 @@
         </div>
     </footer>
     <script src="../scripts/cartpage.js"></script>
+    <script src="../scripts/access.js"></script>
+    <script src="../scripts/cartcounter.js"></script>
 
 </body>
 
