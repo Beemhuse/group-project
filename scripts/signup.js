@@ -1,14 +1,13 @@
 // Getting the elements
+const signInButton = document.getElementById('create-account-button');
+const loader = document.getElementById('loader');
+const signInButtonText = document.getElementById('sign-in-button-text');
 let password = document.getElementById("password");
 let passwordIcon = document.getElementById("password-icon");
 let messageContainer = document.getElementById("message-container");
 let messageText = document.getElementById("message");
 let messageIcon = document.getElementById("message-icon");
-let usernameInput = document.querySelector("#username")
-let emailInput = document.querySelector("#email")
-let passwordInput = document.querySelector("#password")
 const signUpForm = document.querySelector(".sign-up-form");
-// Password view toggle
 passwordIcon.onclick = (e) => {
     e.preventDefault();
     if (password.type === "password") {
@@ -25,27 +24,38 @@ passwordIcon.onclick = (e) => {
 // Function to handle signup form submission
 async function handleSignup(event) {
   event.preventDefault(); // Prevent form submission
-  const name = usernameInput.value.trim();
-  const email = emailInput.value.trim();
-  const password = passwordInput.value.trim();
-  const signInButton = document.getElementById('create-account-button');
-  const loader = document.getElementById('loader');
-  const signInButtonText = document.getElementById('sign-in-button-text');
-    if(password.length < 8){
-        showMessage("Password must be at least 8 characters long", "error");
-        return
-    }
-    else{
-        showMessage("Password is valid", "success");
-         signInButton.disabled = false;
-        loader.style.display = 'none';
-        signInButtonText.style.visibility = 'visible';
-    }
-  // Disable the button and show the loader
+  const name = document.querySelector("#username").value.trim();
+  const email = document.querySelector("#email").value.trim();
+  const password = document.querySelector("#password").value.trim();
+  
   signInButton.disabled = true;
   loader.style.display = 'inline-block';
   signInButtonText.style.visibility = 'hidden';
-  // User data to send in the request
+ // Check if the form is valid
+  if (!name ||!email ||!password) {
+    showMessage("Please fill in all fields", "error");
+    signInButton.disabled = false; // Re-enable the button
+    loader.style.display = 'none';
+    signInButtonText.style.visibility = 'visible';
+    return;
+  }
+  // Validate the email format
+
+  if (!/^\S+@\S+\.\S+$/.test(email)) {
+    showMessage("Please enter a valid email address", "error");
+    signInButton.disabled = false; // Re-enable the button
+    loader.style.display = 'none';
+    signInButtonText.style.visibility = 'visible';
+    return;
+  }
+  // Validate the password length
+  if (password.length < 8) {
+    showMessage("Password must be at least 8 characters long", "error");
+    signInButton.disabled = false; // Re-enable the button
+    loader.style.display = 'none';
+    signInButtonText.style.visibility = 'visible';
+    return;
+  }
   const userData = {
       name,
       email,
