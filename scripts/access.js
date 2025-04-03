@@ -8,6 +8,8 @@ const confirmLogout = document.getElementById("confirmLogout");
 const loginButton = document.querySelector('.log-in-button');
 const signUpButtons = document.querySelectorAll('.sign-up-button');
 const token = sessionStorage.getItem("token");
+const cartCountElement = document.getElementById('cart-count');
+
 
 
 // Show dropdown
@@ -69,7 +71,20 @@ loginButton.addEventListener('click', () => {
 })
 // Handle login button click (removed duplicate code)
 if (token) {
-    signUpButtons.forEach(button => {
+    const cartCountElement = document.getElementById('cart-count');
+    const cartIcon = document.querySelector('.fa-cart-shopping');
+    
+    
+    cartIcon.addEventListener('click',() => {
+        window.location.href = "/pages/cartpage.html"; // direct to cartpage
+    })
+    function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let totalItems = cart.length;
+        cartCountElement.style.visibility = totalItems > 0 ? "visible" : "hidden";
+        cartCountElement.innerText = totalItems;
+    }
+    updateCartCount();    signUpButtons.forEach(button => {
         button.style.display = 'none';  // Hide sign-up buttons if logged in
     });
     if (loginButton) {
@@ -78,6 +93,7 @@ if (token) {
     userIcon.style.display = 'flex';  // Show user icon if logged in
 } else {
     userIcon.style.display = 'none';  // Hide user icon if not logged in
+    cartCountElement.style.visibility = 'hidden'
 }
 
 // Toggle dropdown when clicking on the user icon

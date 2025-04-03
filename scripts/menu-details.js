@@ -81,9 +81,9 @@ function displayDish(dish) {
     orderButton.addEventListener("click", () => {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
         const existingItem = cart.find(item => item.slug === myParam);
-    
         try {
             const newQuantity = parseInt(quantityValue.value, 10); // Get the new quantity from the input
+            
     
             if (existingItem) {
                 // If the item already exists in the cart, check if the quantity is different
