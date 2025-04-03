@@ -5,8 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - My Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/header.css">
+
+
 </head>
 <body class="bg-gray-100">
+    <header class="mb-10">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="/Images/Eudia-logo.png" alt="">
+            </div>
+         
+        </div>
+     
+</header>
     <div class="flex h-screen">
         <!-- Sidebar -->
         <aside class="w-1/4 bg-white p-6 shadow-lg">
@@ -58,7 +71,47 @@
                 </form>
             </div>
         </main>
+
+        
     </div>
-    
+    <footer class="mt-10">
+        <div id="footer-container">
+            <div>
+                <div id="newsletter">
+                    <h2>Join Our <strong>Newsletter</strong> </h2>
+                    <div class="subscribe-email">
+                        <input type=" email" id="email" placeholder="Enter your email address">
+                        <button id="subscribe">Subscribe</button>
+                    </div>
+                </div>
+                <p id="extra">Be the first to know about our latest updates, exclusive offers and more</p>
+            </div>
+            <hr>
+            <div id="customer-service">
+                <div class="help">
+                    <h3>Help</h3>
+                    <a href="#">Customer Support</a>
+                    <a href="#"> Email Support <i class="fa-solid fa-square-arrow-up-right"></i></i></i></a>
+                    <a href="#">Delivery Details <i class="fa-solid fa-square-arrow-up-right"></i></i></i></a>
+                </div>
+                <div class="about">
+                    <h3>About</h3>
+                    <a href="#">Contact</a>
+                    <a href="#">Service</a>
+                </div>
+            </div>
+            <hr>
+            <div id="privacy">
+                <div class="privacy-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Refund Policy</a>
+                </div>
+                <div>
+                    <p>�� 2025 All rights reserved Euodia Whole Foods</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
