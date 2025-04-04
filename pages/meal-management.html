@@ -5,194 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meal Management</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/header.css">
   </head>
-  <body class="bg-gray-100 p-10">
-    <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-      <h2 class="text-green-600 text-xl font-bold mb-4">Create a Meal</h2>
-      <form id="mealForm" class="grid grid-cols-1 gap-4">
-        <div>
-          <label class="block text-gray-700">Meal Name</label>
-          <input
-            type="text"
-            id="mealName"
-            class="w-full p-2 border rounded"
-            required
-          />
+  <body class="">
+    <header class="mb-10">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="/Images/Eudia-logo.png" alt="">
+            </div>
         </div>
-        <div>
-          <label class="block text-gray-700">Description</label>
-          <textarea
-            id="mealDescription"
-            class="w-full p-2 border rounded"
-            required
-          ></textarea>
-        </div>
-        <div>
-          <label class="block text-gray-700">Category</label>
-          <select
-            id="mealCategory"
-            class="w-full p-2 border rounded"
-            required
-          ></select>
-        </div>
-        <div>
-          <label class="block text-gray-700">Price ($)</label>
-          <input
-            type="number"
-            id="mealPrice"
-            class="w-full p-2 border rounded"
-            required
-          />
-        </div>
-        <div>
-          <label class="block text-gray-700">Image</label>
-          <input
-            type="file"
-            id="mealImage"
-            class="w-full p-2 border rounded"
-            accept="image/*"
-            required
-          />
-        </div>
-        <div>
-          <label class="block text-gray-700">Sort Number</label>
-          <input
-            type="number"
-            id="mealSortNumber"
-            class="w-full p-2 border rounded"
-            required
-          />
-        </div>
-        <div>
-          <label class="block text-gray-700">Status</label>
-          <select id="mealStatus" class="w-full p-2 border rounded">
-            <option value="true">Active</option>
-            <option value="false">Inactive</option>
-          </select>
-        </div>
-        <div class="flex justify-end">
-          <button
-            type="submit"
-            class="bg-green-600 text-white px-4 py-2 rounded"
-          >
-            Add Meal
-          </button>
-        </div>
-      </form>
+    </header>
+    <div class="grid grid-cols-5 gap-6 p-6">
+      <div class="col-span-3  bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-green-600 text-xl font-bold mb-4">Create a Meal</h2>
+        <form id="mealForm" class="grid grid-cols-1 gap-4">
+          <div>
+            <label class="block text-gray-700">Meal Name</label>
+            <input
+              type="text"
+              id="mealName"
+              class="w-full p-2 border rounded"
+              required
+            />
+          </div>
+          <div>
+            <label class="block text-gray-700">Description</label>
+            <textarea
+              id="mealDescription"
+              class="w-full p-2 border rounded"
+              required
+            ></textarea>
+          </div>
+          <div>
+            <label class="block text-gray-700">Category</label>
+            <select
+              id="mealCategory"
+              class="w-full p-2 border rounded"
+              required
+            ></select>
+          </div>
+          <div>
+            <label class="block text-gray-700">Price ($)</label>
+            <input
+              type="number"
+              id="mealPrice"
+              class="w-full p-2 border rounded"
+              required
+            />
+          </div>
+          <div>
+            <label class="block text-gray-700">Image</label>
+            <input
+              type="file"
+              id="mealImage"
+              class="w-full p-2 border rounded"
+              accept="image/*"
+              required
+            />
+          </div>
+          <div>
+            <label class="block text-gray-700">Sort Number</label>
+            <input
+              type="number"
+              id="mealSortNumber"
+              class="w-full p-2 border rounded"
+              required
+            />
+          </div>
+          <div>
+            <label class="block text-gray-700">Status</label>
+            <select id="mealStatus" class="w-full p-2 border rounded">
+              <option value="true">Active</option>
+              <option value="false">Inactive</option>
+            </select>
+          </div>
+          <div class="flex justify-end">
+            <button
+              type="submit"
+              class="bg-green-600 text-white px-4 py-2 rounded"
+            >
+              Add Meal
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-span-2 bg-white p-6 rounded-lg shadow-lg ">
+        <h2 class="text-green-600 text-xl font-bold mb-4">Meals List</h2>
+        <ul id="mealsList" class="space-y-2"></ul>
+      </div>
     </div>
 
-    <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg mt-6">
-      <h2 class="text-green-600 text-xl font-bold mb-4">Meals List</h2>
-      <ul id="mealsList" class="space-y-2"></ul>
-    </div>
-
-    <script>
-      // const API_URL = "https://student-food-be.onrender.com/api/";
-      const API_URL = "http://localhost:5000/api/";
-      const SANITY_API_URL =
-        "https://h1ah3je5.api.sanity.io/v2021-06-07/data/mutate/production";
-
-      const SANITY_QUERY_URL =
-        "https://h1ah3je5.api.sanity.io/v2021-06-07/data/query/production";
-
-      async function fetchCategories() {
-        const response = await fetch(`${API_URL}category`);
-        const data = await response.json();
-        const categorySelect = document.getElementById("mealCategory");
-        categorySelect.innerHTML = data.categories
-          ?.map((cat) => `<option value="${cat._id}">${cat.title}</option>`)
-          .join("");
-      }
-
-      document
-        .getElementById("mealForm")
-        .addEventListener("submit", async function (event) {
-          event.preventDefault();
-
-          const mealImage = document.getElementById("mealImage").files[0];
-
-          if (!mealImage) {
-            alert("Please select an image");
-            return;
-          }
-
-          try {
-            // Upload Image to Sanity
-            const formData = new FormData();
-            formData.append("image", mealImage);
-
-            const imageUploadResponse = await fetch(`${API_URL}upload-image`, {
-              method: "POST",
-              body: formData,
-            });
-
-            if (!imageUploadResponse.ok) {
-              throw new Error("Image upload failed");
-            }
-
-            const imageData = await imageUploadResponse.json();
-            const imageRef = imageData.assetId; // Use the correct property from response
-
-            // Prepare Meal Data
-            const meal = {
-              title: document.getElementById("mealName").value,
-              description: document.getElementById("mealDescription").value,
-              price: Number(document.getElementById("mealPrice").value),
-              category: document.getElementById("mealCategory").value, // Ensure category is passed correctly
-              image:imageRef ,
-              status: document.getElementById("mealStatus").value === "true",
-              sortOrder: Number(
-                document.getElementById("mealSortNumber").value
-              ),
-            };
-
-            // Create Meal in Sanity
-            const response = await fetch(`${API_URL}dishes`, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(meal), // Send meal object directly
-            });
-
-            if (!response.ok) {
-              throw new Error("Meal creation failed");
-            }
-
-            alert("Meal added successfully!");
-            document.getElementById("mealForm").reset();
-            fetchMeals();
-          } catch (error) {
-            console.error("Error:", error);
-            alert(error.message);
-          }
-        });
-
-      async function fetchMeals() {
-        const response = await fetch(
-          `${SANITY_QUERY_URL}?query=*[_type=="dish"]{title,description,price,image,sortOrder,status,category->{title}}`
-        );
-        const data = await response.json();
-        document.getElementById("mealsList").innerHTML = data.result
-          .map(
-            (meal) => `
-                <li class="p-4 bg-gray-100 rounded flex justify-between">
-                    <span><strong>${meal.title}</strong> - ${
-              meal.description
-            } ($${meal.price}) - ${meal.category?.title} - Sort: ${
-              meal.sortOrder
-            } - Status: ${meal.status ? "Active" : "Inactive"}</span>
-                    <img src="${
-                      meal.image?.asset?._ref
-                    }" alt="Meal Image" class="w-12 h-12 rounded">
-                </li>
-            `
-          )
-          .join("");
-      }
-
-      fetchCategories();
-      fetchMeals();
-    </script>
+    <footer class="mt-10">
+        <div id="footer-container">
+            <div>
+                <div id="newsletter">
+                    <h2>Join Our <strong>Newsletter</strong> </h2>
+                    <div class="subscribe-email">
+                        <input type=" email" id="email" placeholder="Enter your email address">
+                        <button id="subscribe">Subscribe</button>
+                    </div>
+                </div>
+                <p id="extra">Be the first to know about our latest updates, exclusive offers and more</p>
+            </div>
+            <hr>
+            <div id="customer-service">
+                <div class="help">
+                    <h3>Help</h3>
+                    <a href="#">Customer Support</a>
+                    <a href="#"> Email Support <i class="fa-solid fa-square-arrow-up-right"></i></a>
+                    <a href="#">Delivery Details <i class="fa-solid fa-square-arrow-up-right"></i></a>
+                </div>
+                <div class="about">
+                    <h3>About</h3>
+                    <a href="#">Contact</a>
+                    <a href="#">Service</a>
+                </div>
+            </div>
+            <hr>
+            <div id="privacy">
+                <div class="privacy-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Refund Policy</a>
+                </div>
+                <div>
+                    <p>&copy; 2025 All rights reserved Euodia Whole Foods</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+   
   </body>
 </html>
