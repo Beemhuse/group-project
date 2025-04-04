@@ -1,13 +1,10 @@
 // Getting the elements
 let password = document.getElementById("password");
 let passwordIcon = document.getElementById("password-icon");
-let passwordErrorMessage = document.querySelector(".password-error-message")
 let messageContainer = document.getElementById("message-container");
 let messageText = document.getElementById("message");
 let messageIcon = document.getElementById("message-icon");
 let loginButton = document.getElementById("log-in-btn");
-let emailInput = document.getElementById("email");
-let passwordInput = document.getElementById("password");
 let loginForm = document.querySelector(".login-form")
 const loader = document.getElementById('loader');
 const btnText = document.getElementById('log-in-button-text');
@@ -26,18 +23,33 @@ passwordIcon.onclick = (e) => {
 };
 async function handleLogin(event) {
     event.preventDefault();
-    if(passwordInput.value.length < 8){
-        showMessage("Password must be at least 8 characters long", "error");
-        return;
-    }
-    else{
-        showMessage("Password is valid", "success");
-        loginButton.disabled = false; // Enable the login button
-        loader.style.display = 'none';
-        btnText.style.visibility = 'visible';
-    }    
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+     // Check if the form is valid
+  if (!email ||!password) {
+    showMessage("Please fill in all fields", "error");
+    signInButton.disabled = false; // Re-enable the button
+    loader.style.display = 'none';
+    signInButtonText.style.visibility = 'visible';
+    return;
+  }
+  // Validate the email format
+
+  if (!/^\S+@\S+\.\S+$/.test(email)) {
+    showMessage("Please enter a valid email address", "error");
+    signInButton.disabled = false; // Re-enable the button
+    loader.style.display = 'none';
+    signInButtonText.style.visibility = 'visible';
+    return;
+  }
+  // Validate the password length
+  if (password.length < 8) {
+    showMessage("Password must be at least 8 characters long", "error");
+    signInButton.disabled = false; // Re-enable the button
+    loader.style.display = 'none';
+    signInButtonText.style.visibility = 'visible';
+    return;
+  }
     loginButton.disabled = true; // Disable the login button
     loader.style.display = 'inline-block';
     btnText.style.visibility = 'hidden';
@@ -55,6 +67,8 @@ async function handleLogin(event) {
             body: JSON.stringify(userData), // Convert form data to JSON
         });
         const result = await response.json();
+        console.log(result);
+        
         if (response.ok) {
             sessionStorage.setItem("token", result.token); // Store token for authentication
             showMessage("Login successful!", "success");
@@ -63,15 +77,16 @@ async function handleLogin(event) {
             }, 1200); 
             messageContainer.style.transition = 'right 3s ease-out';  // Smooth transition   
         } else {
-            throw new Error(result.error || "Login failed");
+            // Display the error message returned from the response
+            showMessage(result.message || "Invalid credentials", "error"); // Use `result.message` if it's available
         }
     } catch (error) {
-        showMessage("Login failed", "error");
-        loginButton.disabled = false; // Disable the login button
-        loader.style.display = 'none';
-        btnText.style.visibility = 'visible';
+        // Display the error message in case of an exception
+        showMessage(error.message || "Something went wrong", "error");
     } finally {
         loginButton.disabled = false; // Re-enable the login button
+        loader.style.display = 'none';
+        btnText.style.visibility = 'visible';
     }
 }
 // Show the slide-in message
