@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="/Images/head-logo.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/styles/forgot.css">
     <title>Forgot password</title>
 </head>
@@ -20,19 +26,26 @@
                         <form class="forgot-password-form">
                             <div class="user-email">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="chinedufreedom10@gmail.com"required>
+                                <input type="email" id="email" name="email" placeholder="chinedufreedom10@gmail.com" autocomplete="email">
                                 <span class="email-error-message"></span>
                             </div>
-                            <button id="send-code-button" type="submit">Send code</button>
-                            <p id="log-in-opt"><a href="/pages/auth/login.html">Go back</a><a href="/pages/auth/login.html">Log in</a></p>
+                            <button type="submit" id="send-otp-btn">
+                                <span id="send-code-button-text" type="submit">Send code</span>
+                                <div id="loader" class="loader"></div>
+                            </button>
+                            <p id="log-in-opt"><a href="/pages/auth/login.html">Log in</a></p>
                         </form>
                     </div>
                 </div>
                 <p class="alrightrev">© 2023 My Blog. All rights reserved.</p>
             </div>
         </section>
+        <div id="message-container" class="message-container hidden">
+            <i id="message-icon" class="fas"></i>
+            <p id="message"></p>
+        </div>
     </main>
- <script src="/scripts/forgot.js"></script>
+ <script type="module" src="/scripts/forgot.js"></script>
 </body>
 
 </html>

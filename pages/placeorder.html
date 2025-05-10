@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../styles/placeorder.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="icon" href="/Images/head-logo.png">
+    <title>cart</title>
+</head>
+
+<!--SHEDRACH-->
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="/Images/Eudia-logo.png" alt="">
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/menu.html">Our Menu</a></li>
+                    <li><a href="/pages/contact.html">Contact Us</a></li>
+                    <button class="sign-up-button" id="sign-up-mobile">Sign In</button>
+                    <button class="log-in-button" id="login-mobile">Log In</button>
+                </ul>
+            </nav>
+            <div class="header-left-content">
+                <div class="cart-container">
+                <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+                 <span id="cart-count" class="cart-count"></span>
+                </div>
+                <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
+                <div class="user">
+                    <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
+                </div>
+                <button class="sign-up-button">Sign In</button>
+            </div>
+            <button class="hamburger">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </button>
+        </div>
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+                <h3>Are you sure you want to log out?</h3>
+                <button id="confirmLogout">Yes</button>
+                <button id="cancelLogout">No</button>
+            </div>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <ul>
+                <li>
+                    <a href="/dashboard.html" id="dashboardLink">
+                        <i class="fa-solid fa-user-tie" style="color: #fff;" id="menu-icon"></i>Dashboard
+                    </a>
+                </li>
+                <li><a href="#" id="logoutLink">
+                        <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;" id="menu-icon"></i>Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="container">
+            <div id="form-container">
+                <form action="">
+                    <div>
+                        <label for="fullname">Full Name</label><br>
+                        <input type="text" id="fullname" required><br>
+                    </div>
+
+                    <div>
+                        <label for="address">Street Address</label><br>
+                        <input type="text" id="address" required><br>
+                        <input type="text" required><br>
+                    </div>
+
+                    <label for="apartment">Apartment,Floor,etc. (Optional)</label><br>
+                    <input type="text" id="apartment" required><br>
+
+                    <label for="area">Town/City</label><br>
+                    <input type="text" id="area" required><br>
+
+                    <label for="phone">Phone Number</label><br>
+                    <input type="text" id="phone" required><br>
+
+                    <label for="">Email Address</label><br>
+                    <input type="email" id="email" required>
+
+                    <h3>ORDER NOTES (OPTIONAL)</h3>
+                    <textarea name="" id="Order Note" cols="50" rows="10"
+                        placeholder="Special notes about your orders, e.g. special notes for delivery"></textarea>
+
+                </form>
+            </div>
+            <div id="payment-container">
+                <div class="carddiv">
+                    <!-- <div class="jollofdiv">
+                        <img src="/images/jollof.png" alt="" style="padding-top: 3%;">
+                        <p style="padding-top: 4%;">Jollof Rice ✖3</p>
+                        <label>$20,000.00</label>
+                    </div>
+
+                    <div class="saladdiv">
+                        <img src="/images/village rice.png" alt="" style="padding-top: 1.5%;">
+                        <p style="padding-top: 2.5%;">Fruit Salad ✖2</p>
+                        <label>$20,000.00</label>
+                    </div>
+
+                    <div class="villagediv">
+                        <img src="/images/village rice.png" alt="" style="padding-top: 1.5%;">
+                        <p style="padding-top: 2.5%;">Village Rice ✖3</p>
+                        <label>$15,000.00</label> -->
+                </div>
+                <div id="cart-summary">
+
+                    <div id="subtotal">
+                        <p>Subtotal:</p>
+                        <span id="subtotalgap"> </span>
+                    </div>
+                    <hr>
+                    <div id="shipping">
+                        <p>Shipping:</p>
+                        <textarea name="shipping" id="shipping" cols="25" rows="3"
+                            placeholder="Enter your address to view shipping options"></textarea>
+                    </div>
+                    <hr>
+                    <div id="service-amount">
+                        <p>Service Fee:</p>
+                        <span id="service-fee"></span>
+                    </div>
+                    <hr>
+                    <div id="tax-amount">
+                        <p>Tax:</p>
+                        <span id="tax"></span>
+                    </div>
+                    <hr>
+                    <div id="total-amount">
+                        <p>Total:</p>
+                        <span id="total"></span>
+
+                    </div>
+                    <hr>
+                </div>
+
+                <div id="payment-mode-details">
+                    <p>Your personal data will be
+                        used to process your order. Support your experience throughout this website,and for other
+                        purposes
+                        described in our <a href="#">privacy policy</a> </p>
+
+                    <div id="checkbox">
+                        <input type="checkbox">
+                        <p style="margin-left: 1%; font-size: 12px; margin-top: 2%;">I HAVE READ AND AGREE TO THE
+                            WEBSITE <a href="">TERMS AND CONDITIONS</a></p>
+                    </div>
+
+                    <div class="payment-card">
+                        <img src="/images/menu_images/paystack-wc 1.png" alt="">
+                    </div>
+                    <button id="place-order-btn">Place Order</button>
+                </div>
+            </div>
+        </div>
+   
+    </main>
+
+    <footer>
+        <div id="footer-container">
+            <div>
+                <div id="newsletter">
+                    <h2>Join Our <strong>Newsletter</strong> </h2>
+                    <div class="subscribe-email">
+                        <input type=" email" placeholder="Enter your email address">
+                        <button id="subscribe">Subscribe</button>
+                    </div>
+                </div>
+                <p id="extra">Be the first to know about our latest updates, exclusive offers and more</p>
+            </div>
+            <hr>
+            <div id="customer-service">
+                <div class="help">
+                    <h3 style="margin-left: 11%;">Help</h3>
+                    <a href="#">Customer Support</a>
+                    <a href="#"> Email Support <i class="fa-solid fa-square-arrow-up-right"></i></i></i></a>
+                    <a href="#">Delivery Details <i class="fa-solid fa-square-arrow-up-right"></i></i></i></a>
+                </div>
+                <div class="about">
+                    <h3 style="margin-left: 18%;">About</h3>
+                    <a href="#">Contact</a>
+                    <a href="#">Service</a>
+                </div>
+            </div>
+            <hr>
+            <div id="privacy">
+                <div class="privacy-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Refund Policy</a>
+                </div>
+                <div>
+                    <p>�� 2025 All rights reserved Euodia Whole Foods</p>
+                </div>
+            </div>
+        </div>
+
+        <!--
+               <div class="footer-div">
+
+        <div class="footer-links1">
+            <div><a href="">Help</a></div>
+            <div><a href="">Customer Support</a></div>
+            <div><a href="">Email Support</a></div>
+            <div><a href="">Delivery Details</a></div>
+        </div>
+
+        <div class="footer-links2">
+            <div><a href="">About</a></div>
+            <div><a href="">Contact</a></div>
+            <div><a href="">Service</a></div>
+        </div>
+       </div><hr>
+
+       <div class="privacy-div">
+
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+
+       </div>
+    -->
+    </footer>
+
+    <script src="/scripts/placeholder.js"></script>
+    <script src="../scripts/access.js"></script>
+    <script src="../scripts/cartcounter.js"></script>
+    <script src="../scripts/placeorder.js"></script>
+
+</body>
+
+</html>

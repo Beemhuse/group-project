@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="/Images/head-logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/styles/otp.css">
     <title>Send OTP</title>
 </head>
@@ -16,23 +22,35 @@
                 <div class="otp-password-container">
                     <div class="otp-password-container-content">
                         <h2 id="otp-password-heading">Recover your password</h2>
-                        <p id="otp-password-introduction">Let's recover your password in one go</p>
                         <form class="otp-password-form">
-                            <div class="user-email">
-                                <p id="otp-requirement">Enter the six digit code sent to your email</p>
-                                <input type="number" id="number" name="number" placeholder="112233" required>
-                                <span class="code-error-message"></span>
+                            <p id="otp-requirement">Enter the six digit code sent to your email</p>
+                            <div class="otp-inputs">
+                                <input type="text" name="number" maxlength="1">
+                                <input type="text" name="number" maxlength="1">
+                                <input type="text" name="number" maxlength="1">
+                                <input type="text" name="number" maxlength="1">
+                                <input type="text" name="number" maxlength="1">
+                                <input type="text" name="number" maxlength="1">
                             </div>
-                            <button id="send-button" type="submit">send</button>
-                            <p id="log-in-opt"><a href="/pages/auth/login.html">Go back</a><a href="/pages/auth/login.html">Log in</a></p>
+                            <button type="submit" id="send-button">
+                                <span id="send-otp-button-text" type="submit">send</span>
+                                <div id="loader" class="loader"></div>
+                            </button>
                         </form>
+                        <p id="log-in-opt"><a href="/pages/auth/login.html">Go back</a><a
+                                href="/pages/auth/login.html">Log in</a></p>
+                        <span class="code-error-message"></span>
                     </div>
                 </div>
                 <p class="alrightrev">© 2023 My Blog. All rights reserved.</p>
             </div>
         </section>
+        <div id="message-container" class="message-container hidden">
+            <i id="message-icon" class="fas"></i>
+            <p id="message"></p>
+        </div>
     </main>
-    <script src="/scripts/otp.js"></script>
+    <script type="module" src="/scripts/otp.js"></script>
 </body>
 
 </html>

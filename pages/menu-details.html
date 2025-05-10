@@ -10,51 +10,70 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/styles/menu-details.css">
+    <link rel="icon" href="/Images/head-logo.png">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/header.css">
     <title>Menu Details</title>
 </head>
 
 <body>
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="/Images/Eudia-logo.png" alt="">
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/menu.html">Our Menu</a></li>
+                    <li><a href="/pages/contact.html">Contact Us</a></li>
+                    <button class="sign-up-button" id="sign-up-mobile">Sign In</button>
+                    <button class="log-in-button" id="login-mobile">Log In</button>
+                </ul>
+            </nav>
+            <div class="header-left-content">
+                <div class="cart-container">
+                <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+                 <span id="cart-count" class="cart-count"></span>
+                </div>
+                <i class="fa-solid fa-lock fa-flip-horizontal" style="color: #000000;"></i>
+                <div class="user">
+                    <i class="fa-solid fa-user" style="color: #000;" id="user-icon"></i>
+                </div>
+                <button class="sign-up-button">Sign In</button>
+            </div>
+            <button class="hamburger">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </button>
+        </div>
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+                <h3>Are you sure you want to log out?</h3>
+                <button id="confirmLogout">Yes</button>
+                <button id="cancelLogout">No</button>
+            </div>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <ul>
+                <li>
+                    <a href="/dashboard.html" id="dashboardLink">
+                        <i class="fa-solid fa-user-tie" style="color: #fff;" id="menu-icon"></i>Dashboard
+                    </a>
+                </li>
+                <li><a href="#" id="logoutLink">
+                        <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;" id="menu-icon"></i>Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </header>
     <main>
         <section>
-            <div class="menu-detials">
-                <!-- <span class="page-tracker">
-            <p>Home</p> /
-            <p>Our Menu</p> /
-            <p>Oven baked potatoes</p>
-        </span> -->
-                <div class="menu-details-container">
-                    <div class="menu-details-container-content">
-                        <div class="food-image">
-                            <img src="/Images/baked-potatoes.png" alt="baked-potatoes">
-                        </div>
-                    </div>
-                    <div class="food-details">
-                        <div class="">
-                            <h2 id="food-name">OVEN BAKED SWEET POTATOES</h2>
-                            <p id="food-about">Oven baked potatoes spiced with sauce, made With Minced Meat,Shrimps, Coconut Flavor,Served with Spicy pepper and fresh olive mint.</p>
-                            <button class="size">Serving size: 0.06kg</button>
-                        </div>
-                        <span id="food-price">
-                            <i class="fa-solid fa-naira-sign" style="color: #616161;"></i>
-                            <p id="price">10,000</p>
-                        </span>
-                        <div class="quantity">
-                            <span class="quantity-content">
-                                <div class="number">
-                                    <button class="minus-btn" type="button">
-                                        <i class="fa-solid fa-minus"></i>
-                                    </button>
-                                </div>
-                                <input class="quantity-value" type="text" value="01" id="number-of-plates">
-                                <div class="number">
-                                    <button class="plus-btn" type="button">
-                                        <i class="fa-solid fa-plus"></i>
-                                    </button>
-                                </div>
-                                <button type="submit" class="order">Order</button>
-                            </span>
-                        </div>
-                    </div>
+            <div class="menu-detials-container">
+                <div class="menu-details-container-content">
                 </div>
             </div>
         </section>
@@ -63,90 +82,56 @@
                 <div class="food-lists-container">
                     <h2>Other dishes you’ll Love</h2>
                     <div class="food-lists-container-content-container">
-                        <div class="food-lists-container-content">
-                            <div class="others_details">
-                                <img src="/Images/jellof-rice.png" alt="">
-                                <span id="category_price">
-                                    <h4>Jollof Rice</h4>
-                                    <p>N5,000</p>
-                                </span>
-                                <span id="desc_buy">
-                                    <p id="desc">Tasty village rice</p>
-                                    <button class="buy-now">Buy now</button>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="food-lists-container-content">
-                            <div class="others_details">
-                                <img src="/Images/jellof-rice.png" alt="">
-                                <span id="category_price">
-                                    <h4>Jollof Rice</h4>
-                                    <p>N5,000</p>
-                                </span>
-                                <span id="desc_buy">
-                                    <p id="desc">Tasty village rice</p>
-                                    <button class="buy-now">Buy now</button>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="food-lists-container-content">
-                            <div class="others_details">
-                                <img src="/Images/jellof-rice.png" alt="">
-                                <span id="category_price">
-                                    <h4>Jollof Rice</h4>
-                                    <p>N5,000</p>
-                                </span>
-                                <span id="desc_buy">
-                                    <p id="desc">Tasty village rice</p>
-                                    <button class="buy-now">Buy now</button>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="food-lists-container-content">
-                            <div class="others_details">
-                                <img src="/Images/jellof-rice.png" alt="">
-                                <span id="category_price">
-                                    <h4>Jollof Rice</h4>
-                                    <p>N5,000</p>
-                                </span>
-                                <span id="desc_buy">
-                                    <p id="desc">Tasty village rice</p>
-                                    <button class="buy-now">Buy now</button>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="food-lists-container-content">
-                            <div class="others_details">
-                                <img src="/Images/jellof-rice.png" alt="">
-                                <span id="category_price">
-                                    <h4>Jollof Rice</h4>
-                                    <p>N5,000</p>
-                                </span>
-                                <span id="desc_buy">
-                                    <p id="desc">Tasty village rice</p>
-                                    <button class="buy-now">Buy now</button>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="food-lists-container-content">
-                            <div class="others_details">
-                                <img src="/Images/jellof-rice.png" alt="">
-                                <span id="category_price">
-                                    <h4>Jollof Rice</h4>
-                                    <p>N5,000</p>
-                                </span>
-                                <span id="desc_buy">
-                                    <p id="desc">Tasty village rice</p>
-                                    <button class="buy-now">Buy now</button>
-                                </span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        <div id="message-container" class="message-container hidden">
+            <i id="message-icon" class="fas"></i>
+            <p id="message"></p>
+        </div>
     </main>
+    <footer>
+        <div id="footer-container">
+            <div>
+                <div id="newsletter">
+                    <h2>Join Our <strong>Newsletter</strong> </h2>
+                    <div class="subscribe-email">
+                        <input name="email" type="email" placeholder="Enter your email address" autocomplete="email">
+                        <button id="subscribe">Subscribe</button>
+                    </div>
+                </div>
+                <p id="extra">Be the first to know about our latest updates, exclusive offers and more</p>
+            </div>
+            <hr>
+            <div id="customer-service">
+                <div class="help">
+                    <h3>Help</h3>
+                    <a href="#">Customer Support</a>
+                    <a href="#"> Email Support <i class="fa-solid fa-square-arrow-up-right"></i></i></i></a>
+                    <a href="#">Delivery Details <i class="fa-solid fa-square-arrow-up-right"></i></i></i></a>
+                </div>
+                <div class="about">
+                    <h3>About</h3>
+                    <a href="#">Contact</a>
+                    <a href="#">Service</a>
+                </div>
+            </div>
+            <hr>
+            <div id="privacy">
+                <div class="privacy-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Refund Policy</a>
+                </div>
+                <div>
+                    <p>�� 2025 All rights reserved Euodia Whole Foods</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="/scripts/menu-details.js"></script>
+    <script src="/scripts/access.js"></script>
 </body>
 
 </html>

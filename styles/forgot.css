@@ -54,21 +54,23 @@ label{
     border: 1px solid #6FCF9780;
     outline: none;
 }
-#send-code-button{
-    margin-top: 12px;
-    width: 100%;
-    height: 42px;
-    border-radius: 5px;
-    outline: none;
+button {
     border: 1px solid #34A853;
-    background-color: #34A853;
+    background-color: #34A853;    
     color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    outline: none;
     cursor: pointer;
     font-weight: 600;
-    font-size: 17px;
+    position: relative;
+    width: 100%;
+    height: 42px;
     transition: background-color 0.3s ease
 }
-#send-code-button:hover{
+button:hover{
     background-color: #219653
 }
 #log-in-opt{
@@ -79,7 +81,6 @@ label{
     color: #9CA3AF;
     transition: color 0.3s ease;
     margin-bottom: 30px; 
-    text-decoration: underline; 
 }
 #log-in-opt:focus{
     outline: none;
@@ -90,7 +91,6 @@ label{
     cursor: pointer; 
     font-weight: 500;
     margin-left: 5px;
-    text-decoration: none; 
 }
 #log-in-opt a:hover{
     color: #219653;
@@ -107,4 +107,60 @@ label{
     margin-top: -8px;  
     text-indent: 5px;  
 }
+#send-otp-btn:disabled {
+    cursor: not-allowed;
+}
+#loader {
+    display: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    border-top: 3px solid #34A853;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.message-container {
+    position: fixed;
+    top: 20px;
+    right: -300px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: right 1s ease-out;
+    z-index: 1000;
+}
+.message-container p {
+    margin: 0;
+    font-size: 16px;
+}
+.message-container.hidden {
+    display: none;
+}
+.message-container.show {
+    right: 20px;
+}
+.message-icon.error {
+    background-color: #f44336;
+}
+.message-icon.success {
+    background-color: #4CAF50;
+}
+.message-container i {
+    margin-right: 10px;
+}
+
 
